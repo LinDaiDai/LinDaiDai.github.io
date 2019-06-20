@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>在npm上发布模块 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/otherSkill/Npm/npmOfPublic/" data-name="在npm上发布模块" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/npm.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/otherSkill/Npm/npmOfPublic/">
+                在Npm上发布模块
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/其它技能/" data-no-instant="">
+                    <img src="/images/其它技能.svg" alt="其它技能" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="其它技能">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/npm/">Npm</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/vue/">Vue</a></label>
+		
+	
+		
+			<label class="tag-3"><a href="/tags/其它技能/">其它技能</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言入行前端也不少时间了，之前一直都在使用npm install别人的模块/组件，那么作为一名有追求的前端肯定不会满足一直在用别人的轮子。今天给大家分享一下如何在npm上发布自己的模块或者组件。
+第一章 登录npm123npm adduser //创建用户ornpm login //登录用户
+可以使用
+1npm whoami
+检测用户是否登录上了npm
+第二章 发布模块1.首先安装npm publish1npm i -g publish
+2.创建自己的npm模块创建空文件夹 fm_lindaidai_first
+并且在命令行输入
+12npm...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p><strong>前言</strong><br>入行前端也不少时间了，之前一直都在使用<code>npm install</code>别人的模块/组件，那么作为一名有追求的前端肯定不会满足一直在用别人的轮子。<br>今天给大家分享一下如何在npm上发布自己的模块或者组件。</p>
+<h3 id="第一章-登录npm"><a href="#第一章-登录npm" class="headerlink" title="第一章 登录npm"></a>第一章 登录npm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm adduser //创建用户</span><br><span class="line">or</span><br><span class="line">npm login //登录用户</span><br></pre></td></tr></table></figure>
+<p>可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm whoami</span><br></pre></td></tr></table></figure>
+<p>检测用户是否登录上了npm</p>
+<h3 id="第二章-发布模块"><a href="#第二章-发布模块" class="headerlink" title="第二章 发布模块"></a>第二章 发布模块</h3><h4 id="1-首先安装npm-publish"><a href="#1-首先安装npm-publish" class="headerlink" title="1.首先安装npm publish"></a>1.首先安装npm publish</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g publish</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建自己的npm模块"><a href="#2-创建自己的npm模块" class="headerlink" title="2.创建自己的npm模块"></a>2.创建自己的npm模块</h4><p>创建空文件夹 <code>fm_lindaidai_first</code></p>
+<p>并且在命令行输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br><span class="line">一路回车</span><br></pre></td></tr></table></figure>
+<p>此时会出现<code>package.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"fm_lindaidai_first"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"lindaidai"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在package.json同级目录下编写<code>date.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">date.js</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">global</span>) </span>&#123;</span><br><span class="line"><span class="meta">	'use strict'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> datachange = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> date = date || <span class="keyword">new</span> <span class="built_in">Date</span>;</span><br><span class="line">            <span class="keyword">if</span> (!date <span class="keyword">instanceof</span> <span class="built_in">Date</span>) &#123;</span><br><span class="line">                data = <span class="keyword">new</span> <span class="built_in">Date</span>(date);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isNaN</span>(data)) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'Invalid date'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> enDate = date.getFullYear() + <span class="string">"."</span> + (date.getMonth()+<span class="number">1</span>) + <span class="string">"."</span> + date.getDate();</span><br><span class="line">            <span class="keyword">return</span> enDate;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) &#123;</span><br><span class="line">        define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> datechange;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="built_in">module</span>.exports = datechange;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        global.datechange = datechange;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;)(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>上面的date.js是添加简单的日期转换格式插件</strong></p>
+<p>由于命名的是date.js，因此记得将package.json中的“main”修改为date.js</p>
+<p>否则别人使用的时候就会报错</p>
+<h4 id="3-在npm上发布自己的模块"><a href="#3-在npm上发布自己的模块" class="headerlink" title="3.在npm上发布自己的模块"></a>3.在npm上发布自己的模块</h4><p><strong>注</strong></p>
+<blockquote>
+<p>1.确保自己是登录了npm的</p>
+<p>2.确保自己的npm的邮箱被激活了</p>
+<p>3.命名不能太简单,最后要有自己的标志,太简单可能是别人已经用过的名字你就不能发布成功,也不要有数字</p>
+<p>4.如果是要再次推送同一个项目记得修改该项目版本号。</p>
+</blockquote>
+<p>在<code>fm_lindaidai_first</code>的命令行中输入指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+<p>成功之后会提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ fm_lindaidai_first@1.0.0</span><br></pre></td></tr></table></figure>
+<p>若是你编写的模块是第一次发布的，则直接使用指令<code>npm publish</code>就可以了<br>若是第二次，则需要在<code>package.json</code>中修改一下<code>version</code>，如修改为<code>1.0.1</code>，然后再次执行<code>npm publish</code>就OK。</p>
+<h4 id="4-使用自己的模块"><a href="#4-使用自己的模块" class="headerlink" title="4.使用自己的模块"></a>4.使用自己的模块</h4><p>可以直接就在项目中使用指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev fm_lindaidai_first</span><br></pre></td></tr></table></figure>
+<p>接下来可以在项目中使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> datechange = <span class="built_in">require</span>(<span class="string">'fm_lindaidai_first'</span>);</span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> timeStamp = datechange(now);</span><br></pre></td></tr></table></figure>
+<h3 id="第三章-创建vue组件并发布"><a href="#第三章-创建vue组件并发布" class="headerlink" title="第三章 创建vue组件并发布"></a>第三章 创建vue组件并发布</h3><p>上面介绍发布的模块是一个比较简单的时间格式转换插件，当然你也可以针对某个框架来发布特定的组件。</p>
+<p>说一下我要实现的效果：<br>1.构建一个基于elementUI的表单生成器组件<br>2.在npm上发布它并使用</p>
+<h4 id="3-1-表单构造器组件"><a href="#3-1-表单构造器组件" class="headerlink" title="3.1 表单构造器组件"></a>3.1 表单构造器组件</h4><p>想要实现一个表单生成器，我们希望通过prop传入其中，就能构造想要的表单组件<br>如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form-generator</span> <span class="attr">:schema</span>=<span class="string">"schema"</span> <span class="attr">v-model</span>=<span class="string">"formData"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            formData: &#123;</span><br><span class="line">                firstName: "Lin",</span><br><span class="line">                lastName: "DaiDai"</span><br><span class="line">            &#125;,</span><br><span class="line">            schema: [&#123;</span><br><span class="line">                    fieldType: "SelectList",</span><br><span class="line">                    name: "food",</span><br><span class="line">                    multi: false,</span><br><span class="line">                    label: "food",</span><br><span class="line">                    options: [&#123;</span><br><span class="line">                        value: '黄金糕',</span><br><span class="line">                        label: '黄金糕'</span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        value: '双皮奶',</span><br><span class="line">                        label: '双皮奶'</span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        value: '蚵仔煎',</span><br><span class="line">                        label: '蚵仔煎'</span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        value: '龙须面',</span><br><span class="line">                        label: '龙须面'</span><br><span class="line">                    &#125;, &#123;</span><br><span class="line">                        value: '北京烤鸭',</span><br><span class="line">                        label: '北京烤鸭'</span><br><span class="line">                    &#125;]</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    fieldType: "TextInput",</span><br><span class="line">                    placeholder: "First Name",</span><br><span class="line">                    label: "First Name",</span><br><span class="line">                    name: "firstName"</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    fieldType: "TextInput",</span><br><span class="line">                    placeholder: "Last Name",</span><br><span class="line">                    label: "Last Name",</span><br><span class="line">                    name: "lastName"</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    fieldType: "NumberInput",</span><br><span class="line">                    placeholder: "Age",</span><br><span class="line">                    name: "age",</span><br><span class="line">                    label: "Age",</span><br><span class="line">                    minValue: 0</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>向名为from-generator的组件中传递一个数组，就能构建出以下表单列表：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/otherSkill-npm-1.png" alt="npm1"></p>
+<h5 id="3-1-1-vue-cli创建vue简单项目"><a href="#3-1-1-vue-cli创建vue简单项目" class="headerlink" title="3.1.1 vue-cli创建vue简单项目"></a>3.1.1 vue-cli创建vue简单项目</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack-simple form-lin</span><br></pre></td></tr></table></figure>
+<p>我创建的项目名为form-lin</p>
+<h5 id="3-1-2-安装elementUI"><a href="#3-1-2-安装elementUI" class="headerlink" title="3.1.2 安装elementUI"></a>3.1.2 安装elementUI</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui -S</span><br></pre></td></tr></table></figure>
+<p>可以看到我上面的表单类型是有select、input、numberInput、button这几种，所以我没有引入ele的全部组件，只是按需引入了，按需引入还需要借助 <a href="https://github.com/QingWei-Li/babel-plugin-component" target="_blank" rel="noopener">babel-plugin-component</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure></p>
+<p>然后，将 .babelrc 修改为：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [[<span class="string">"es2015"</span>, &#123; <span class="attr">"modules"</span>: <span class="literal">false</span> &#125;]],</span><br><span class="line">  <span class="attr">"plugins"</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">"component"</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"libraryName"</span>: <span class="string">"element-ui"</span>,</span><br><span class="line">        <span class="attr">"styleLibraryName"</span>: <span class="string">"theme-chalk"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在main.js中引入部分组件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Button, Select, Input, Option, InputNumber &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span><br><span class="line">Vue.component(Button.name, Button);</span><br><span class="line">Vue.component(Select.name, Select);</span><br><span class="line">Vue.component(Option.name, Option);</span><br><span class="line">Vue.component(Input.name, Input);</span><br><span class="line">Vue.component(InputNumber.name, InputNumber);</span><br></pre></td></tr></table></figure></p>
+<p>通过以上步骤你已经可以在你的这个项目中使用elementUI的部分组件了。</p>
+<h5 id="3-1-3-逐个创建表单组件"><a href="#3-1-3-逐个创建表单组件" class="headerlink" title="3.1.3 逐个创建表单组件"></a>3.1.3 逐个创建表单组件</h5><p>结合上面的效果图，可以发现此项目创建的表单类型只有下拉框、输入框、数字输入框这三种，所以可以分别创建3种不同的组件</p>
+<p>在components文件夹下创建文件夹v5，并在其中分别创建以下三个组件</p>
+<ul>
+<li>TextInput.vue</li>
+<li>SelectList.vue</li>
+<li>NumberInput.vue</li>
+</ul>
+<blockquote>
+<p>TextInput.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"v5-template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span>&#123;&#123;label&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- &lt;input type="text"</span></span><br><span class="line"><span class="comment">           :name="name"</span></span><br><span class="line"><span class="comment">           :value="value"</span></span><br><span class="line"><span class="comment">           @input="$emit('input',$event.target.value)"</span></span><br><span class="line"><span class="comment">           :placeholder="placeholder</span></span><br><span class="line"><span class="comment">           "&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">style</span>=<span class="string">"width: 135px;"</span> <span class="attr">:name</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">:value</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">           @<span class="attr">input</span>=<span class="string">"TextInput"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">:placeholder</span>=<span class="string">"placeholder"</span> <span class="attr">clearable</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="comment">&lt;!-- @input="$emit('input',$event.target.value)" --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; Input &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'TextInput'</span>,</span></span><br><span class="line"><span class="javascript">  props: [<span class="string">'placeholder'</span>, <span class="string">'label'</span>, <span class="string">'name'</span>, <span class="string">'value'</span>],</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    TextInput(value) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, value);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>注释部分为原生的input标签</p>
+<blockquote>
+<p>SelectList.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"v5-template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span>&#123;&#123;label&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-select</span>  <span class="attr">:multiple</span>=<span class="string">"multi"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:value</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">                @<span class="attr">change</span>=<span class="string">"SelectVal"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">placeholder</span>=<span class="string">"请选择"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-option</span> <span class="attr">v-for</span>=<span class="string">"option in options"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:key</span>=<span class="string">"option.value"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:label</span>=<span class="string">"option.label"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">:value</span>=<span class="string">"option.value"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; Select &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; Option &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'SelectList'</span>,</span></span><br><span class="line"><span class="javascript">  props: [<span class="string">'multi'</span>, <span class="string">'options'</span>, <span class="string">'name'</span>, <span class="string">'label'</span>, <span class="string">'value'</span>],</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    SelectVal(value) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, value);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>NumberInput.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"v5-template"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span>&#123;&#123;label&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;input type="number"</span></span><br><span class="line"><span class="comment">           :name="name"</span></span><br><span class="line"><span class="comment">           :value="value"</span></span><br><span class="line"><span class="comment">           @input="$emit('input',</span></span><br><span class="line"><span class="comment">           $event.target.value)"</span></span><br><span class="line"><span class="comment">           :placeholder="placeholder"&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-input-number</span> <span class="attr">:name</span>=<span class="string">"name"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">:value</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">            @<span class="attr">change</span>=<span class="string">"InputNumber"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">:placeholder</span>=<span class="string">"placeholder"</span> <span class="attr">controls-position</span>=<span class="string">"right"</span> <span class="attr">:min</span>=<span class="string">"1"</span> <span class="attr">:max</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-input-number</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; InputNumber &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'NumberInput'</span>,</span></span><br><span class="line"><span class="javascript">  props: [<span class="string">'placeholder'</span>, <span class="string">'label'</span>, <span class="string">'name'</span>, <span class="string">'value'</span>],</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    InputNumber(value) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, value);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>完成以上步骤，我们创建了三种不同的表单组件<br>接下来我们需要用一个生成器来将这三种表单组件联系起来</p>
+<h5 id="3-1-4-表单生成器"><a href="#3-1-4-表单生成器" class="headerlink" title="3.1.4 表单生成器"></a>3.1.4 表单生成器</h5><p>上面所创建的三种不同的组件，其实都可以用<code>component</code>标签来进行引入，只需要改变<code>component</code>标签的<code>:is</code>属性就可以了。<br>如<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--输入框组件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"TextInput"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--下拉框组件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"SelectList"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>那么我们就可以通过<code>v-for</code>来循环创建不同的表单组件，仅仅只需要改变<code>:is</code>的值就行了</p>
+<p>接下来 还是在v5文件夹下，创建文件<code>FormGenerator.vue</code></p>
+<blockquote>
+<p>FormGenerator.vue<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">v-for</span>=<span class="string">"(field, index) in schema"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:key</span>=<span class="string">"index"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:is</span>=<span class="string">"field.fieldType"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">:value</span>=<span class="string">"formData[field.name]"</span></span></span><br><span class="line"><span class="tag">               @<span class="attr">input</span>=<span class="string">"updateForm(field.name, $event)"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">v-bind</span>=<span class="string">"field"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> NumberInput <span class="keyword">from</span> <span class="string">"./NumberInput"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> SelectList <span class="keyword">from</span> <span class="string">"./SelectList"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> TextInput <span class="keyword">from</span> <span class="string">"./TextInput"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">"FormGenerator"</span>,</span></span><br><span class="line"><span class="undefined">  components: &#123; NumberInput, SelectList, TextInput &#125;,</span></span><br><span class="line"><span class="javascript">  props: [<span class="string">"schema"</span>, <span class="string">"value"</span>],</span></span><br><span class="line"><span class="undefined">  data() &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      formData: <span class="keyword">this</span>.value || &#123;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    updateForm(fieldName, value) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$<span class="keyword">set</span>(this.formData, fieldName, value);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$emit(<span class="string">"input"</span>, <span class="keyword">this</span>.formData);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><code>v-for</code>不用多说，<code>schema</code>就是我们在引用这个组件时外部传递进来表单数组<br><code>:is</code>就是表单组件的类型<br><code>@input</code>在使用<code>component</code>标签时，默认的事件名就是为input，值为value</p>
+<h5 id="3-1-5-调用表单构造器"><a href="#3-1-5-调用表单构造器" class="headerlink" title="3.1.5 调用表单构造器"></a>3.1.5 调用表单构造器</h5><p>完成以上步骤，我们可以在这个项目中本地调用以下这个组件<br>在<code>APP.vue</code>中引用<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form-generator</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:schema</span>=<span class="string">"schema"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">"formData"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form-generator</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        Hello &#123;&#123;formData.title&#125;&#125; &#123;&#123;formData.firstName&#125;&#125; &#123;&#123;formData.lastName&#125;&#125;, I hear you are &#123;&#123;formData.age&#125;&#125; years old.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> FormGenerator <span class="keyword">from</span> <span class="string">"./components/v5/FormGenerator"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">    name: <span class="string">'formlin'</span>,</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">        FormGenerator </span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    data() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">            formData: &#123;</span></span><br><span class="line"><span class="javascript">                firstName: <span class="string">"Lin"</span>,</span></span><br><span class="line"><span class="javascript">                lastName: <span class="string">"DaiDai"</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            schema: [&#123;</span></span><br><span class="line"><span class="javascript">                    fieldType: <span class="string">"SelectList"</span>,</span></span><br><span class="line"><span class="javascript">                    name: <span class="string">"food"</span>,</span></span><br><span class="line"><span class="javascript">                    multi: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                    label: <span class="string">"food"</span>,</span></span><br><span class="line"><span class="undefined">                    options: [...]</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                &#123;</span></span><br><span class="line"><span class="javascript">                    fieldType: <span class="string">"TextInput"</span>,</span></span><br><span class="line"><span class="javascript">                    placeholder: <span class="string">"First Name"</span>,</span></span><br><span class="line"><span class="javascript">                    label: <span class="string">"First Name"</span>,</span></span><br><span class="line"><span class="javascript">                    name: <span class="string">"firstName"</span></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                &#123;</span></span><br><span class="line"><span class="javascript">                    fieldType: <span class="string">"TextInput"</span>,</span></span><br><span class="line"><span class="javascript">                    placeholder: <span class="string">"Last Name"</span>,</span></span><br><span class="line"><span class="javascript">                    label: <span class="string">"Last Name"</span>,</span></span><br><span class="line"><span class="javascript">                    name: <span class="string">"lastName"</span></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                &#123;</span></span><br><span class="line"><span class="javascript">                    fieldType: <span class="string">"NumberInput"</span>,</span></span><br><span class="line"><span class="javascript">                    placeholder: <span class="string">"Age"</span>,</span></span><br><span class="line"><span class="javascript">                    name: <span class="string">"age"</span>,</span></span><br><span class="line"><span class="javascript">                    label: <span class="string">"Age"</span>,</span></span><br><span class="line"><span class="undefined">                    minValue: 0</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            ]</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用<code>npm run dev</code>打开项目，是可以在页面中看到效果的，此时整个项目目录如下：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/otherSkill-npm-2.png" alt="npm2"><br>style文件夹是我个人创建的公用样式<br>DemoFive.vue和HellowWorld.vue可以忽略<br>src/index.js在后面会讲到。</p>
+<h4 id="3-2-将整个vue项目发布至npm"><a href="#3-2-将整个vue项目发布至npm" class="headerlink" title="3.2 将整个vue项目发布至npm"></a>3.2 将整个vue项目发布至npm</h4><p>要想将vue项目发布至npm上，需要做一些配置</p>
+<ul>
+<li><p>修改package.json</p>
+<ol>
+<li><p>修改”private”: false<br>npm默认创建的项目是私有的，如果要发布至npm必须将其公开</p>
+<ol start="2">
+<li>添加”main”: “dist/build.js”<br>通过import formlin from ‘form-lin’引用该组件时，项目会自动找到node_modules/load-ling-zi/dist/build.js</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>在src加入组件代码App.vue， 并创建我们的导出文件index.js。 在index.js中添加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> formlin <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> formlin;</span><br><span class="line"></span><br><span class="line"><span class="comment">//global 情况下 自动安装</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">window</span>.Vue) &#123;</span><br><span class="line">    <span class="built_in">window</span>.Vue.component(<span class="string">'formlin'</span>, formlin);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>APP.vue</code>中做一些修改</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Form Generator<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form-generator</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:schema</span>=<span class="string">"schema"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-model</span>=<span class="string">"formData"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form-generator</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> @<span class="attr">click</span>=<span class="string">"outPut"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        Hello &#123;&#123;formData.title&#125;&#125; &#123;&#123;formData.firstName&#125;&#125; &#123;&#123;formData.lastName&#125;&#125;, I hear you are &#123;&#123;formData.age&#125;&#125; years old.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">demo-five</span>&gt;</span><span class="tag">&lt;/<span class="name">demo-five</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> DemoFive <span class="keyword">from</span> <span class="string">'./components/DemoFive.vue'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> FormGenerator <span class="keyword">from</span> <span class="string">"./components/v5/FormGenerator"</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; Button &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">    name: <span class="string">'formlin'</span>,</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">        DemoFive,</span></span><br><span class="line"><span class="undefined">        FormGenerator </span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;</span></span><br><span class="line"><span class="undefined">        outPut() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$emit(<span class="string">'submit'</span>, <span class="keyword">this</span>.formData);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    data() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">            formData: &#123;</span></span><br><span class="line"><span class="javascript">                firstName: <span class="string">"Lin"</span>,</span></span><br><span class="line"><span class="javascript">                lastName: <span class="string">"DaiDai"</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            schema: [&#123;...&#125;]</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">@import "./style/common.css";</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在<code>el-button</code>标签中添加一个click事件，用于输出<code>formData</code><br>再将name修改为你要模块的名字，如我这里修改为<code>formlin</code></p>
+<ul>
+<li>因为最后我们是打包成一个js文件，所以需要修改一下配置文件webpack.config.js</li>
+</ul>
+<p>因为不是所有使用你组件的人都是通过npm按住和impor的很多人是通过<script>直接引入的,我们要将libraryTarget改为umd,以及修改入口文件与设置导出文件目录以及名称。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">entry: './src/index.js',</span><br><span class="line">output: &#123;</span><br><span class="line">path: path.resolve(__dirname, './dist'),</span><br><span class="line">publicPath: '/dist/',</span><br><span class="line">filename: 'build.js',</span><br><span class="line">library: 'formlin',</span><br><span class="line">libraryTarget: 'umd',</span><br><span class="line">umdNamedDefine: true</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>最后需要把.gitignore文件里面的/dist删除掉要不然上传时会忽略掉dist打包的文件。</li>
+</ul>
+<p>完成上述步骤之后，我们就可以开始正式发布了，首先要将整个项目进行打包<br>使用指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></p>
+<p>如果报错，请检查你是否安装了相关的依赖<br>执行完毕之后，目录下会出现dist文件夹，里面存放的就是压缩的js文件<br>继续执行指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure></p>
+<p>提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ form-lin@1.0.0</span><br></pre></td></tr></table></figure></p>
+<p>则表示发布成功。</p>
+<h4 id="3-3-使用vue组件"><a href="#3-3-使用vue组件" class="headerlink" title="3.3 使用vue组件"></a>3.3 使用vue组件</h4><p>我们将自己的vue模块已经发布到了npm上面，那么怎样使用它呢。</p>
+<p>首先我还是先创建一个vue-cli项目，然后等会再用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i formlin -D</span><br></pre></td></tr></table></figure></p>
+<p>看是否能够使用它。</p>
+<ul>
+<li>创建use-form-lin项目<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack use-form-lin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>再使用指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install element-ui -S</span><br><span class="line">npm install form-lin babel-plugin-component -D</span><br></pre></td></tr></table></figure></p>
+<p>需要配置以下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">main.js</span><br><span class="line"><span class="keyword">import</span> &#123; Button, Select, Input, Option, InputNumber &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span>;</span><br><span class="line">Vue.component(Button.name, Button);</span><br><span class="line">Vue.component(Select.name, Select);</span><br><span class="line">Vue.component(Option.name, Option);</span><br><span class="line">Vue.component(Input.name, Input);</span><br><span class="line">Vue.component(InputNumber.name, InputNumber);</span><br><span class="line"></span><br><span class="line">.babelrc</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [[<span class="string">"es2015"</span>, &#123; <span class="string">"modules"</span>: <span class="literal">false</span> &#125;]],</span><br><span class="line">  <span class="string">"plugins"</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">"component"</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"libraryName"</span>: <span class="string">"element-ui"</span>,</span><br><span class="line">        <span class="string">"styleLibraryName"</span>: <span class="string">"theme-chalk"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>组件依赖于elementUI  以上步骤是配置elementUI 当然也可以参考elementUI官网全局引用ele组件<br>传送门<a href="http://element.eleme.io/#/zh-CN/component/quickstart">elementUI</a></p>
+</blockquote>
+<ul>
+<li>在APP.vue中使用<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>use form-lin<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">formlin</span> @<span class="attr">submit</span>=<span class="string">"submitForm"</span>&gt;</span><span class="tag">&lt;/<span class="name">formlin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> formlin <span class="keyword">from</span> <span class="string">'form-lin'</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'App'</span>,</span></span><br><span class="line"><span class="undefined">  components: &#123;</span></span><br><span class="line"><span class="undefined">    formlin: formlin</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    submitForm($event) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log($event);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用<code>npm run dev</code>打开页面可以看到效果：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/otherSkill-npm-3.png" alt="npm3"></p>
+<h3 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h3><blockquote>
+<p>实现的功能很简单而且也很low ，甚至还要依赖于其他的UI组件，比较创建的这个vue组件里面的表单内容是写死的，你也可以多加一个prop值将内容传进去<br>最后想说的是 每个人在学习一样新东西的时候肯定都会碰到各种意想不到的情况，有时候你甚至和参考来的代码一模一样都不能实现相同的效果<br>但希望你能够坚持 在一个胡同了转太久了总是弄不出来一个东西时 你可以选择休息以下或者第二天再弄 总之不要放弃就OK</p>
+</blockquote>
+<p>上面vue组件的源码已经上传只git 有兴趣的小伙可以给个小心心<br><a href="https://github.com/LinDaiDai/vue/tree/master/form-lin">https://github.com/LinDaiDai/vue/tree/master/form-lin</a></p>
+</script></p>
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/otherSkill/Npm/npmOfPublic/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/otherSkill/Npm/npmOfPublic/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/otherSkill/Npm/npmOfPublic/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/otherSkill/Npm/npmOfPublic/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
+    leanCloud.fetchVisitCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
+    leanCloud.getCommentCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

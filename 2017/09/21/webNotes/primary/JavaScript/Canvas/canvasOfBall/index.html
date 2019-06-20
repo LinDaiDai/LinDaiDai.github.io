@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>canvas简单动画--躁动的小球 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/" data-name="canvas简单动画--躁动的小球" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/">
+                Canvas简单动画--躁动的小球
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2017年09月21日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/canvas/">Canvas</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言我们都知道canvas实际就是一个H5新增的标签,它呢,可以用来制作照片集或者制作简单(也不是那么简单)的动画，甚至可以进行实时视频处理和渲染。制作动画的原理实际上也非常简单:利用定时执行一定语句的方法来重复执行绘图功能,常用的方法有:1. setInterval()2. setTimeout()3. requestAnimationFrame()
+一个简单的demo在讲解躁动的小球之前呢,我们先来看一个简单的动画:
+让一个方块以匀速向右移动1234567891011121314151617181920212223242526272829&lt;canvas id="canvas"...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p><strong>前言</strong><br>我们都知道canvas实际就是一个H5新增的标签,它呢,可以用来制作照片集或者制作简单(也不是那么简单)的动画，甚至可以进行实时视频处理和渲染。<br>制作动画的原理实际上也非常简单:<br>利用定时执行一定语句的方法来重复执行绘图功能,<br>常用的方法有:<br><code>1. setInterval()</code><br><code>2. setTimeout()</code><br><code>3. requestAnimationFrame()</code></p>
+<h3 id="一个简单的demo"><a href="#一个简单的demo" class="headerlink" title="一个简单的demo"></a>一个简单的demo</h3><p>在讲解躁动的小球之前呢,我们先来看一个简单的动画:</p>
+<p>让一个方块以匀速向右移动<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000"</span>&gt;</span>您的浏览器不支持<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取canvas</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">'#canvas'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取2d的上下文对象</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> cxt = canvas.getContext(<span class="string">'2d'</span>)</span></span><br><span class="line"><span class="javascript">        <span class="comment">//创建一个方块对象</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> rect = &#123;</span></span><br><span class="line"><span class="javascript">            w:<span class="number">50</span>,   <span class="comment">//宽</span></span></span><br><span class="line"><span class="javascript">            h:<span class="number">50</span>,   <span class="comment">//高</span></span></span><br><span class="line"><span class="javascript">            x:<span class="number">20</span>,   <span class="comment">//x轴方向的位移</span></span></span><br><span class="line"><span class="javascript">            y:<span class="number">0</span>,    <span class="comment">//y方向的位移</span></span></span><br><span class="line"><span class="javascript">            color:<span class="string">'red'</span>,    <span class="comment">//填充色</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//给方块对象中添加绘制的方法</span></span></span><br><span class="line"><span class="javascript">        rect.draw=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">//每调用一次这个函数执行一次x+2的操作</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.x += <span class="number">2</span></span></span><br><span class="line"><span class="javascript">            cxt.fillStyle = <span class="keyword">this</span>.color</span></span><br><span class="line"><span class="javascript">            cxt.fillRect(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="keyword">this</span>.w, <span class="keyword">this</span>.h)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">//绘图之前先清空画布,如果不清空的话,就会看到一连串的方块</span></span></span><br><span class="line"><span class="undefined">            ctx.clearRect(0, 0, canvas.width, canvas.height)</span></span><br><span class="line"><span class="javascript">            <span class="comment">//调用绘制方块的函数</span></span></span><br><span class="line"><span class="undefined">            rect.draw()</span></span><br><span class="line"><span class="undefined">        &#125;,30)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的例子我们可以看到,我先创建了一个<code>rect</code>对象,这个对象中储存的是绘制的方块的各种信息,如宽高,位移,颜色等.<br>然后给<code>rect</code>对象添加一个绘制的功能(draw),其中这个功能中将<code>this.x</code>累加,<br>最后在外面利用一个没30毫秒执行一次的定时器来调用<code>rect.draw()</code>,这样就实现了让方块一直向右运动的效果(有一点要注意,在每次调用绘制方法之前,都得清空当前的画布)<br>清空画布的方法:<br><code>clearRect(startX,startY,endX,endY)</code><br>第一,二个参数表示的是清空的其实位置,后俩个位置表示清空的结束位置.<br>这里我想清空的是整个画布,也就是其实位置从(0,0)点开始,结束位置就是整个画布的宽度和高度(画布的最右下角).</p>
+<h3 id="躁动的小球"><a href="#躁动的小球" class="headerlink" title="躁动的小球"></a>躁动的小球</h3><p>好的,说完上面的例子,我就可以来介绍这篇文章的主要内容,”躁动的小球”,我们先来看下效果图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-9ad215a1565a19cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>可以看到,效果就是在画布中,绘制出各种颜色不同,透明度不同的小球,并且这些小球是可以四处乱窜的.</p>
+<h4 id="1-布局"><a href="#1-布局" class="headerlink" title="1. 布局"></a>1. 布局</h4><p>先来看看布局,实际是布局上很简单,就是一个class为out的div内盛放一个<canvas></canvas></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"out"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"1000"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>而在样式上内,我是这样设定的:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">body</span>&#123;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#333333</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.out</span>&#123;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">600px</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">50px</span> auto;</span><br><span class="line">            <span class="attribute">box-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">10px</span> <span class="number">#999</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-JS部分"><a href="#2-JS部分" class="headerlink" title="2. JS部分"></a>2. JS部分</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建一个小球的构造函数</span></span><br><span class="line"><span class="comment">     * @param canvasW   画布的宽</span></span><br><span class="line"><span class="comment">     * @param canvasH   画布的高</span></span><br><span class="line"><span class="comment">     * @param ctx       2d上下文</span></span><br><span class="line"><span class="comment">     * @constructor</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Ball</span>(<span class="params">canvasW, canvasH, ctx</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.canvasW = canvasW</span><br><span class="line">        <span class="keyword">this</span>.canvasH = canvasH</span><br><span class="line">        <span class="keyword">this</span>.ctx = ctx</span><br><span class="line">        <span class="keyword">this</span>.r = <span class="keyword">this</span>.randomInt(<span class="number">10</span>, <span class="number">80</span>)</span><br><span class="line">        <span class="keyword">this</span>.x = <span class="keyword">this</span>.randomInt(<span class="keyword">this</span>.r, <span class="keyword">this</span>.canvasW - <span class="keyword">this</span>.r)</span><br><span class="line">        <span class="keyword">this</span>.y = <span class="keyword">this</span>.randomInt(<span class="keyword">this</span>.r, <span class="keyword">this</span>.canvasH - <span class="keyword">this</span>.r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> R = <span class="keyword">this</span>.randomInt(<span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">        <span class="keyword">let</span> G = <span class="keyword">this</span>.randomInt(<span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">        <span class="keyword">let</span> B = <span class="keyword">this</span>.randomInt(<span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">        <span class="keyword">let</span> A = <span class="built_in">Math</span>.random()</span><br><span class="line">        <span class="keyword">this</span>.color = <span class="string">`rgba(<span class="subst">$&#123;R&#125;</span>,<span class="subst">$&#123;G&#125;</span>,<span class="subst">$&#123;B&#125;</span>,<span class="subst">$&#123;A&#125;</span>)`</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> speedX = <span class="keyword">this</span>.randomInt(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">        <span class="keyword">this</span>.speedX = <span class="keyword">this</span>.randomInt(<span class="number">0</span>, <span class="number">100</span>) &gt; <span class="number">50</span> ? speedX : -speedX</span><br><span class="line">        <span class="keyword">let</span> speedY = <span class="keyword">this</span>.randomInt(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">        <span class="keyword">this</span>.speedY = <span class="keyword">this</span>.randomInt(<span class="number">0</span>, <span class="number">100</span>) &gt; <span class="number">50</span> ? speedY : -speedY</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//绘制一个小球</span></span><br><span class="line">    Ball.prototype.draw = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> deg = <span class="built_in">Math</span>.PI / <span class="number">180</span></span><br><span class="line">        <span class="keyword">this</span>.ctx.beginPath()</span><br><span class="line">        <span class="keyword">this</span>.ctx.arc(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="keyword">this</span>.r, <span class="number">0</span>, <span class="number">360</span> * deg, <span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">this</span>.ctx.closePath()</span><br><span class="line">        <span class="keyword">this</span>.ctx.fillStyle = <span class="keyword">this</span>.color</span><br><span class="line">        <span class="keyword">this</span>.ctx.fill()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//小球移动</span></span><br><span class="line">    Ball.prototype.ballMove = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.x += <span class="keyword">this</span>.speedX</span><br><span class="line">        <span class="keyword">this</span>.y += <span class="keyword">this</span>.speedY</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.x &gt;= <span class="keyword">this</span>.canvasW - <span class="keyword">this</span>.r) &#123;</span><br><span class="line">            <span class="keyword">this</span>.speedX *= <span class="number">-1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.x &lt;= <span class="keyword">this</span>.r) &#123;</span><br><span class="line">            <span class="keyword">this</span>.speedX *= <span class="number">-1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.y &gt;= <span class="keyword">this</span>.canvasH - <span class="keyword">this</span>.r) &#123;</span><br><span class="line">            <span class="keyword">this</span>.speedY *= <span class="number">-1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.y &lt;= <span class="keyword">this</span>.r) &#123;</span><br><span class="line">            <span class="keyword">this</span>.speedY *= <span class="number">-1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//产生范围随机数的函数</span></span><br><span class="line">    Ball.prototype.randomInt = <span class="function"><span class="keyword">function</span> (<span class="params">from, to</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * (to - <span class="keyword">from</span> + <span class="number">1</span>) + <span class="keyword">from</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">'#canvas'</span>);</span><br><span class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">    <span class="comment">//定义一个数组用来盛放所有的小球"对象"</span></span><br><span class="line">    <span class="keyword">let</span> balls = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> ball = <span class="keyword">new</span> Ball(canvas.width, canvas.height, ctx);</span><br><span class="line">        balls.push(ball)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//绘图之前先清空画布</span></span><br><span class="line">        ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; balls.length; i++) &#123;</span><br><span class="line">            balls[i].ballMove();</span><br><span class="line">            balls[i].draw()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="number">30</span>)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>1.也是和上面的demo一样,我想将每一个小球都当成一个”对象”来写,只不过小球的数量不确定,所以我写了一个构造函数<code>Ball</code>,用它来创建每一个小球对象,这样只要利用一个for循环,就可以创建我们想要的数量的小球了.<br>2.这里的绘制小球和移动小球我分别用了俩个函数<code>draw()</code>和<code>ballMove()</code>来写,这样的目的能也是为了达到面向对象的效果,将各个功能拆分开来,一个方法实现一种功能.<br>3.利用for循环来重复调用构造函数<code>Ball</code>,每创建一个小球”对象”,就把它推进数组<code>balls</code>中,这样for循环完之后,balls数组中存放的就是一个个的小球”对象”.<br>4.利用定时器<code>setInterval</code>,每隔30毫秒,调用一次<code>ballMove()</code>和<code>draw()</code></p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', json.ip);
+    leanCloud.fetchCommentCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/');
+    leanCloud.fetchVisitCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/');
+    leanCloud.fetchThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/');
+    leanCloud.getCommentCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/canvasOfBall/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

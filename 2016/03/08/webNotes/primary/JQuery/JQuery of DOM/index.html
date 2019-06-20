@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>JQuery of DOM - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/" data-name="JQuery of DOM" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/JQuery.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/">
+                JQuery of DOM
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年03月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">第一章:创建节点#### 1.创建元素节点
+12$body = $(&apos;body&apos;);				//获取body$(&apos;&lt;div&gt;&lt;/div&gt;&apos;)				//创建div元素节点
+2.创建文本节点与创建元素节点一样,可以直接把文本内容一并写上
+1$(&apos;&lt;div&gt;我是新创建的元素节点&lt;/div&gt;&apos;)		//创建有文本内容的元素节点
+3.创建属性节点与创建元素节点一样
+1$(&apos;&lt;div id=&quot;son&quot; class =...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h3 id="第一章-创建节点"><a href="#第一章-创建节点" class="headerlink" title="第一章:创建节点"></a>第一章:创建节点</h3><pre><code>#### 1.创建元素节点
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$body = $(&apos;body&apos;);				//获取body</span><br><span class="line">$(&apos;&lt;div&gt;&lt;/div&gt;&apos;)				//创建div元素节点</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建文本节点"><a href="#2-创建文本节点" class="headerlink" title="2.创建文本节点"></a>2.创建文本节点</h4><p>与创建元素节点一样,可以直接把文本内容一并写上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;&lt;div&gt;我是新创建的元素节点&lt;/div&gt;&apos;)		//创建有文本内容的元素节点</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建属性节点"><a href="#3-创建属性节点" class="headerlink" title="3.创建属性节点"></a>3.创建属性节点</h4><p>与创建元素节点一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;&lt;div id=&quot;son&quot; class = &quot;father&quot;&gt;&lt;/div&gt;		//创建带有类名和id的元素节点</span><br></pre></td></tr></table></figure>
+<p>例:点击body 创建带有class 和 id 的div</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$body = $(&apos;body&apos;);</span><br><span class="line">$body.click(function()&#123;</span><br><span class="line">  var div = $(&apos;&lt;div id=&quot;son&quot; class=&quot;father&quot;&gt;新建&lt;/div&gt;&apos;);</span><br><span class="line">  $body.append(div);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="第二章-添加元素节点"><a href="#第二章-添加元素节点" class="headerlink" title="第二章.添加元素节点"></a>第二章.添加元素节点</h3><h4 id="1-父子之间添加至元素节点"><a href="#1-父子之间添加至元素节点" class="headerlink" title="1.父子之间添加至元素节点"></a>1.父子之间添加至元素节点</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">选择器</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">append(content)</td>
+<td style="text-align:center">向每个匹配的元素内部追加内容</td>
+</tr>
+<tr>
+<td style="text-align:center">appendTo(content)</td>
+<td style="text-align:center">把所匹配的元素从开始的位置移到另一个元素里</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注:$(A).append(B)是把B添加到A中,并且是作为最后一个子元素</strong>    </p>
+<p>​    <strong>$(A).appendTo(B)是把A追加到B中,也是作为最后一个子元素</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选择器</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">prepend( )</td>
+<td style="text-align:center">向每个匹配的元素内前置内容</td>
+</tr>
+<tr>
+<td style="text-align:center">prependTo( )</td>
+<td style="text-align:center">把所有匹配的元素前置到另一个指定的元素集合中</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注:$(A).prepend(B)是把B添加到A中,并且是作为第一个子元素</strong>    </p>
+<p>​    <strong>$(A).prependTo(B)是把A追加到B中,也是作为第一个子元素</strong></p>
+<h4 id="2-兄弟之间插入元素节点"><a href="#2-兄弟之间插入元素节点" class="headerlink" title="2.兄弟之间插入元素节点"></a>2.兄弟之间插入元素节点</h4><p>​    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选择器</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.after(content)</td>
+<td style="text-align:center">在匹配元素集合中的每个元素后面插入参数所指定的内容,作为其兄弟节点</td>
+</tr>
+<tr>
+<td style="text-align:center">.before(content)</td>
+<td style="text-align:center">据参数设定,在匹配元素的前面插入内容</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注:</strong></p>
+<p>1.都是用来对相对选中元素外部增加相邻的兄弟节点</p>
+<p>2.都可以接收 HTML字符串,DOM元素,元素数组,JQuery对象</p>
+<p>3.都支持多个参数传递,如:after(div1,div2…)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">在class 名为test的元素后面插入p标签</span><br><span class="line">$(&apos;.test&apos;).after(&apos;&lt;p style=&quot;color:red&gt;新插入的p标签&lt;/p&gt;&apos;);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选择器</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">insertBefore</td>
+<td style="text-align:center">在目标元素前面插入集合中每个匹配的元素</td>
+</tr>
+<tr>
+<td style="text-align:center">insertAfter</td>
+<td style="text-align:center">在目标元素后面插入集合中每个匹配的元素</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">将p标签插入class名为test的元素后面</span><br><span class="line">$(&apos;&lt;p style=&quot;color:red&gt;新插入的p标签&lt;/p&gt;&apos;).insetBefore($(&quot;.test&quot;));</span><br></pre></td></tr></table></figure>
+<h4 id="3-添加DOM包裹"><a href="#3-添加DOM包裹" class="headerlink" title="3.添加DOM包裹"></a>3.添加DOM包裹</h4><p>#####1.wrap( )</p>
+<blockquote>
+<p>wrap(wrappingElement)  或者 wrap(funciton)</p>
+</blockquote>
+<blockquote>
+<p>在集合中匹配的每个元素周围包裹一个HTML结构</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">例1:	写法一</span><br><span class="line">&lt;p&gt;p元素1&lt;/p&gt;</span><br><span class="line">&lt;p&gt;p元素2&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">$(&apos;p&apos;).wrap(&apos;&lt;div&gt;&lt;/div&gt;&apos;)				//给每个p标签都添加一个父元素div包裹层</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;p&gt;p元素1&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;p元素2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">例2: 写法二</span><br><span class="line">&lt;p&gt;p元素&lt;/p&gt;</span><br><span class="line">		</span><br><span class="line">$(&apos;p&apos;).wrap(function()&#123;				//给p标签添加一个父元素div包裹层,写法不同</span><br><span class="line"> 	return &apos;&lt;div&gt;&lt;/div&gt;&apos;;</span><br><span class="line">&#125;)				</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;p元素&lt;/p&gt;					//效果相同</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>#####2.  wrapAll( )</p>
+<blockquote>
+<p>wrapAll(wrappingElement)  或者 wrapAll(funciton)</p>
+</blockquote>
+<blockquote>
+<p>给集合中匹配的元素,他们的总体添加一个外面包裹HTML结构</p>
+<p>如匹配到的p元素在不同的父级元素中,则会把所有的p标签都提出来并添加到匹配的第一个P元素的父级中</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;p标签1&lt;/p&gt;</span><br><span class="line">&lt;p&gt;p标签2&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">$(&apos;p&apos;).wrapAll(&apos;&lt;div&gt;&lt;/div&gt;&apos;)	给匹配到的所有p标签都添加一个共同的父级元素</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;p&gt;p标签1&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;p标签2&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="3-wrapInner"><a href="#3-wrapInner" class="headerlink" title="3.wrapInner( )"></a>3.wrapInner( )</h5><blockquote>
+<p>wrapInner(wrappingElement)  或者 wrapInner(funciton)</p>
+<p>给匹配到的所有元素的内部添加一个包裹层</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">&lt;div&gt;p元素&lt;/div&gt;</span><br><span class="line">&lt;div&gt;p元素&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">$(&apos;div&apos;).wrapInner(&apos;&lt;p&gt;&lt;/p&gt;&apos;)</span><br><span class="line"></span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;p元素&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;p元素&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>注:若要删除包裹层请参照第三章的删除DOM包裹 unwrap( )</strong></p>
+<h4 id="4-集合对象中添加元素"><a href="#4-集合对象中添加元素" class="headerlink" title="4.$( )集合对象中添加元素"></a>4.$( )集合对象中添加元素</h4><h5 id="1-add"><a href="#1-add" class="headerlink" title="1. add( )"></a>1. add( )</h5><blockquote>
+<p>$()之后就意味着这个合集对象已经是确定的，如果后期需要再往这个合集中添加一新的元素要如何处理？</p>
+<p>jQuery为此提供add方法，用来创建一个新的jQuery对象 ，元素添加到匹配的元素集合中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">如在$(&apos;li&apos;)这个以及确定的集合对象中再添加p元素</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;list item 1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;list item 3&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p&gt;新的p元素&lt;/p&gt;</span><br><span class="line">$(&apos;li&apos;).add(&apos;p&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="第三章-删除元素节点"><a href="#第三章-删除元素节点" class="headerlink" title="第三章:删除元素节点"></a>第三章:删除元素节点</h3><h5 id="1-empty"><a href="#1-empty" class="headerlink" title="1. empty( )"></a>1. empty( )</h5><blockquote>
+<p>移除了指定元素中的所有子节点</p>
+<p>不仅移除了子元素(和其他后代元素),同样移除元素里的文本</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">&lt;div class = &quot;father&quot;&gt;&lt;p&gt;王先生&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">//使用empty() </span><br><span class="line">$(&apos;.father&apos;).empty()</span><br><span class="line">//输出:</span><br><span class="line">&lt;div class = &quot;father&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2-remove"><a href="#2-remove" class="headerlink" title="2. remove( )"></a>2. remove( )</h5><blockquote>
+<p>移除元素自身包过元素内部的一切以及绑定的事件及与该元素相关的jQuery数据</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">$(&apos;button:first&apos;).on(&apos;click&apos;,funciton()&#123;</span><br><span class="line">  $(&apos;.test&apos;).remove();							//点击第一个按钮,移除class名为test的元素</span><br><span class="line">&#125;)</span><br><span class="line">$(&apos;button:last&apos;).on(&apos;click&apos;,function()&#123;</span><br><span class="line">  $(&apos;p&apos;).filter(&quot;contains(&apos;3&apos;)&quot;).remove();		//点击第二个按钮,移除内容中有3的p标签</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="3-detach"><a href="#3-detach" class="headerlink" title="3. detach( )"></a>3. detach( )</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">会移除对象，仅仅是显示效果没有了。但是内存中还是存在的。当你append之后，又重新回到了文档流中。就又显示出来了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">$(&apos;p&apos;).on(&apos;click&apos;,funciton(e)&#123;</span><br><span class="line">  	alert(e.target.innerHTML);		//将点击的那个p的内容弹出;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(&apos;button:first&apos;).on(&apos;click&apos;,function()&#123;</span><br><span class="line">  if(!$(&apos;p&apos;).lenght) return;		//去重				</span><br><span class="line">  //通过detach方法删除元素</span><br><span class="line">  //只是页面不可见，但是这个节点还是保存在内存中</span><br><span class="line">  //数据与事件都不会丢失</span><br><span class="line">  p = $(&apos;p&apos;).datech();</span><br><span class="line">&#125;)</span><br><span class="line">$(&apos;button:last&apos;).on(&apos;click&apos;,function()&#123;</span><br><span class="line">  $(&apos;body&apos;).append(p);						//把p添加到body中,证明事件还是存在的.</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-删除DOM包裹"><a href="#4-删除DOM包裹" class="headerlink" title="4.删除DOM包裹"></a>4.删除DOM包裹</h4><blockquote>
+<p>.unwrap( )    </p>
+<p>作用与wrap方法是相反的。将匹配元素集合的父级元素删除，保留自身（和兄弟元素，如果存在）在原来的位置。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;p元素&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">$(&apos;p&apos;).unwrap();			//找到p元素,并调用unwrap() 方法,只删除父辈div</span><br><span class="line"></span><br><span class="line">&lt;p&gt;p元素&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="第四章-元素节点替换"><a href="#第四章-元素节点替换" class="headerlink" title="第四章: 元素节点替换"></a>第四章: 元素节点替换</h3><h4 id="1-replaceWith-newContent"><a href="#1-replaceWith-newContent" class="headerlink" title="1. replaceWith(newContent)"></a>1. replaceWith(newContent)</h4><blockquote>
+<p>用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合</p>
+<p>target.replaceWith(newContent);</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;p&gt;第一段&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;第二段&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;第三段&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">$(&quot;p:eq(1)&quot;).replaceWith(&apos;&lt;a style=&quot;color:red&quot;&gt;替换第二段的内容&lt;/a&gt;&apos;)	//将第二个p标签替换</span><br></pre></td></tr></table></figure>
+<h4 id="2-replaceAll-target"><a href="#2-replaceAll-target" class="headerlink" title="2.replaceAll(target);"></a>2.replaceAll(target);</h4><p>与replaceWith( ) 功能相似,但目标和源相反</p>
+<p>newContent.replaceAll(target);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例1改:</span><br><span class="line">$(&apos;&lt;a style=&quot;color:red&quot;&gt;替换第二段的内容&lt;/a&gt;&apos;).replaceAll(&quot;p:eq(1)&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="第五章-元素遍历"><a href="#第五章-元素遍历" class="headerlink" title="第五章:元素遍历"></a>第五章:元素遍历</h3><p>子元素选择器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&gt;.box&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="1-children"><a href="#1-children" class="headerlink" title="1. .children( )"></a>1. .children( )</h4><blockquote>
+<p>jQuery是一个合集对象，所以通过children是匹配合集中每一个元素的所有第一级子元素(即仅父子关系)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">1</span>:</span><br><span class="line">$(<span class="string">"#right-well"</span>).children().css(<span class="string">"color"</span>,<span class="string">"orange"</span>);		<span class="comment">//匹配id为right-well下的所有子元素</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">例<span class="number">2</span>:</span><br><span class="line"><span class="class"><span class="keyword">class</span>名为<span class="title">father</span>的3个<span class="title">div</span> </span></span><br><span class="line"><span class="class">&lt;<span class="title">div</span> <span class="title">class</span> </span>= <span class="string">"father"</span>&gt;</span><br><span class="line">	&lt;p&gt;p标签&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span> </span>= <span class="string">"father"</span>&gt;</span><br><span class="line">	&lt;p&gt;p标签&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span> </span>= <span class="string">"father"</span>&gt;</span><br><span class="line">	&lt;p&gt;p标签&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;span&gt;span标签&lt;/</span>span&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">$('father').children().css('color','red')				/</span><span class="regexp">/所有的p标签以及span标签都会被匹配改变颜色</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>children(.selected)内还可以传参</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如例<span class="number">2</span>中,若在最后一步的children()中加入参数</span><br><span class="line"></span><br><span class="line">$(<span class="string">'father'</span>).children(<span class="string">':last'</span>).css(<span class="string">'color'</span>,<span class="string">'red'</span>)		<span class="comment">//则只匹配到了所有集合中的最后一个元素,即只有span标签会变色</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-find"><a href="#2-find" class="headerlink" title="2. .find( )"></a>2. .find( )</h4><p>通过find( )是匹配合集中每一个元素的所有的后代元素(即所有的儿子,孙子元素)</p>
+<p>参数:必需.    target.find(“*”)    所有的后代元素   </p>
+<p>​            target.find(“HTML标签名”)        target中的所有HTML标签名的元素</p>
+<p>​            target.find(“HTML标签名:selected”)        target中的所有HTML标签名的并符合selected的元素;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例:</span><br><span class="line"></span><br><span class="line">$(&apos;.father&apos;).find(&apos;*&apos;);					class名为father的所有元素的所有后代元素</span><br><span class="line">$(&apos;.father&apos;).find(&apos;li&apos;)					class名为father的所有元素的所有li标签</span><br><span class="line">$(&apos;.father&apos;).find(&apos;li:last&apos;)			class名为father的所有元素的最后一个li标签</span><br></pre></td></tr></table></figure>
+<h4 id="3-each"><a href="#3-each" class="headerlink" title="3. .each( )"></a>3. .each( )</h4><blockquote>
+<p>.each() 方法就是一个for循环的迭代器，它会迭代jQuery对象合集中的每一个DOM元素。</p>
+<p>每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数)</p>
+</blockquote>
+<p><strong>注:</strong>    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">each是一个for循环的包装迭代器</span><br><span class="line">each通过回调的方式处理，并且会有2个固定的实参，索引与元素,若不用到俩个参数index,element,可不用写</span><br><span class="line">each回调方法中的this指向当前迭代的dom元素</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例1:					遍历.father下所有的li元素,给其添加样式	</span><br><span class="line">$(&apos;.father&apos;).children(&apos;li&apos;).each(function(index,element)&#123;	//对所有的.father的子级为li的元素遍历</span><br><span class="line">  $(this).on(&apos;mouseover&apos;,function()&#123;						//给所有li添加mouseover事件</span><br><span class="line">    $(this).css(&apos;background&apos;,&apos;red&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">  $(this).on(&apos;mouseout&apos;,function()&#123;							//给所有li添加mouseout事件</span><br><span class="line">    $(this).css(&apos;background&apos;,&apos;&apos;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">例2:					给所有偶数项的li元素添加样式</span><br><span class="line">$(&apos;.father&apos;).children(&apos;li&apos;).each(function(index,element)&#123;	//对所有的.father的子级为li的元素遍历</span><br><span class="line">  $(this).on(&apos;mouseover&apos;,function()&#123;						//给所有li添加mouseover事件</span><br><span class="line">   if(index%2)&#123;												//再次index从0开始,所以index为奇数实际是li项数里的偶数			</span><br><span class="line">      $(this).css(&apos;background&apos;,&apos;red&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="3-查找父级元素"><a href="#3-查找父级元素" class="headerlink" title="3.查找父级元素"></a>3.查找父级元素</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">方法名</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">起始位置</th>
+<th style="text-align:center">遍历目标</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">parent( )</td>
+<td style="text-align:center">可选selected</td>
+<td style="text-align:center">父元素</td>
+<td style="text-align:center">父级元素</td>
+<td style="text-align:center">包含零个或一个或多个元素的jquery对象</td>
+</tr>
+<tr>
+<td style="text-align:center">parents( )</td>
+<td style="text-align:center">可选selected</td>
+<td style="text-align:center">父元素到文档根元素</td>
+<td style="text-align:center">所有父级,祖父级元素</td>
+<td style="text-align:center">包含零个或一个或多个元素的jquery对象</td>
+</tr>
+<tr>
+<td style="text-align:center">closest( )</td>
+<td style="text-align:center">可选selected</td>
+<td style="text-align:center">指定的目标</td>
+<td style="text-align:center">所有父级,祖父级元素</td>
+<td style="text-align:center">包含零个或一个元素的jquery对象,</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-parent"><a href="#1-parent" class="headerlink" title="1.parent( )"></a>1.parent( )</h5><blockquote>
+<p>某个元素的父元素</p>
+<p>参数,可选        target.parent()    匹配target集合中的所有元素的父元素</p>
+<p>​                target.parent(“selected”)       匹配target集合中的所有元素的并满足selected要求的父元素</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#target1&quot;).parent().css(&quot;background-color&quot;,&quot;red&quot;);				//匹配id为target1的父元素</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;.target1&quot;).parent(&quot;:last&quot;).css(&quot;background-color&quot;,&quot;red&quot;);		//匹配所有class名为target1的父级元素集合中的最后一个</span><br></pre></td></tr></table></figure>
+<h5 id="2-parents"><a href="#2-parents" class="headerlink" title="2.parents( )"></a>2.parents( )</h5><blockquote>
+<p> .parents( ) 方法,匹配的是所有元素的祖辈元素,查找模式从里向外,包括body html document</p>
+</blockquote>
+<h5 id="3-closest"><a href="#3-closest" class="headerlink" title="3.closest( )"></a>3.closest( )</h5><blockquote>
+<p>从元素本身开始，在DOM 树上逐级向上级元素匹配，并返回最先匹配的祖先元素</p>
+<p>若( )内无参数,则返回document(整个文档)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">例：在div元素中，往上查找所有的li元素，可以这样表达</span><br><span class="line">$(&quot;div&quot;).closet(&quot;li&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-查找兄弟元素"><a href="#4-查找兄弟元素" class="headerlink" title="4.查找兄弟元素"></a>4.查找兄弟元素</h4><h5 id="1-next"><a href="#1-next" class="headerlink" title="1.next( )"></a>1.next( )</h5><blockquote>
+<p>取得一个包含匹配的元素集合中每一个元素紧邻的下一个同辈元素的元素集合</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;li.test&apos;).next().css(&apos;border&apos;,&apos;1px solid red&apos;);		//设置class名为test的li的下一个兄弟元素</span><br></pre></td></tr></table></figure>
+<h5 id="2-prev"><a href="#2-prev" class="headerlink" title="2.prev( )"></a>2.prev( )</h5><blockquote>
+<p>取得一个包含匹配的元素集合中每一个元素紧邻的前一个同辈元素的元素集合</p>
+</blockquote>
+<h5 id="3-siblings"><a href="#3-siblings" class="headerlink" title="3.siblings( )"></a>3.siblings( )</h5><blockquote>
+<p>取得一个包含匹配的元素集合中每一个元素的同辈元素的元素集合</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;button:first&quot;).click(function() &#123;</span><br><span class="line">    $(&apos;li.item-2&apos;).siblings().css(&apos;border&apos;,&apos;1px solid red&apos;);			//选取class名为item-2 的所有兄弟元素,不包裹它自身	</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="第六章-滚动条"><a href="#第六章-滚动条" class="headerlink" title="第六章: 滚动条"></a>第六章: 滚动条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(window).scroll(function (event) &#123;</span><br><span class="line">    // 获取窗口的高度</span><br><span class="line">    var windowH = $(window).height()</span><br><span class="line">    // 获取滚动条的位置</span><br><span class="line">    var WindowScrollTop = $(window).scrollTop()</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+    leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+    leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+    leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+    leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

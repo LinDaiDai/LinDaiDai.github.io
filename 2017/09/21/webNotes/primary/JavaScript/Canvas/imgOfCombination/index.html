@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>canvas中图形的组合方式 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/" data-name="canvas中图形的组合方式" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/">
+                Canvas中图形的组合方式
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2017年09月21日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/canvas/">Canvas</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前文我们在用canvas绘图中,经常会碰到当俩个图形重叠时怎么办的问题,这篇文章介绍的就是一些关于俩个图形重叠时的样式的处理问题
+1. 设置组合方式我们可以通过globalCompositeOperation这个属性,我们可以来更改俩个图形重叠时的样式
+如:是想让新图覆盖原始图,还是只保留重叠部分等等.
+语法:1ctx.globalCompositeOperation = source-in
+先来看看几个属性值:  source-over            默认属性,新图像会覆盖在原有图像  source-in           只保留当前图重叠的部分  source-out  ...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h3 id="前文"><a href="#前文" class="headerlink" title="前文"></a>前文</h3><p>我们在用canvas绘图中,经常会碰到当俩个图形重叠时怎么办的问题,这篇文章介绍的就是一些关于俩个图形重叠时的样式的处理问题</p>
+<h3 id="1-设置组合方式"><a href="#1-设置组合方式" class="headerlink" title="1. 设置组合方式"></a>1. 设置组合方式</h3><p>我们可以通过globalCompositeOperation这个属性,我们可以来更改俩个图形重叠时的样式</p>
+<p>如:是想让新图覆盖原始图,还是只保留重叠部分等等.</p>
+<p>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctx.globalCompositeOperation = source-in</span><br></pre></td></tr></table></figure></p>
+<p>先来看看几个属性值:<br>  source-over            默认属性,新图像会覆盖在原有图像<br>  source-in           只保留当前图重叠的部分<br>  source-out          绘制不重叠部分<br>  source-atop           新图像仅仅显示与老图像重叠区域,老图像仍然可以显示<br>  destination-over    原图覆盖新图<br>  destination-in      绘制原图和新图重叠部分<br>  destination-out     绘制原图和新图不重叠部分<br>  destination-atop    绘制原图和新图重叠部分以及新图<br>  lighten              绘制新图和原图,重叠部分加色处理<br>  darken            保留重叠部分最黑的像素<br>  lighter             保证重叠部分最量的像素<br>  copy                绘制新图,覆盖原图<br>  xor                  重叠部分会变成透明</p>
+<h3 id="1-2-几种组合方式案例"><a href="#1-2-几种组合方式案例" class="headerlink" title="1.2 几种组合方式案例"></a>1.2 几种组合方式案例</h3><p>例1:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        #canvas1{
+            border:1px solid red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;canvas id=&quot;canvas1&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var canvas = document.getElementById(&quot;canvas1&quot;);
+    var ctx = canvas.getContext(&quot;2d&quot;);
+
+    ctx.fillStyle = &quot;red&quot;;
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, Math.PI*2, true);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = &quot;green&quot;;
+    ctx.beginPath();
+    ctx.arc(250,150, 100, 0, Math.PI*2, true);
+    ctx.closePath();
+    ctx.fill();
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>上面的例子中,我没有对图片的重叠部分做任何的处理,效果就是和source-over一样,新图会覆盖原图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-479219244ea4ff9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="default.png"></p>
+<p>在代码中加入globalCompositeOperation属性的时候,会呈现不同的效果</p>
+<p>1.source-over(default)<br>新图像会覆盖在原有图像。(默认)<br><img src="http://upload-images.jianshu.io/upload_images/7190596-479219244ea4ff9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="default.png"></p>
+<p>2.source-in<br>只保留当前图重叠的部分其他区域都变成透明的。(包括其他的老图像区域也会透明)<br>    <code>ctx.globalCompositeOperation = &quot;source-in&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-59cb5c58f285f659.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="source-in.png"></p>
+<p>3.source-out<br>绘制不重叠部分<br><code>ctx.globalCompositeOperation = &quot;source-out&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-9bf9263a888088c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="source-out.png"></p>
+<p>4.source-atop<br>新图像仅仅显示与老图像重叠区域。老图像仍然可以显示。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-48b3fe632ab62d6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="source-atop.png"></p>
+<p>5.destination-over<br>原图覆盖新图<br>    <code>ctx.globalCompositeOperation = &quot;destination-over&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-8a33a28bcfe7844d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="destination-over.png"></p>
+<p>6.destination-in<br>绘制原图和新图重叠部分<br><code>ctx.globalCompositeOperation = &quot;destination-in&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-3dd3ef5b6ca91348.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="destination-in.png"></p>
+<p>7.destination-out<br>绘制原图和新图不重叠部分<br><code>ctx.globalCompositeOperation = &quot;destination-out&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-4b84eba4fa2c81f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="destination-out.png"></p>
+<p>8.destination-atop<br>绘制原图和新图重叠部分以及新图<br>   <code>ctx.globalCompositeOperation = &quot;destination-atop&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-cc9a727c42583ebd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="destination-atop.png"></p>
+<p>9.lighten<br>绘制新图和原图,重叠部分加色处理<br>    <code>ctx.globalCompositeOperation = &quot;lighter&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-17d1534209de29cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="lighter.png"></p>
+<p>10.darken<br>保留重叠部分最黑的像素。(每个颜色位进行比较，得到最小的)<br>blue: #0000ff<br>red: #ff0000<br>所以重叠部分的颜色：#000000<br> <code>ctx.globalCompositeOperation = &quot;darken&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-349e694f06e6a79f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="darken.png"></p>
+<p>11.lighter<br>保证重叠部分最量的像素。(每个颜色位进行比较，得到最大的)<br>blue: #0000ff<br>red: #ff0000<br>所以重叠部分的颜色：#ff00ff<br>    <code>ctx.globalCompositeOperation = &quot;lighter&quot;</code><br><img src="http://upload-images.jianshu.io/upload_images/7190596-17d1534209de29cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="lighter.png"></p>
+<p>12.copy<br>只有新图像会被保留，其余的全部被清除(变透明)<br><code>ctx.globalCompositeOperation = &quot;copy&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-c49ce39d9dee8350.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="copy.png"></p>
+<p>13.xor<br>重叠部分会变成透明<br><code>ctx.globalCompositeOperation = &quot;xor&quot;</code></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-49534f7bfde7fada.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="xor.png"></p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', json.ip);
+    leanCloud.fetchCommentCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/');
+    leanCloud.fetchVisitCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/');
+    leanCloud.fetchThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/');
+    leanCloud.getCommentCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2017/09/21/webNotes/primary/JavaScript/Canvas/imgOfCombination/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

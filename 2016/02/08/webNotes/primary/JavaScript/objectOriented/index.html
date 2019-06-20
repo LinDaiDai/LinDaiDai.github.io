@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>面向对象入门 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/objectOriented/" data-name="面向对象入门" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/objectOriented/">
+                面向对象入门
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">对于很多初学JavaScript的小白来说,刚接触面向对象肯定是一脸懵逼的,博主也是一样.但经过一段时间的工作,还是对于面向对象有了一定的了解,下面就是这些天学习面向对象的一些心得与体会,希望对大家有所帮助.
+什么是面向对象?相信对于面向对象的一些概念大家在网上看的也都不少,什么学会了面向对象呀就能找对象之类的.好吧,言归正传,在JavaScript中,可以说所有东西都是对象,对象就是包含一组变量和函数的集合.函数是一个对象,数组是一个对象.而对于面向对象来说,我们把构成问题事务分解成各个对象,那么建立这些对象是为了描叙某个事物在整个解决问题的步骤中的行为,而不是为了完成一个步骤。...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p>对于很多初学JavaScript的小白来说,刚接触面向对象肯定是一脸懵逼的,博主也是一样.但经过一段时间的工作,还是对于面向对象有了一定的了解,下面就是这些天学习面向对象的一些心得与体会,希望对大家有所帮助.</p>
+<h3 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象?"></a>什么是面向对象?</h3><p>相信对于面向对象的一些概念大家在网上看的也都不少,什么学会了面向对象呀就能找对象之类的.好吧,言归正传,在JavaScript中,可以说所有东西都是对象,对象就是包含一组变量和函数的集合.函数是一个对象,数组是一个对象.而对于面向对象来说,我们把构成问题事务分解成各个对象,那么建立这些对象是为了描叙某个事物在整个解决问题的步骤中的行为,而不是为了完成一个步骤。 </p>
+<p><strong>第一:如何创建对象</strong></p>
+<p>对象的每个属性或者方法都有一个名字,而每个名字都映射到一个值<br>如下面的对象:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">var person = &#123;</span><br><span class="line">          name: &quot;王先生&quot;,</span><br><span class="line">          age:22,</span><br><span class="line">          sex:&quot;男&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于person(人)这个对象来说,每个人肯定是有名字的,有年龄,也有性别,也就是说person这个对象它有3个属性.<br>那么像这种  name:”王先生” ,  属性名:属性值 , 我们就称之为键值对,一个键值对就是一个对象的属性.<br>那么有人就会问了,向刚刚上面的例子中,不管是name还是age都只是一个简单的数据类型,像”王先生”是字符串,22是数字,这个对象中能不能有一些更牛的属性呢,比如函数?答案是可以的.<br>对象中的属性不仅仅可以是一些简单数据类型,也可以是函数,也可以是对象.这里我要科普一下,哪些是简单数据类型呢?<br>简单数据类型在JS中就是5种,分别是:<br>    1.数字类型  number;<br>    2.布尔类型  boolean;<br>    3.字符串类型  string;<br>    4.undefined<br>    5.null<br>除了以上5种数据类型,其他的所有元素的数据类型都是object类型<br>所以我们想给对象person中添加函数应该怎么做?这里你可以理解为函数也只是我们给对象中添加的一个属性而已,所以用法也和添加简单数据类型一样.</p>
+<p>如,我要给person添加一个eat函数:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例2:</span><br><span class="line">var person = &#123;</span><br><span class="line">          name: &quot;王先生&quot;,</span><br><span class="line">          age:22,</span><br><span class="line">          sex:&quot;男&quot;,</span><br><span class="line">          eat:function()&#123;</span><br><span class="line">                  alert(&quot;王先生爱吃&quot;);</span><br><span class="line">          &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里要提醒的一点是,对象中各个属性直接是用逗号来隔开的,而不是分号.</p>
+<p><strong>第二:如何访问对象中的属性</strong></p>
+<p>如果我们现在想访问例2中的name属性,可以这样写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对象名.属性名</span><br><span class="line">console.log(person.name);</span><br><span class="line">另外也可以直接调用对象中的方法(函数):</span><br><span class="line">person.eat();        //既然是调用方法(函数) 则一定还要添加()来表示方法的调用</span><br></pre></td></tr></table></figure></p>
+<p>也可以这样写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对象名[属性名]</span><br><span class="line">console.log(person[&quot;name&quot;])</span><br></pre></td></tr></table></figure></p>
+<p>俩种方式都可以使我们访问到对象中的属性,但也有一定的区别:<br>  对象名.属性名只适合知道了属性的名字时使用,如果一个属性名是个变量则会出现语法错误;<br>  对象名[属性名]就没有限制了,不过当变量名是字符串常量,我们就要用” “引号引起来,是变量的话则可以直接使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">person,age = 22;</span><br><span class="line">var a = &apos;age&apos;;</span><br><span class="line">console.log(person[a])</span><br><span class="line">=&gt;22</span><br></pre></td></tr></table></figure></p>
+<p><strong>第三:如何修改对象中的属性</strong></p>
+<p>修改对象中的属性其实很简单,只需要获取到你想修改的对象的属性,然后给它重新赋值就可以了;<br>比如修改例2中的sex属性和eat属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">person.sex = &quot;女&quot;</span><br><span class="line">person.eat=function()&#123;</span><br><span class="line">        alert(&quot;王先生不爱吃&quot;);</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line">**第四:如何给对象添加属性**</span><br><span class="line"></span><br><span class="line">上面我们了解到了怎么访问对象属性,修改对象属性,那么现在想给对象中添加属性应该怎么做呢?</span><br><span class="line"></span><br><span class="line">比如我现在还是想给例3中的person添加一个属性hobby和play;</span><br></pre></td></tr></table></figure></p>
+<p>例3:<br>var person = {<br>          name: “王先生”,<br>          age:22,<br>          sex:”男”,<br>          eat:function(){<br>                  alert(“王先生爱吃”);<br>          }<br>}<br>person.hobby=”yun”;<br>person.favorite=function(){<br>      alert(this.name+”favorite is”+this.hobby);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**第五:如何删除对象中的属性**</span><br><span class="line"></span><br><span class="line">删除对象中属性这里我们要用到一个操作符:delete;</span><br><span class="line">如我要删除例3中person的年龄属性:</span><br></pre></td></tr></table></figure></p>
+<p>delete person.age;<br>//此时我们再执行<br>console.log(person.age)<br>=&gt;undefined                    //返回的是undefined ,说明age这个属性被删除了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**第六:如何遍历对象**</span><br><span class="line"></span><br><span class="line">针对遍历对象,可以有俩种变量对象的方式</span><br><span class="line"></span><br><span class="line">1.通过for(...in...)来变量对象的各个属性名称</span><br></pre></td></tr></table></figure></p>
+<p>for(var proName in p){                //var 可以省略    in前面表示的是p对象的属性名称<br>  console.log(proName);                //在此输出的只是p对象的各个属性名称<br>}</p>
+<p>for(var proName in p){<br>  console.log(p[proName])            //在此输出的是p对象的各个属性的值<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.通过for(...of...)来变量对象的各个属性的值</span><br></pre></td></tr></table></figure></p>
+<p>for(var pro of p){<br>  console.log(pro);                    //在此输出的是p对象的各个属性的值<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### 解析面向对象的几种创建方式</span><br><span class="line"></span><br><span class="line">上面我们只是简单的用 </span><br><span class="line">            ```  var 对象名 = &#123;</span><br><span class="line">                      属性名:属性值,</span><br><span class="line">                      属性名:属性值, </span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure></p>
+<p>来创建一个对象,这种方式称为<em>字面量的创建方式</em>,其实还有另外几种创建对象的方式.</p>
+<h4 id="3-1-使用new-Object"><a href="#3-1-使用new-Object" class="headerlink" title="3.1 使用new Object( )"></a>3.1 使用new Object( )</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var p = new Object();</span><br><span class="line">p.name = &quot;小王&quot;,</span><br><span class="line">p.eat = function()&#123;</span><br><span class="line">  alert(&apos;函数&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-工厂模式创建"><a href="#3-2-工厂模式创建" class="headerlink" title="3.2 工厂模式创建"></a>3.2 工厂模式创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function createP(name,age,sex)&#123;</span><br><span class="line">  var p = new Object();</span><br><span class="line">  p.name = name;</span><br><span class="line">  p.age = age;</span><br><span class="line">  p.sex = sex;</span><br><span class="line">  return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = createP(&quot;小王&quot;,&quot;22&quot;,&quot;男&quot;);</span><br><span class="line">var p2 = createP(&quot;小张&quot;,&quot;23&quot;,&quot;女&quot;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>createPerson()函数可以多次调用，每调用一次这个函数就会返回一个对象，而且对象的类型仍然是Object类型的。虽然解决了多个相似对象的问题，但却没有解决对象类型识别的问题。</p>
+</blockquote>
+<h4 id="3-3-构造函数创建"><a href="#3-3-构造函数创建" class="headerlink" title="3.3 构造函数创建"></a>3.3 构造函数创建</h4><blockquote>
+<p>为了解决对象类型识别问题，又提出了构造函数模式。</p>
+<p>通俗来说,就是用 new 的方式来调用函数的时候,就是构造函数.    如:    var p = new person();</p>
+<p>这种模式，其实在我们创建一些原生对象的时候，比如Array、Object都是调用的他们的构造函数。</p>
+<p>构造函数的使用:</p>
+<p>​    1.首先创建一个对象,这个对象的类型就是构造函数的名字    </p>
+<p>​        如例1中的p1就是创建的对象,这个对象的类型就是createP</p>
+<p>​    2.最后会把创建这个对象自动的返回,所以不需要return</p>
+<p>​    3.为什么使用构造函数:实际是给创建对象的一个初始化</p>
+<p>​    4.函数作为构造函数使用时,this指代的是创建的这个对象;函数作为正常调用时,this代指window</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">function createP(name,age,sex)&#123;</span><br><span class="line">  this.name = name;						//在构造函数中,this就是指代创建这个对象</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = new createP(&quot;小王&quot;,&quot;22&quot;,&quot;男&quot;);	//使用new的方式来调用函数的时候,这个时候,这样的函数就叫构造函数</span><br><span class="line">var p2 = new createP(&quot;小张&quot;,&quot;23&quot;,&quot;女&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="构造函数与普通函数的区别"><a href="#构造函数与普通函数的区别" class="headerlink" title="构造函数与普通函数的区别"></a>构造函数与普通函数的区别</h3><p>上面我们在创建对象的时候用了一种通过构造函数创建的方式,那么构造函数与普通函数有什么区别呢?<br>他们的调用方式不同:</p>
+<pre><code>   构造函数:    new 函数( )
+
+            默认返回创建的那个对象
+
+            所有单词首字母大写
+
+普通函数:    函数( )
+
+            默认返回undefined
+</code></pre>
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/objectOriented/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

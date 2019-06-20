@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>几种简单的设计模式 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/designPattern/" data-name="几种简单的设计模式" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/designPattern/">
+                几种简单的设计模式
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">第一章.设计模式简介作用：JavaScript设计模式的作用 - 提高代码的重用性，可读性，使代码更容易的维护和扩展。    
+一般只用于大型的项目.
+设计模式有六大原则：
+
+开闭原则。就是说模块应对扩展开放，而对修改关闭。
+里氏代换原则。如果调用的是父类的话，那么换成子类也完全可以运行。
+依赖倒转原则。把父类都替换成它的子类，程序的行为没有变化。
+接口隔离原则，每一个接口应该是一种角色，不多不少，不干不该干的事，该干的事都要干。
+单一职责原则。
+迪米特法则。 最少知识原则。
+
+第二章:常见设计模式1.聚合12345678910function A()&#123;      ...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h3 id="第一章-设计模式简介"><a href="#第一章-设计模式简介" class="headerlink" title="第一章.设计模式简介"></a>第一章.设计模式简介</h3><p><strong>作用：JavaScript设计模式的作用 - 提高代码的重用性，可读性，使代码更容易的维护和扩展。</strong>    </p>
+<p>一般只用于大型的项目.</p>
+<p>设计模式有六大原则：</p>
+<ol>
+<li>开闭原则。就是说模块应对扩展开放，而对修改关闭。</li>
+<li>里氏代换原则。如果调用的是父类的话，那么换成子类也完全可以运行。</li>
+<li>依赖倒转原则。把父类都替换成它的子类，程序的行为没有变化。</li>
+<li>接口隔离原则，每一个接口应该是一种角色，不多不少，不干不该干的事，该干的事都要干。</li>
+<li>单一职责原则。</li>
+<li>迪米特法则。 最少知识原则。</li>
+</ol>
+<h3 id="第二章-常见设计模式"><a href="#第二章-常见设计模式" class="headerlink" title="第二章:常见设计模式"></a>第二章:常见设计模式</h3><h4 id="1-聚合"><a href="#1-聚合" class="headerlink" title="1.聚合"></a>1.聚合</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.a = <span class="keyword">new</span> A();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br><span class="line">   b.a.say();</span><br></pre></td></tr></table></figure>
+<h4 id="2-单例"><a href="#2-单例" class="headerlink" title="2.单例"></a>2.单例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a = <span class="keyword">new</span> A();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="keyword">new</span> B();</span><br><span class="line">    b.a.say();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span></span><br><span class="line">    <span class="keyword">var</span> createPerson = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> p;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!p)&#123;</span><br><span class="line">                p = <span class="keyword">new</span> Person(name);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                p.name = name;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;());</span><br><span class="line">    <span class="keyword">var</span> p1 = createPerson(<span class="string">'张三'</span>);</span><br><span class="line">    <span class="keyword">var</span> p2 = createPerson(<span class="string">"李四"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(p1);</span><br><span class="line">    <span class="built_in">console</span>.log(p1==p2);</span><br><span class="line">    =&gt;李四</span><br><span class="line">    =&gt;<span class="literal">true</span></span><br><span class="line">    </span><br><span class="line">后传入的是谁就是谁</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">       <span class="keyword">var</span> p = <span class="keyword">this</span>;</span><br><span class="line">       p.name = name;</span><br><span class="line">       Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="keyword">return</span> p;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;AQ																														</span><br><span class="line">   <span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'张三'</span>);</span><br><span class="line">   <span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"李四"</span>);</span><br><span class="line">   <span class="built_in">console</span>.log(person1);</span><br><span class="line">   <span class="built_in">console</span>.log(person2);</span><br></pre></td></tr></table></figure>
+<h4 id="3-替换构造函数法"><a href="#3-替换构造函数法" class="headerlink" title="3.替换构造函数法"></a>3.替换构造函数法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">复写了构造函数Person</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">this</span>;</span><br><span class="line">  p.name = name;</span><br><span class="line">  Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-适配器模式"><a href="#4-适配器模式" class="headerlink" title="4.适配器模式"></a>4.适配器模式</h4><blockquote>
+<p>用法:在不更改原有功能的前提下,来试用新的变化</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p1"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"p2"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"myAjax.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">       myAjax.get(<span class="string">'data5.json'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           showMsg(<span class="built_in">JSON</span>.parse(result),p1)</span></span><br><span class="line"><span class="undefined">       &#125;);</span></span><br><span class="line"><span class="javascript">       myAjax.get(<span class="string">'data4.json'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           showMsgAdapter(<span class="built_in">JSON</span>.parse(result),p2)</span></span><br><span class="line"><span class="undefined">       &#125;);</span></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">showMsg</span>(<span class="params">obj,p</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">           p.innerHTML = obj.name;</span></span><br><span class="line"><span class="undefined">       &#125;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//适配器模式:</span></span></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">showMsgAdapter</span>(<span class="params">arr,p</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">           showMsg(arr[0],p)</span></span><br><span class="line"><span class="undefined">       &#125;</span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-观察者模式"><a href="#5-观察者模式" class="headerlink" title="5.观察者模式"></a>5.观察者模式</h4><p>开服务器才行</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>发布<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> publisher = &#123;</span></span><br><span class="line"><span class="javascript">           register:<span class="function"><span class="keyword">function</span> (<span class="params">subscriber</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">               <span class="keyword">this</span>.subscriber = subscriber;</span></span><br><span class="line"><span class="undefined">           &#125;,</span></span><br><span class="line"><span class="javascript">           publish:<span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">               <span class="keyword">this</span>.subscriber(msg);</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">       &#125;;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//向发布者订阅信息,订阅者使用函数来充当</span></span></span><br><span class="line"><span class="javascript">       publisher.register(<span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;	</span></span><br><span class="line"><span class="javascript">           <span class="built_in">console</span>.log(msg);</span></span><br><span class="line"><span class="undefined">       &#125;);</span></span><br><span class="line"><span class="javascript">       btn1.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           publisher.publish(<span class="string">"我是发布的信息"</span>);</span></span><br><span class="line"><span class="undefined">       &#125;</span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>发布1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span>发布2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> publisher = &#123;</span></span><br><span class="line"><span class="javascript">          register:<span class="function"><span class="keyword">function</span> (<span class="params">event,subscriber</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span>(<span class="keyword">typeof</span> subscriber != <span class="string">"function"</span>) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="javascript">              <span class="comment">//先判断event是否存在</span></span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span>(!<span class="keyword">this</span>[event]) <span class="keyword">this</span>[event] = [];</span></span><br><span class="line"><span class="javascript">              <span class="keyword">this</span>[event].push(subscriber);</span></span><br><span class="line"><span class="undefined">          &#125;,</span></span><br><span class="line"><span class="javascript">          publish:<span class="function"><span class="keyword">function</span> (<span class="params">event,msg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span>(!(event <span class="keyword">in</span> <span class="keyword">this</span>)) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">for</span>(<span class="keyword">var</span> sub <span class="keyword">of</span> <span class="keyword">this</span>[event]) &#123;</span></span><br><span class="line"><span class="undefined">                  sub(msg)</span></span><br><span class="line"><span class="undefined">              &#125;</span></span><br><span class="line"><span class="undefined">          &#125;,</span></span><br><span class="line"><span class="javascript">          remove:<span class="function"><span class="keyword">function</span>(<span class="params">event,sub</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span>(!<span class="keyword">this</span>[event] ||<span class="keyword">this</span>[event].indexOf(sub)==<span class="number">-1</span>) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">this</span>[event].splice(<span class="keyword">this</span>[event].indexOf(sub),<span class="number">1</span>)</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">      &#125;;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//向发布者订阅信息,订阅者使用函数来充当</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"我是第一个订阅者:"</span>+msg)</span></span><br><span class="line"><span class="undefined">      &#125;;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"我是第二个订阅者:"</span>+msg);</span></span><br><span class="line"><span class="undefined">      &#125;;</span></span><br><span class="line"><span class="javascript">      publisher.register(<span class="string">'first'</span>,f1);</span></span><br><span class="line"><span class="javascript">      publisher.register(<span class="string">'second'</span>,f2);</span></span><br><span class="line"><span class="javascript">      btn1.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;	</span></span><br><span class="line"><span class="javascript">          publisher.publish(<span class="string">'first'</span>,<span class="string">"发布1"</span>);</span></span><br><span class="line"><span class="undefined">      &#125;;</span></span><br><span class="line"><span class="javascript"><span class="comment">//我是第一个订阅者:发布1</span></span></span><br><span class="line"><span class="javascript">      btn2.onclick=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          publisher.publish(<span class="string">'second'</span>,<span class="string">"发布2"</span>)</span></span><br><span class="line"><span class="undefined">      &#125;;</span></span><br><span class="line"><span class="javascript"><span class="comment">//我是第二个订阅者:发布2</span></span></span><br><span class="line"><span class="javascript">      publisher.remove(<span class="string">'first'</span>,f1);</span></span><br><span class="line"><span class="javascript"><span class="comment">//点击按钮1失去效果</span></span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例:利用观察者模式来给按钮添加三击事件</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span>按钮1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span>按钮2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">   	<span class="comment">//在按钮的原型对象中添加addMyEventListener方法,这个方法用来给按钮添加自定义事件.</span></span></span><br><span class="line"><span class="javascript">       HTMLButtonElement.prototype.addMyEventListener = <span class="function"><span class="keyword">function</span>(<span class="params">event,f</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">if</span>(!<span class="keyword">this</span>[event]) <span class="keyword">this</span>[event] = [];</span></span><br><span class="line"><span class="javascript">           <span class="keyword">this</span>[event].push(f);</span></span><br><span class="line"><span class="undefined">       &#125;;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//调用addMyEventListener函数给按钮1添加自定义三击事件</span></span></span><br><span class="line"><span class="javascript">       btn1.addMyEventListener(<span class="string">'threeclick'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="built_in">console</span>.log(<span class="string">"您三击了"</span>);</span></span><br><span class="line"><span class="undefined">       &#125;);</span></span><br><span class="line"><span class="javascript">       <span class="comment">//定义变量times用来记录三次点击事件的时间</span></span></span><br><span class="line"><span class="javascript">       <span class="keyword">var</span> times =[];</span></span><br><span class="line"><span class="undefined">       </span></span><br><span class="line"><span class="javascript">       <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">           <span class="keyword">if</span>(times.length ==<span class="number">3</span>)&#123;</span></span><br><span class="line"><span class="undefined">               times.shift();</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="javascript">           times.push(<span class="keyword">new</span> <span class="built_in">Date</span>());</span></span><br><span class="line"><span class="javascript">           <span class="keyword">if</span>(times.length ==<span class="number">3</span>)&#123;</span></span><br><span class="line"><span class="javascript">               <span class="keyword">if</span>(times[<span class="number">2</span>]-times[<span class="number">0</span>]&lt;=<span class="number">1000</span>)&#123;</span></span><br><span class="line"><span class="undefined">                   times.length = 0;</span></span><br><span class="line"><span class="javascript">                   <span class="keyword">for</span>(tc <span class="keyword">of</span> <span class="keyword">this</span>.threeclick)&#123;</span></span><br><span class="line"><span class="undefined">                       tc();</span></span><br><span class="line"><span class="undefined">                   &#125;</span></span><br><span class="line"><span class="undefined">               &#125;</span></span><br><span class="line"><span class="undefined">           &#125;</span></span><br><span class="line"><span class="undefined">       &#125;</span></span><br><span class="line"><span class="javascript">       <span class="comment">//给俩个按钮都添加三击事件</span></span></span><br><span class="line"><span class="javascript">       btn1.addEventListener(<span class="string">'mousedown'</span>,step);</span></span><br><span class="line"><span class="javascript">       btn2.addEventListener(<span class="string">'mousedown'</span>,step);</span></span><br><span class="line"><span class="javascript">       <span class="comment">//只有按钮1才有三击事件,按钮2会报错</span></span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/designPattern/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/designPattern/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/designPattern/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/designPattern/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/designPattern/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

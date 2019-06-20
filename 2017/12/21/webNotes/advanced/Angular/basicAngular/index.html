@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>Angular基础 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2017/12/21/webNotes/advanced/Angular/basicAngular/" data-name="Angular基础" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/Angular.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2017/12/21/webNotes/advanced/Angular/basicAngular/">
+                Angular基础
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2017年12月21日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/Angular/">Angular</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">第一章：安装配置设置开发环境node.js和npm
+全局安装Angular CLI1npm install -g @angular/cli
+创建项目1ng new my-app
+启动项目12cd my-appng serve --open
+ng serve命令会启动开发服务器，监听文件变化，并在修改这些文件时重新构建此应用。
+使用--open（或-o）参数可以自动打开浏览器并访问http://localhost:4200/。
+注：可以设置为cnpm
+1ng set --global packageManager=cnpm
+第二章：常用指令2.1...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h3 id="第一章：安装配置"><a href="#第一章：安装配置" class="headerlink" title="第一章：安装配置"></a>第一章：安装配置</h3><h4 id="设置开发环境"><a href="#设置开发环境" class="headerlink" title="设置开发环境"></a>设置开发环境</h4><p>node.js和npm</p>
+<h4 id="全局安装Angular-CLI"><a href="#全局安装Angular-CLI" class="headerlink" title="全局安装Angular CLI"></a>全局安装Angular CLI</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new my-app</span><br></pre></td></tr></table></figure>
+<h4 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my-app</span><br><span class="line">ng serve --open</span><br></pre></td></tr></table></figure>
+<p><code>ng serve</code>命令会启动开发服务器，监听文件变化，并在修改这些文件时重新构建此应用。</p>
+<p>使用<code>--open</code>（或<code>-o</code>）参数可以自动打开浏览器并访问<code>http://localhost:4200/</code>。</p>
+<p>注：可以设置为cnpm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng set --global packageManager=cnpm</span><br></pre></td></tr></table></figure>
+<h3 id="第二章：常用指令"><a href="#第二章：常用指令" class="headerlink" title="第二章：常用指令"></a>第二章：常用指令</h3><h4 id="2-1-属性绑定"><a href="#2-1-属性绑定" class="headerlink" title="2.1 属性绑定"></a>2.1 属性绑定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;img [src]=&quot;heroImageUrl&quot;&gt;</span><br><span class="line">&lt;img bind-src=&quot;heroImageUrl&quot;&gt;</span><br><span class="line">&lt;img src=&quot;&#123;&#123;heroImageUrl&#125;&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">heroImageUrl = &apos;../assets/image/img1.png&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;button [disabled]=&quot;isUnchanged&quot;&gt;Cancel is disabled&lt;/button&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;按钮&quot;  [disabled]=&quot;true&quot;&gt;</span><br><span class="line"></span><br><span class="line">isUnchanged = true;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;span&gt;&#123;&#123;title&#125;&#125;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&quot;&lt;span [innerHTML]=&quot;title&quot;&gt;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">title = &apos;标题&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-类名绑定"><a href="#2-2-类名绑定" class="headerlink" title="2.2 类名绑定"></a>2.2 类名绑定</h4><p>添加或删除<em>单个</em>类</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 设置单个class名,通过isSpecial判断是否添加special这个类名</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">class.special</span>]=<span class="string">"isSpecial"</span>&gt;</span>The class binding is special<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--isSpecial = true--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当想要同时添加或移除<em>多个</em> CSS 类时，<code>NgClass</code>指令可能是更好的选择。</p>
+<p>试试把<code>ngClass</code>绑定到一个 key:value 形式的控制对象。这个对象中的每个 key 都是一个 CSS 类名，如果它的 value 是<code>true</code>，这个类就会被加上，否则就会被移除。</p>
+<p>组件方法<code>setCurrentClasses</code>可以把组件的属性<code>currentClasses</code>设置为一个对象，它将会根据三个其它组件的状态为<code>true</code>或<code>false</code>而添加或移除三个类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div [ngClass]=&quot;currentClasses&quot;&gt;This div is initially saveable, unchanged, and special&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">currentClasses: &#123;&#125;;</span><br><span class="line">setCurrentClasses() &#123;</span><br><span class="line">  // CSS classes: added/removed per current state of component properties</span><br><span class="line">  this.currentClasses =  &#123;</span><br><span class="line">    &apos;saveable&apos;: this.canSave,</span><br><span class="line">    &apos;modified&apos;: !this.isUnchanged,</span><br><span class="line">    &apos;special&apos;:  this.isSpecial</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-style绑定"><a href="#2-3-style绑定" class="headerlink" title="2.3 style绑定"></a>2.3 style绑定</h4><p>设置单一样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button [style.color]=&quot;isSpecial ? &apos;red&apos;: &apos;green&apos;&quot;&gt;Red&lt;/button&gt;</span><br><span class="line">&lt;button [style.background-color]=&quot;canSave ? &apos;cyan&apos;: &apos;grey&apos;&quot; &gt;Save&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;button [style.margin-left.px]=&quot;isSpecial ? 10 : 20&quot; &gt;Big&lt;/button&gt;</span><br><span class="line">&lt;button [style.font-size.em]=&quot;isSpecial ? 3 : 1&quot; &gt;Big&lt;/button&gt;</span><br><span class="line">&lt;button [style.font-size.%]=&quot;!isSpecial ? 150 : 50&quot; &gt;Small&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>设置多个内联样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div [ngStyle]=&quot;currentStyles&quot;&gt;</span><br><span class="line">  This div is initially italic, normal weight, and extra large (24px).</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">currentStyles: &#123;&#125;;</span><br><span class="line">setCurrentStyles() &#123;</span><br><span class="line">  // CSS styles: set per current state of component properties</span><br><span class="line">  this.currentStyles = &#123;</span><br><span class="line">    &apos;font-style&apos;:  this.canSave      ? &apos;italic&apos; : &apos;normal&apos;,</span><br><span class="line">    &apos;font-weight&apos;: !this.isUnchanged ? &apos;bold&apos;   : &apos;normal&apos;,</span><br><span class="line">    &apos;font-size&apos;:   this.isSpecial    ? &apos;24px&apos;   : &apos;12px&apos;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-4-事件绑定"><a href="#2-4-事件绑定" class="headerlink" title="2.4 事件绑定"></a>2.4 事件绑定</h4><h5 id="目标事件"><a href="#目标事件" class="headerlink" title="目标事件"></a>目标事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button (click)=&quot;onSave()&quot;&gt;Save&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;button on-click=&quot;onSave()&quot;&gt;On Save&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="event-和事件处理语句"><a href="#event-和事件处理语句" class="headerlink" title="$event 和事件处理语句"></a>$event 和事件处理语句</h5><p>通过<code>$event</code>获取事件对象</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> [<span class="attr">value</span>]=<span class="string">"inputVal"</span></span></span><br><span class="line"><span class="tag">        (<span class="attr">input</span>) = <span class="string">"inputVal=$event.target.value"</span>&gt;</span>`</span><br><span class="line">        </span><br><span class="line"><span class="comment">&lt;!-- 和双项绑定一样 --&gt;</span>        </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"inputVal"</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;inputVal&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-双项绑定"><a href="#1-双项绑定" class="headerlink" title="1. 双项绑定"></a>1. 双项绑定</h4><p><code>[(ngModel)]=&quot;&quot;</code></p>
+<p>虽然<code>NgModel</code>是一个有效的Angular指令，但它默认情况下却是不可用的。 它属于一个可选模块<code>FormsModule</code>。 我们必须选择使用那个模块。</p>
+<p><strong>导入 FormsModule</strong></p>
+<p>打开<code>app.module.ts</code>文件，并且从<code>@angular/forms</code>库中导入符号<code>FormsModule</code>。 然后把<code>FormsModule</code>添加到<code>@NgModule</code>元数据的<code>imports</code>数组中，它是当前应用正在使用的外部模块列表。</p>
+<p>修改后的<code>AppModule</code>是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NgModule &#125;      <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormsModule &#125;   <span class="keyword">from</span> <span class="string">'@angular/forms'</span>; <span class="comment">//  NgModel lives here</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125;  <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"> </span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule <span class="comment">//  import the FormsModule before binding with [(ngModel)]</span></span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [ AppComponent ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-遍历"><a href="#2-遍历" class="headerlink" title="2.遍历"></a>2.遍历</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li *ngFor=&quot;let hero of heroes&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="第三章：父子组件"><a href="#第三章：父子组件" class="headerlink" title="第三章：父子组件"></a>第三章：父子组件</h3><p>父组件app.component.ts</p>
+<p>子组件hero-detail.components.ts</p>
+<p>在创建子组件之前，先在src下创建一个hero.ts，其中存放着一个hero类,这个类会被多个组件引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    id: number;</span><br><span class="line">    name: string;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>之后，在其他的组件中要引用这个公共的类，只需要使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Hero &#125; from &apos;./hero&apos;;	// 引入Hero</span><br></pre></td></tr></table></figure>
+<p>引入即可。</p>
+<h4 id="3-1-创建子组件"><a href="#3-1-创建子组件" class="headerlink" title="3.1 创建子组件"></a>3.1 创建子组件</h4><p><strong>每一个组件，都必须引入Component来表明它是一个组件</strong>    </p>
+<p>在src下创建文件夹<code>hero-detail</code></p>
+<p>并在其中依次创建<code>hero-detail/component.ts/component.html/component.css</code>三个文件</p>
+<p><code>hero-detail.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;	<span class="comment">// 引入Componens 和 Input</span></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'../hero'</span>;	<span class="comment">// 引入Hero</span></span><br><span class="line">@Component(&#123;</span><br><span class="line">    selector: <span class="string">'hero-detail'</span>,	<span class="comment">// 确定子组件引用时的标签名</span></span><br><span class="line">    templateUrl: <span class="string">'./hero-detail.component.html'</span>,	<span class="comment">// 子组件的HTML代码</span></span><br><span class="line">    styleUrls: [<span class="string">'./hero-detail.component.css'</span>]		<span class="comment">// 子组件的样式</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroDetailComponent</span> </span>&#123;		<span class="comment">// 导出子组件</span></span><br><span class="line">    @Input() hero: Hero;			<span class="comment">// 1.通过在hero属性前面加上@Input装饰器，来表明它是一个输入属性 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>hero-detail.component.html</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"hero"</span>&gt;</span>	// 2.引用父组件传递进来的属性</span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;hero.name&#125;&#125; details!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>id: <span class="tag">&lt;/<span class="name">label</span>&gt;</span>&#123;&#123;hero.id&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>name: <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"hero.name"</span> <span class="attr">placeholder</span>=<span class="string">"name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-在父组件中引用子组件"><a href="#3-2-在父组件中引用子组件" class="headerlink" title="3.2 在父组件中引用子组件"></a>3.2 在父组件中引用子组件</h4><p>1.在<code>AppModule</code>中声明<code>HeroDetailComponent</code></p>
+<p>每个组件都必须在一个（且只有一个）Angular模块中声明。</p>
+<p>打开<code>app.module.ts</code>并且导入<code>HeroDetailComponent</code>，以便我们可以引用它。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; HeroDetailComponent &#125; <span class="keyword">from</span> <span class="string">'./hero-detail/hero-detail.component'</span>; <span class="comment">// 引入</span></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    HeroDetailComponent	<span class="comment">// 引入</span></span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>2.在父组件html中引用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>My Heroes<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"heroes"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let hero of heroes"</span> [<span class="attr">class.selected</span>]=<span class="string">"hero === selectedHero"</span> (<span class="attr">click</span>)=<span class="string">"onSelect(hero)"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>&#123;&#123;hero.id&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span> &#123;&#123;hero.name&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hero-detail</span> [<span class="attr">hero</span>]=<span class="string">"selectedHero"</span>&gt;</span><span class="tag">&lt;/<span class="name">hero-detail</span>&gt;</span> // 通过[]向子组件传递值,子组件那边用@Input接收</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-ViewChild"><a href="#3-3-ViewChild" class="headerlink" title="3.3 @ViewChild"></a>3.3 @ViewChild</h4><blockquote>
+<p>有些时候，在父组件中你可能需要用到子组件中的属性或者方法，此时你可以使用<code>@ViewChild</code></p>
+</blockquote>
+<p><code>child.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-child'</span>,</span><br><span class="line">  template: <span class="string">'&lt;p&gt;&#123;&#123;name&#125;&#125;&lt;/p&gt;&lt;div&gt;&lt;input value="xixi"&gt;&lt;/div&gt;'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./child.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ChildComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  public name: string = <span class="string">'childName'</span>;</span><br><span class="line"></span><br><span class="line">  greeting(name: string) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello '</span> + name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>father.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ChildComponent &#125; form <span class="string">'./child/ChildComponent'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  template: <span class="string">'&lt;app-child #child&gt;&lt;/app-child&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  @ViewChild(<span class="string">'child'</span>)child: ChildComponent;</span><br><span class="line"></span><br><span class="line">  clickMe() &#123;</span><br><span class="line">  	<span class="keyword">this</span>.child.greeting(<span class="string">'father'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第四章：服务"><a href="#第四章：服务" class="headerlink" title="第四章：服务"></a>第四章：服务</h3><h4 id="1-创建服务"><a href="#1-创建服务" class="headerlink" title="1.创建服务"></a>1.创建服务</h4><p>服务其实也是一个ts文件，只不过创建这个文件命名时要加上<code>service</code>来表明它是一个服务</p>
+<p>1.如创建一个名为hero的服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero.service.ts</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;	<span class="comment">// 引入Injectable, 就像组件引用Component一样</span></span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroService</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时创建了一个hero的服务，但是里面什么东西也没有</p>
+<h4 id="2-给服务中添加东西"><a href="#2-给服务中添加东西" class="headerlink" title="2.给服务中添加东西"></a>2.给服务中添加东西</h4><p>可以给服务中添加一个方法，这个方法用来获取一个heros数组</p>
+<p>首先创建一个<code>mock-heroes.ts</code>来存放数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> HEROES: Hero[] = [		<span class="comment">// 表明数组中的每一个对象都是Hero这个类，并输出这个数组</span></span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">11</span>, <span class="attr">name</span>: <span class="string">'Mr. Nice'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">12</span>, <span class="attr">name</span>: <span class="string">'Narco'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">13</span>, <span class="attr">name</span>: <span class="string">'Bombasto'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">14</span>, <span class="attr">name</span>: <span class="string">'Celeritas'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">15</span>, <span class="attr">name</span>: <span class="string">'Magneta'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">16</span>, <span class="attr">name</span>: <span class="string">'RubberMan'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">17</span>, <span class="attr">name</span>: <span class="string">'Dynama'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">18</span>, <span class="attr">name</span>: <span class="string">'Dr IQ'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">19</span>, <span class="attr">name</span>: <span class="string">'Magma'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">20</span>, <span class="attr">name</span>: <span class="string">'Tornado'</span> &#125;</span><br><span class="line">  ];</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> NUM: number = <span class="number">1</span>	<span class="comment">// 也可以输出多个变量(或常量),如再输出一个NUM的变量</span></span><br></pre></td></tr></table></figure>
+<p>然后在服务中引用它，并设定一个方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HEROES &#125; <span class="keyword">from</span> <span class="string">'./mock-heroes'</span>;	<span class="comment">// 接收mock-heroes中的数组</span></span><br><span class="line"><span class="keyword">import</span> &#123; NUM &#125; <span class="keyword">from</span> <span class="string">'./mock-heroes'</span>;	<span class="comment">// 接收mock-heroes中的变量NUM</span></span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroService</span> </span>&#123;</span><br><span class="line">  getHeroes(): Hero[] &#123;</span><br><span class="line">    <span class="keyword">return</span> HEROES;</span><br><span class="line">  &#125;</span><br><span class="line">  getNum(): number &#123;</span><br><span class="line">    <span class="keyword">return</span> NUM;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-使用服务"><a href="#3-使用服务" class="headerlink" title="3.使用服务"></a>3.使用服务</h4><p>如在app.component这个组件中要引用这个服务：</p>
+<p><code>app.component.ts</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;	<span class="comment">// 1. 引入服务</span></span><br><span class="line">...</span><br><span class="line">@Component(&#123;</span><br><span class="line">  ...</span><br><span class="line">  providers: [HeroService];	<span class="comment">// 2. 在@Component组件的元数据底部添加providers数组属性</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span></span>&#123;</span><br><span class="line">  title = <span class="string">'Tour of Heroes'</span>;</span><br><span class="line">  heroes: Hero[]; </span><br><span class="line">  selectedHero: Hero;</span><br><span class="line">  num: number;</span><br><span class="line">  <span class="keyword">constructor</span>(private heroService: HeroService) &#123;&#125;; <span class="comment">// 3. 添加构造函数</span></span><br><span class="line"></span><br><span class="line">  getHeroes ():<span class="keyword">void</span> &#123;	</span><br><span class="line">    <span class="keyword">this</span>.heroes =<span class="keyword">this</span>.heroService.getHeroes(); <span class="comment">// 4. 使用服务中的方法,将获取过来的数组赋值给app中的</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  getNum ():<span class="keyword">void</span> &#123;		</span><br><span class="line">    <span class="keyword">this</span>.num =<span class="keyword">this</span>.heroService.getNum(); <span class="comment">// 4. 使用服务中的方法,将获取过来的NUM赋值给app中的num</span></span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过上面几部，我们实现了引用服务，并且可以使用服务中的方法。</p>
+<p>但是我们想要页面一打开就执行<code>getHeroes()</code>这个方法，可以参考生命周期</p>
+<h4 id="4-异步服务与承诺"><a href="#4-异步服务与承诺" class="headerlink" title="4. 异步服务与承诺"></a>4. 异步服务与承诺</h4><p>上面我们的服务使用的是同步的方法来获取数据，可以结合Promise来异步获取数据</p>
+<p>服务中的getHeroes方法</p>
+<p>同步的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getHeroes(): Hero[] &#123;</span><br><span class="line">  <span class="keyword">return</span> HEROES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>异步的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getHeroes(): <span class="built_in">Promise</span>&lt;Hero[]&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(HEROES); <span class="comment">// 异步返回的是一个promise对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时也要修改引用服务的地方，如上面的<code>app.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;	<span class="comment">// 1. 引入服务</span></span><br><span class="line">...</span><br><span class="line">@Component(&#123;</span><br><span class="line">  ...</span><br><span class="line">  providers: [HeroService];	<span class="comment">// 2. 在@Component组件的元数据底部添加providers数组属性</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span></span>&#123;</span><br><span class="line">  title = <span class="string">'Tour of Heroes'</span>;</span><br><span class="line">  heroes: Hero[]; </span><br><span class="line">  selectedHero: Hero;</span><br><span class="line">  num: number;</span><br><span class="line">  <span class="keyword">constructor</span>(private heroService: HeroService) &#123;&#125;; <span class="comment">// 3. 添加构造函数</span></span><br><span class="line"></span><br><span class="line">  getHeroes ():<span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.heroService.getHeroes().then(<span class="function"><span class="params">heroes</span> =&gt;</span> <span class="keyword">this</span>.heroes = heroes); <span class="comment">// 采用promise的写法</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  getNum ():<span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.num =<span class="keyword">this</span>.heroService.getNum(); <span class="comment">// 采用同步的写法</span></span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第五章：-生命周期"><a href="#第五章：-生命周期" class="headerlink" title="第五章： 生命周期"></a>第五章： 生命周期</h3><p>在上面，我们虽然引用了自定义的服务，但是它并没有被调用，可以添加生命周期，让它在适当的时候调用。</p>
+<p><strong>生命周期的顺序</strong></p>
+<p>当Angular使用构造函数新建一个组件或指令后，就会按下面的顺序在特定时刻调用这些生命周期钩子方法：</p>
+<table>
+<thead>
+<tr>
+<th>钩子</th>
+<th>目的和时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ngOnChanges()</code></td>
+<td>当Angular（重新）设置数据绑定输入属性时响应。 该方法接受当前和上一属性值的<code>SimpleChanges</code>对象当被绑定的输入属性的值发生变化时调用，首次调用一定会发生在<code>ngOnInit()</code>之前。</td>
+</tr>
+<tr>
+<td><code>ngOnInit()</code></td>
+<td>在Angular第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。在第一轮<code>ngOnChanges()</code>完成之后调用，只调用<strong>一次</strong>。</td>
+</tr>
+<tr>
+<td><code>ngDoCheck()</code></td>
+<td>检测，并在发生Angular无法或不愿意自己检测的变化时作出反应。在每个Angular变更检测周期中调用，<code>ngOnChanges()</code>和<code>ngOnInit()</code>之后。</td>
+</tr>
+<tr>
+<td><code>ngAfterContentInit()</code></td>
+<td>当把内容投影进组件之后调用。第一次<code>ngDoCheck()</code>之后调用，只调用一次。<strong>只适用于组件</strong>。</td>
+</tr>
+<tr>
+<td><code>ngAfterContentChecked()</code></td>
+<td>每次完成被投影组件内容的变更检测之后调用。<code>ngAfterContentInit()</code>和每次<code>ngDoCheck()</code>之后调用<strong>只适合组件</strong>。</td>
+</tr>
+<tr>
+<td><code>ngAfterViewInit()</code></td>
+<td>初始化完组件视图及其子视图之后调用。第一次<code>ngAfterContentChecked()</code>之后调用，只调用一次。<strong>只适合组件</strong>。</td>
+</tr>
+<tr>
+<td><code>ngAfterViewChecked()</code></td>
+<td>每次做完组件视图和子视图的变更检测之后调用。<code>ngAfterViewInit()</code>和每次<code>ngAfterContentChecked()</code>之后调用。<strong>只适合组件</strong>。</td>
+</tr>
+<tr>
+<td><code>ngOnDestroy</code></td>
+<td>当Angular每次销毁指令/组件之前调用并清扫。 在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。在Angular销毁指令/组件之前调用。</td>
+</tr>
+</tbody>
+</table>
+<p>在上面的例子中，我们就可以在<code>ngOnInit()</code>中使用服务的方法</p>
+<h4 id="使用生命周期钩子"><a href="#使用生命周期钩子" class="headerlink" title="使用生命周期钩子"></a>使用生命周期钩子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>; <span class="comment">// 1. 引入生命周期钩子</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;	<span class="comment">// 2. 往export语句中添加OnInit接口的实现：</span></span><br><span class="line"></span><br><span class="line">	ngOnInit(): <span class="keyword">void</span> &#123;		<span class="comment">// 3. 初始化逻辑的ngOnInt()方法</span></span><br><span class="line">      <span class="keyword">this</span>.getHeroes();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时我们的案例变成了：</p>
+<p>app.component.ts</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>],</span><br><span class="line">  providers: [HeroService]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;</span><br><span class="line">  title = <span class="string">'Tour of Heroes'</span>;</span><br><span class="line">  heroes: Hero[];</span><br><span class="line">  selectedHero: Hero;</span><br><span class="line">  num: number;</span><br><span class="line">  <span class="keyword">constructor</span>(private heroService: HeroService) &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  getHeroes ():<span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.heroService.getHeroes().then(<span class="function"><span class="params">heroes</span> =&gt;</span> <span class="keyword">this</span>.heroes = heroes);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  getNum ():<span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.num =<span class="keyword">this</span>.heroService.getNum()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.getHeroes();</span><br><span class="line">    <span class="keyword">this</span>.getNum();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onSelect(hero: Hero):<span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.selectedHero = hero;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第六章：-路由"><a href="#第六章：-路由" class="headerlink" title="第六章： 路由"></a>第六章： 路由</h3><h4 id="1-配置路由"><a href="#1-配置路由" class="headerlink" title="1. 配置路由"></a>1. 配置路由</h4><p>1.在<code>app.module.ts</code>中引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> &#123; RouterModule &#125;   <span class="keyword">from</span> <span class="string">'@angular/router'</span>;	<span class="comment">// 1. 引入router</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroesComponent &#125;     <span class="keyword">from</span> <span class="string">'./heroes.component'</span>;	<span class="comment">// 2. 引入要路由的组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; DashboardComponent &#125; <span class="keyword">from</span> <span class="string">'./dashboard.component'</span>; <span class="comment">// 2. 引入要路由的组件</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [			<span class="comment">// 3. 引入要路由的组件</span></span><br><span class="line">    AppComponent,</span><br><span class="line">    HeroesComponent,</span><br><span class="line">    DashboardComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    RouterModule.forRoot([	<span class="comment">// 4. 添加到AppModule的imports数组中</span></span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'heroes'</span>,</span><br><span class="line">        component: HeroesComponent</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'dashboard'</span>,</span><br><span class="line">        component: DashboardComponent</span><br><span class="line">      &#125;,</span><br><span class="line">    ])</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-使用路由"><a href="#2-使用路由" class="headerlink" title="2. 使用路由"></a>2. 使用路由</h4><p>2.在<code>app.component.html</code>中使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;nav&gt;</span><br><span class="line">  &lt;a routerLink=&quot;/dashboard&quot;&gt;Dashboard&lt;/a&gt;</span><br><span class="line">  &lt;a routerLink=&quot;/heroes&quot;&gt;Heroes&lt;/a&gt;</span><br><span class="line">&lt;/nav&gt;</span><br><span class="line">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="3-路由重定向"><a href="#3-路由重定向" class="headerlink" title="3. 路由重定向"></a>3. 路由重定向</h4><p>在配置路由路径的时候</p>
+<p>当路径是空的时候自动重定向到<code>/dashboard</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path: &apos;&apos;,</span><br><span class="line">  redirectTo: &apos;/dashboard&apos;,</span><br><span class="line">  pathMatch: &apos;full&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-参数化路由"><a href="#4-参数化路由" class="headerlink" title="4. 参数化路由"></a>4. 参数化路由</h4><p>添加一个组件，用来显示英雄的详细信息，通过给路由中传递参数来跳转到对应的英雄</p>
+<p>1.配置参数路由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>; </span><br><span class="line"><span class="keyword">import</span> &#123; RouterModule &#125;   <span class="keyword">from</span> <span class="string">'@angular/router'</span>;	<span class="comment">// 1. </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroDetailComponent &#125; <span class="keyword">from</span> <span class="string">'./hero-detail/hero-detail.component'</span>; <span class="comment">// 2.</span></span><br><span class="line"><span class="keyword">import</span> &#123; HeroesComponent &#125;     <span class="keyword">from</span> <span class="string">'./heroes.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125;         <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; DashboardComponent &#125; <span class="keyword">from</span> <span class="string">'./dashboard.component'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    HeroDetailComponent,	<span class="comment">// 3.</span></span><br><span class="line">    HeroesComponent,</span><br><span class="line">    DashboardComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    RouterModule.forRoot([</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'heroes'</span>,</span><br><span class="line">        component: HeroesComponent</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'dashboard'</span>,</span><br><span class="line">        component: DashboardComponent</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'detail/:id'</span>,			<span class="comment">//4.</span></span><br><span class="line">        component: HeroDetailComponent</span><br><span class="line">      &#125;</span><br><span class="line">    ])</span><br><span class="line">  ],</span><br><span class="line">  providers: [HeroService],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>2.使用参数路由</p>
+<p><code>dashboard</code>是<code>app</code>下的一个路由</p>
+<p>路径为<code>localhost:4200/dashboard</code></p>
+<p>该组件只显示前4个英雄，当点击英雄，跳转到英雄详情页</p>
+<p><code>dashboard.component.html</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;Top Heroes&lt;/h3&gt;</span><br><span class="line">&lt;div class=&quot;grid grid-pad&quot;&gt;</span><br><span class="line">  &lt;a *ngFor=&quot;let hero of heroes&quot; [routerLink] = &quot;[&apos;/detail&apos;, hero.id]&quot; class=&quot;col-1-4&quot;&gt;&#123;&#123;hero.name&#125;&#125;&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><code>dashboard.component.ts</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'my-dashboard'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./dashboard.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./dashboard.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DashboardComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;</span><br><span class="line">  heroes: Hero[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(private heroService: HeroService) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.heroService.getHeroes()</span><br><span class="line">      .then(<span class="function"><span class="params">heroes</span> =&gt;</span> <span class="keyword">this</span>.heroes = heroes.slice(<span class="number">1</span>, <span class="number">5</span>));</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>这一步是引入<code>heroesService</code>这个自定义的服务，来获取英雄列表，详情请看《第四章： 服务》</p>
+<p>3.英雄详情页</p>
+<p><code>hero-detail.component.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=&quot;hero&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;hero.name&#125;&#125; details!&lt;/h2&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;label&gt;id: &lt;/label&gt;&#123;&#123;hero.id&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;label&gt;name: &lt;/label&gt;</span><br><span class="line">        &lt;input [(ngModel)]=&quot;hero.name&quot; placeholder=&quot;name&quot; /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;button (click)=&quot;goBack()&quot;&gt;Back&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><code>hero-detail.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, Input, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ActivatedRoute, ParamMap &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;		<span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">import</span> &#123; Location &#125; <span class="keyword">from</span> <span class="string">'@angular/common'</span>;				<span class="comment">// 2.</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/switchMap'</span>;			<span class="comment">// 3.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'../hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'../hero.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">    selector: <span class="string">'hero-detail'</span>,</span><br><span class="line">    templateUrl: <span class="string">'./hero-detail.component.html'</span>,</span><br><span class="line">    styleUrls: [<span class="string">'./hero-detail.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroDetailComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;</span><br><span class="line">    hero: Hero;</span><br><span class="line">    <span class="keyword">constructor</span>(</span><br><span class="line">        private heroService: HeroService,</span><br><span class="line">        private route: ActivatedRoute,			// 4.</span><br><span class="line">        private location: Location				// 5.</span><br><span class="line">    ) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.route.paramMap						<span class="comment">// 6.</span></span><br><span class="line">            .switchMap(<span class="function">(<span class="params">params: ParamMap</span>) =&gt;</span> <span class="keyword">this</span>.heroService.getHero(+params.get(<span class="string">'id'</span>)))</span><br><span class="line">            .subscribe(<span class="function"><span class="params">hero</span> =&gt;</span> <span class="keyword">this</span>.hero = hero);</span><br><span class="line">    &#125;</span><br><span class="line">    goBack(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.location.back();				<span class="comment">// 7. 返回上一层</span></span><br><span class="line">      &#125;</span><br><span class="line">    providers: [HeroService]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.配置自定义服务<code>heroService</code>中的<code>getHero()</code>方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HEROES &#125; <span class="keyword">from</span> <span class="string">'./mock-heroes'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NUM &#125; <span class="keyword">from</span> <span class="string">'./mock-heroes'</span>;</span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroService</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 获取全部英雄</span></span><br><span class="line">  getHeroes(): <span class="built_in">Promise</span>&lt;Hero[]&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(HEROES);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 获取数字</span></span><br><span class="line">  getNum(): number &#123;</span><br><span class="line">    <span class="keyword">return</span> NUM</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 延迟获取全部英雄</span></span><br><span class="line">  getHeroesSlowly(): <span class="built_in">Promise</span>&lt;Hero[]&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// Simulate server latency with 2 second delay</span></span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="keyword">this</span>.getHeroes()), <span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 获取指定的英雄</span></span><br><span class="line">  getHero(id: number): <span class="built_in">Promise</span>&lt;Hero&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getHeroes() </span><br><span class="line">              .then(<span class="function"><span class="params">heroes</span> =&gt;</span> heroes.find(<span class="function"><span class="params">hero</span> =&gt;</span> hero.id === id));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>此时点击英雄列表的一个英雄，跳转到详情页</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4200/detail/12</span><br></pre></td></tr></table></figure>
+<h4 id="5-js进行路由跳转"><a href="#5-js进行路由跳转" class="headerlink" title="5. js进行路由跳转"></a>5. js进行路由跳转</h4><p>上面我们实现的路由跳转是通过<code>[routerLink] = &quot;[&#39;/detail&#39;, hero.id]&quot;</code>来进行路由跳转的，但如果想要给一个按钮添加点击事件进行跳转，怎么办呢？可以调用路由器的<code>navigate()</code>方法：</p>
+<p>如在<code>heroes.component.html</code>中添加一个按钮：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div *ngIf=&quot;selectedHero&quot;&gt;</span><br><span class="line">  &lt;h2&gt;</span><br><span class="line">    &#123;&#123;selectedHero.name | uppercase&#125;&#125; is my hero</span><br><span class="line">  &lt;/h2&gt;</span><br><span class="line">  &lt;button (click)=&quot;gotoDatail()&quot;&gt;View Details&lt;/button&gt; // 添加点击事件</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>heroes.component.ts</code>中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Router &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;	<span class="comment">// 1. 引入路由</span></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'my-heroes'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./heroes.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./heroes.component.css'</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroesComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="keyword">constructor</span>(</span><br><span class="line">    private heroService: HeroService,</span><br><span class="line">    private router: Router				// 2. </span><br><span class="line">  ) &#123;&#125;;</span><br><span class="line">...	</span><br><span class="line">  gotoDatail():<span class="keyword">void</span> &#123;					<span class="comment">// 3. 调用router中的navigate()</span></span><br><span class="line">    <span class="keyword">this</span>.router.navigate([<span class="string">'/detail'</span>, <span class="keyword">this</span>.selectedHero.id]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若是跳转无参数的路由，也是可以的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gotoDatail():<span class="keyword">void</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.router.navigate([<span class="string">'/dashboard'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-重构路由为一个路由模板"><a href="#6-重构路由为一个路由模板" class="headerlink" title="6. 重构路由为一个路由模板"></a>6. 重构路由为一个路由模板</h4><p>可以将路由重新定义为一个模块，在<code>app.module.ts</code>中引用</p>
+<p><code>app-routing.module.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; NgModule &#125;             <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; RouterModule, Routes &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> &#123; DashboardComponent &#125;   <span class="keyword">from</span> <span class="string">'./dashboard.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroesComponent &#125;      <span class="keyword">from</span> <span class="string">'./heroes.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroDetailComponent &#125;  <span class="keyword">from</span> <span class="string">'./hero-detail/hero-detail.component'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">''</span>, <span class="attr">redirectTo</span>: <span class="string">'/dashboard'</span>, <span class="attr">pathMatch</span>: <span class="string">'full'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'dashboard'</span>,  <span class="attr">component</span>: DashboardComponent &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'detail/:id'</span>, <span class="attr">component</span>: HeroDetailComponent &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'heroes'</span>,     <span class="attr">component</span>: HeroesComponent &#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [ RouterModule.forRoot(routes) ],</span><br><span class="line">  exports: [ RouterModule ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppRoutingModule</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>而此时<code>app.module.ts</code>中要进行修改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroDetailComponent &#125; <span class="keyword">from</span> <span class="string">'./hero-detail/hero-detail.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroesComponent &#125;     <span class="keyword">from</span> <span class="string">'./heroes.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125;         <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; DashboardComponent &#125; <span class="keyword">from</span> <span class="string">'./dashboard.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125;     <span class="keyword">from</span> <span class="string">'./app-routing.modle'</span>; 	<span class="comment">// 1.</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    HeroDetailComponent,</span><br><span class="line">    HeroesComponent,</span><br><span class="line">    DashboardComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    AppRoutingModule		<span class="comment">// 2.</span></span><br><span class="line">  ],</span><br><span class="line">  providers: [HeroService],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第七章：-管道"><a href="#第七章：-管道" class="headerlink" title="第七章： 管道"></a>第七章： 管道</h3><h4 id="7-1-使用管道"><a href="#7-1-使用管道" class="headerlink" title="7.1 使用管道"></a>7.1 使用管道</h4><p>如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-hero-birthday'</span>,</span><br><span class="line">  template: <span class="string">'&lt;p&gt;&#123;&#123; birthday &#125;&#125;&lt;/p&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HeroBirthdayComponent &#123;</span><br><span class="line">  birthday = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1988</span>, <span class="number">3</span>, <span class="number">15</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不使用管道时，显示：</span></span><br><span class="line"><span class="comment">// Fri Apr 15 1988 00:00:00 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+<p>使用管道后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; birthday | date &#125;&#125;&lt;/p&gt;</span><br><span class="line">// Apr 15, 1988</span><br></pre></td></tr></table></figure>
+<h4 id="7-2-参数化管道"><a href="#7-2-参数化管道" class="headerlink" title="7.2 参数化管道"></a>7.2 参数化管道</h4><p>上面的案例中，使用的是data管道，来进行时间转换，有其默认的转换格式，我们也可以自定义转换格式，只需要像data管道中传递参数就可以了。</p>
+<p>比如我们想要上面的信息转换为<code>1998/03/15</code>的格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; birthday | date:&quot;yyyy/MM/dd&quot; &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="7-3-自定义管道"><a href="#7-3-自定义管道" class="headerlink" title="7.3 自定义管道"></a>7.3 自定义管道</h4><p>angular4还支持自定义管道，你可以自己定义想要的管道。</p>
+<p>近期接到这样一个需求：</p>
+<p>要求在多个页面中显示用户的头像图片，但有的用户没有上传头像的话，就需要系统根据用户性别显示默认的男/女头像。</p>
+<p>当然这样一个简单的需求无论你是在HTML进行判断还是在js中判断都可以实现。</p>
+<p>当若是有多个页面都需要用到的话，似乎也是一项比较繁重的任务。</p>
+<p>所以你可以选择封装一个共用的方法在每个页面进行调用或者可以尝试<strong>自定义一个管道</strong>。    </p>
+<p>博主工作中使用的是前端框架<code>Angularjs4</code>，项目整体是使用<code>angular-cli</code>进行搭建的，下面介绍的是如何在<code>angularjs</code>中自定义一个管道。</p>
+<blockquote>
+<p>1.确定需求</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">多个页面显示用户头像</span><br><span class="line">若是头像图片地址不存在则判断用户性别</span><br><span class="line">根据用户性别显示默认的男女头像</span><br><span class="line">若是性别和头像图片地址都不存在则显示默认的人形头像</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.设计管道</p>
+</blockquote>
+<p>1.前期准备</p>
+<p>在项目目录<code>src/app/common</code>文件夹下创建一个新文件夹<code>pipe</code>，并在<code>pipe</code>中创建一个<code>comm.pipe.ts</code>文件。</p>
+<p>(common文件夹是我存放一些公共组件/方法/管道的文件夹,它是一个功能的模块，其中的所有组件/方法/管道我都会在common文件夹下的shared.module.ts中进行导出)</p>
+<p>2.编写<code>comm.pipe.ts</code></p>
+<p>自定义管道需要先引入<code>@angular/core</code>中的<code>Pipe</code>和<code>PipeTransform</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//comm.pipe.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; Pipe, PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sexList = [<span class="string">''</span>, <span class="string">'男'</span>, <span class="string">'女'</span>];</span><br><span class="line"><span class="keyword">const</span> uHeadImg = [<span class="string">'./assets/images/default_male.png'</span>, <span class="string">'./assets/images/boy.png'</span>, <span class="string">'./assets/images/girl.png'</span>];</span><br><span class="line"></span><br><span class="line">@Pipe(&#123; <span class="attr">name</span>: <span class="string">'portrait'</span> &#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Portrait</span> <span class="title">implements</span> <span class="title">PipeTransform</span> </span>&#123;</span><br><span class="line">    transform(value): string &#123;</span><br><span class="line">        <span class="keyword">let</span> url = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (value === <span class="string">'男'</span> || value === <span class="string">'女'</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> idx = sexList.indexOf(value);</span><br><span class="line">            url = uHeadImg[idx];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            url = value ? value : uHeadImg[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> url;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义俩个数组一个为性别，一个为三种图片的存放路径</li>
+<li>需要使用@Pipe来装饰类</li>
+<li>实现PipeTransform的transform方法，该方法接受一个输入值和一些可选参数</li>
+<li>在@Pipe装饰器中指定管道的名字，这个名字就可以在模板中使用。</li>
+<li>transform为PipeTransform中继承而来的方法，它接收0个或多个参数</li>
+</ul>
+<blockquote>
+<p>3.导出自定义管道</p>
+</blockquote>
+<p>在<code>shared.module.ts</code>中导出：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//shared.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Portrait &#125; <span class="keyword">from</span> <span class="string">'./pipe/comm.pipe'</span>;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    ...</span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">  	...</span><br><span class="line">    Portrait</span><br><span class="line">  ],</span><br><span class="line">  exports: [</span><br><span class="line">    ...</span><br><span class="line">    Portrait</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">SharedModule</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>4.使用管道</p>
+</blockquote>
+<p>由于管道是在<code>shared.module.ts</code>中导出的，因此要使用它就必须在要使用的模块中导入</p>
+<p>如在<code>student</code>这个模块中使用</p>
+<p>1.首先在<code>student.module.ts</code>中引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//student.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; SharedModule &#125; <span class="keyword">from</span> <span class="string">"./../common/shared.module"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Students &#125; <span class="keyword">from</span> <span class="string">"./students"</span>; <span class="comment">//students为该模块下的一个页面</span></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    SharedModule,</span><br><span class="line">    </span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    Students</span><br><span class="line">  ],</span><br><span class="line">  providers: [</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>2.在页面中使用：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//students.component.html</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"uHead"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span>&gt;</span>学员头像：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;studentInfo['uHeadUrl']||studentInfo.sex | portrait&#125;&#125;"</span> <span class="attr">title</span>=<span class="string">"头像"</span> <span class="attr">alt</span>=<span class="string">"头像"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>studentInfo.uHeadUrl||studentInfo.sex就是传递给管道的参数，表示为如果有头像路径则传递头像路径，没有则传递性别。</li>
+<li>| potrait`表示使用名为potrait的管道，就是你在comm.pipe.ts中定义的name</li>
+</ul>
+<blockquote>
+<p>5.总结</p>
+</blockquote>
+<p>在<code>angularjs4</code>中使用管道总结为这么几步：</p>
+<p>1.定义一个自定义管道的<code>ts</code>并引入<code>@angular/core</code>中的<code>Pipe</code>来编写管道</p>
+<p>2.将自定义管道的<code>ts</code>在模块中导出</p>
+<p>3.要使用管道的模块中引入管道模块</p>
+<p>4.html中使用的话采用以下方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; info | PipeName &#125;&#125;  // PipeName为你自定义的管道名称</span><br></pre></td></tr></table></figure>
+<h3 id="第八章：-HTTP"><a href="#第八章：-HTTP" class="headerlink" title="第八章： HTTP"></a>第八章： HTTP</h3><h4 id="8-1-配置HttpModule模块"><a href="#8-1-配置HttpModule模块" class="headerlink" title="8.1 配置HttpModule模块"></a>8.1 配置HttpModule模块</h4><p>我们的应用将会依赖于 Angular 的<code>http</code>服务，它本身又依赖于其它支持类服务。 来自<code>@angular/http</code>库中的<code>HttpModule</code>保存着这些 HTTP 相关服务提供商的全集。</p>
+<p>我们要能从本应用的任何地方访问这些服务，就要把<code>HttpModule</code>添加到<code>AppModule</code>的<code>imports</code>列表中。 这里同时也是我们引导应用及其根组件<code>AppComponent</code>的地方。</p>
+<p>1.在<code>app.moudule.ts</code>中引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">import</span> &#123; HttpModule &#125;    <span class="keyword">from</span> <span class="string">'@angular/http'</span>;	<span class="comment">// 1.</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    HttpModule,					<span class="comment">// 2.</span></span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    DashboardComponent,</span><br><span class="line">    HeroDetailComponent,</span><br><span class="line">    HeroesComponent,</span><br><span class="line">  ],</span><br><span class="line">  providers: [ HeroService ],</span><br><span class="line">  bootstrap: [ AppComponent ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-2-模拟web-API"><a href="#8-2-模拟web-API" class="headerlink" title="8.2 模拟web API"></a>8.2 模拟web API</h4><p>在拥有一个能处理Web请求的服务器之前，我们可以先用HTTP客户端通过一个模拟（Mock）服务（内存Web API）来获取和保存数据。</p>
+<p>在<code>app.module.ts</code>中修改</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; InMemoryWebApiModule &#125; <span class="keyword">from</span> <span class="string">'angular-in-memory-web-api'</span>;	<span class="comment">// 1. </span></span><br><span class="line"><span class="keyword">import</span> &#123; InMemoryDataService &#125;  <span class="keyword">from</span> <span class="string">'./in-memory-data.service'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125;         <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; DashboardComponent &#125;   <span class="keyword">from</span> <span class="string">'./dashboard.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroesComponent &#125;      <span class="keyword">from</span> <span class="string">'./heroes.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroDetailComponent &#125;  <span class="keyword">from</span> <span class="string">'./hero-detail.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125;          <span class="keyword">from</span> <span class="string">'./hero.service'</span>;</span><br><span class="line"> </span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    InMemoryWebApiModule.forRoot(InMemoryDataService),	<span class="comment">// 2.</span></span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>app</code>下创建一个<code>in-memory-data.service.ts</code>文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; InMemoryDbService &#125; <span class="keyword">from</span> <span class="string">'angular-in-memory-web-api'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">InMemoryDataService</span> <span class="title">implements</span> <span class="title">InMemoryDbService</span> </span>&#123;</span><br><span class="line">  createDb() &#123;</span><br><span class="line">    <span class="keyword">const</span> heroes = [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">0</span>,  <span class="attr">name</span>: <span class="string">'Zero'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">11</span>, <span class="attr">name</span>: <span class="string">'Mr. Nice'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">12</span>, <span class="attr">name</span>: <span class="string">'Narco'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">13</span>, <span class="attr">name</span>: <span class="string">'Bombasto'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">14</span>, <span class="attr">name</span>: <span class="string">'Celeritas'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">15</span>, <span class="attr">name</span>: <span class="string">'Magneta'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">16</span>, <span class="attr">name</span>: <span class="string">'RubberMan'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">17</span>, <span class="attr">name</span>: <span class="string">'Dynama'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">18</span>, <span class="attr">name</span>: <span class="string">'Dr IQ'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">19</span>, <span class="attr">name</span>: <span class="string">'Magma'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">20</span>, <span class="attr">name</span>: <span class="string">'Tornado'</span> &#125;</span><br><span class="line">    ];</span><br><span class="line">    <span class="keyword">return</span> &#123;heroes&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个文件已经替换了<code>mock-heroes.ts</code>，可以删除<code>mock-heroes.ts</code>了</p>
+<p>但有上面那些步骤还是不够的，此时你会发现<code>angular-in-memory-web-api</code>并不能用。</p>
+<p>解决步骤：</p>
+<p>1.查看工程根目录下的<code>package.json</code>，没有添加<code>angular-in-memory-web-api</code>，于是在”dependencies”下添加<code>&quot;angular-in-memory-web-api&quot;: &quot;^0.3.2&quot;</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">  "dependencies": &#123;</span><br><span class="line">    "@angular/animations": "^5.0.0",</span><br><span class="line">    "@angular/common": "^5.0.0",</span><br><span class="line">    "@angular/compiler": "^5.0.0",</span><br><span class="line">    "@angular/core": "^5.0.0",</span><br><span class="line">    "@angular/forms": "^5.0.0",</span><br><span class="line">    "@angular/http": "^5.0.0",</span><br><span class="line">    "@angular/platform-browser": "^5.0.0",</span><br><span class="line">    "@angular/platform-browser-dynamic": "^5.0.0",</span><br><span class="line">    "@angular/router": "^5.0.0",</span><br><span class="line">    "angular-in-memory-web-api": "^0.3.2",</span><br><span class="line">    "cnpm": "^5.1.1",</span><br><span class="line">    "core-js": "^2.4.1",</span><br><span class="line">    "echarts": "^3.8.5",</span><br><span class="line">    "ng2-echarts": "^0.0.3",</span><br><span class="line">    "ngx-echarts": "^2.0.1",</span><br><span class="line">    "rxjs": "^5.5.2",</span><br><span class="line">    "zone.js": "^0.8.14"</span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">	...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.然后在项目根目录下执行<code>cnpm install</code>安装<code>angular-in-memory-web-api</code>依赖。</p>
+<p>3.重新打开项目。或者执行<code>npm start</code>.</p>
+<h4 id="8-3-使用http-get"><a href="#8-3-使用http-get" class="headerlink" title="8.3 使用http.get()"></a>8.3 使用http.get()</h4><p>这里我用的还是第四章设定的<code>heroes.service.ts</code>服务</p>
+<p>将原本的从<code>mock-heroes.ts</code>获取<code>heroes</code>改为从我们的模拟web API中获取。</p>
+<p>heroes.service.ts</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Headers, Http &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;	<span class="comment">// 1. </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">'rxjs/add/operator/toPromise'</span>;			<span class="comment">// 2. </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Hero &#125; <span class="keyword">from</span> <span class="string">'./hero'</span>;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroService</span> </span>&#123;</span><br><span class="line">  private heroesUrl = <span class="string">'api/heroes'</span>;  <span class="comment">// 3. </span></span><br><span class="line">  <span class="keyword">constructor</span>(private http: Http) &#123; &#125;	<span class="comment">// 4.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取全部英雄</span></span><br><span class="line"> getHeroes(): <span class="built_in">Promise</span>&lt;Hero[]&gt; &#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.http.get(<span class="keyword">this</span>.heroesUrl)</span><br><span class="line">              .toPromise()</span><br><span class="line">              .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json().data <span class="keyword">as</span> Hero[])</span><br><span class="line">              .catch(<span class="keyword">this</span>.handleError);</span><br><span class="line"> &#125;</span><br><span class="line">  </span><br><span class="line"> private handleError(error: any): <span class="built_in">Promise</span>&lt;any&gt; &#123;</span><br><span class="line">   <span class="built_in">console</span>.error(<span class="string">'An error occurred'</span>, error); <span class="comment">// for demo purposes only</span></span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error.message || error);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刷新浏览器后，英雄数据就会从模拟服务器被成功读取。</p>
+<p>使用时，比如在<code>dashboard</code>中获取全部英雄</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'./hero.service'</span>;	<span class="comment">// 1.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DashboardComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(private heroService: HeroService) &#123; &#125;	<span class="comment">// 2.</span></span><br><span class="line">  </span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.heroService.getHeroes()			<span class="comment">// 3.</span></span><br><span class="line">      .then(<span class="function"><span class="params">heroes</span> =&gt;</span> <span class="keyword">this</span>.heroes = heroes);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-4-url拼接"><a href="#8-4-url拼接" class="headerlink" title="8.4 url拼接"></a>8.4 url拼接</h4><p>没用http请求之前，获取英雄详情，我们使用的是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getHero(id: number): <span class="built_in">Promise</span>&lt;Hero&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.getHeroes() </span><br><span class="line">            .then(<span class="function"><span class="params">heroes</span> =&gt;</span> heroes.find(<span class="function"><span class="params">hero</span> =&gt;</span> hero.id === id));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从模拟服务器获取指定英雄数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private heroesUrl = <span class="string">'api/heroes'</span>;  <span class="comment">// 1. URL to web api</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取指定的英雄</span></span><br><span class="line">getHero(id: number): <span class="built_in">Promise</span>&lt;Hero&gt;&#123;	<span class="comment">// 2.</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="keyword">this</span>.heroesUrl + <span class="string">'/'</span> + hero.id;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http.get(url)</span><br><span class="line">              .toPromise()</span><br><span class="line">              .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json().data <span class="keyword">as</span> Hero)</span><br><span class="line">              .catch(<span class="keyword">this</span>.handleError);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> private handleError(error: any): <span class="built_in">Promise</span>&lt;any&gt; &#123;	<span class="comment">// 3.请求错误</span></span><br><span class="line">   <span class="built_in">console</span>.error(<span class="string">'An error occurred'</span>, error); </span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error.message || error);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-5-http-put-改"><a href="#8-5-http-put-改" class="headerlink" title="8.5 http.put()改"></a>8.5 http.put()改</h4><p>点击英雄列表中的英雄，进入英雄详情页，然后点击保存对英雄信息进行更改:</p>
+<p>1.</p>
+<p><code>hero-detail.component.html</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button (click)=&quot;save()&quot;&gt;Save&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p><code>hero-detail.component.ts</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; HeroService &#125; <span class="keyword">from</span> <span class="string">'../hero.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroDetailComponent</span> <span class="title">implements</span> <span class="title">OnInit</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(</span><br><span class="line">        private heroService: HeroService,</span><br><span class="line">    ) &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    save(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.heroService.upData(<span class="keyword">this</span>.hero)</span><br><span class="line">          .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.goBack());</span><br><span class="line">      &#125;</span><br><span class="line">    goBack(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.location.back();</span><br><span class="line">      &#125;</span><br><span class="line">    providers: [HeroService]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.在英雄服务中设置：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 跟新英雄信息</span></span><br><span class="line">upData(hero: Hero): <span class="built_in">Promise</span>&lt;Hero&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="keyword">this</span>.heroesUrl + <span class="string">'/'</span> + hero.id;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http</span><br><span class="line">              .put(url, <span class="built_in">JSON</span>.stringify(hero), &#123;headers: <span class="keyword">this</span>.headers&#125;)</span><br><span class="line">              .toPromise()</span><br><span class="line">              .then(<span class="function"><span class="params">()</span> =&gt;</span> hero)</span><br><span class="line">              .catch(<span class="keyword">this</span>.handleError);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-6-http-post-增"><a href="#8-6-http-post-增" class="headerlink" title="8.6 http.post()增"></a>8.6 http.post()增</h4><p><code>heroes.component.html</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Hero name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span> #<span class="attr">heroName</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"add(heroName.value); heroName.value=''"</span>&gt;</span></span><br><span class="line">    Add</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>heroes.component.ts (add)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add(name: string): <span class="keyword">void</span> &#123;</span><br><span class="line">  name = name.trim();</span><br><span class="line">  <span class="keyword">if</span> (!name) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">this</span>.heroService.create(name)</span><br><span class="line">    .then(<span class="function"><span class="params">hero</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.heroes.push(hero);</span><br><span class="line">      <span class="keyword">this</span>.selectedHero = <span class="literal">null</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>hero.service.ts (create)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create(name: string): <span class="built_in">Promise</span>&lt;Hero&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http</span><br><span class="line">    .post(<span class="keyword">this</span>.heroesUrl, <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">name</span>: name&#125;), &#123;<span class="attr">headers</span>: <span class="keyword">this</span>.headers&#125;)</span><br><span class="line">    .toPromise()</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> res.json().data <span class="keyword">as</span> Hero)</span><br><span class="line">    .catch(<span class="keyword">this</span>.handleError);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-7-http-delete-删"><a href="#8-7-http-delete-删" class="headerlink" title="8.7 http.delete()删"></a>8.7 http.delete()删</h4><p><code>heroes.component.html (li-element)</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let hero of heroes"</span> (<span class="attr">click</span>)=<span class="string">"onSelect(hero)"</span></span></span><br><span class="line"><span class="tag">    [<span class="attr">class.selected</span>]=<span class="string">"hero === selectedHero"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>&#123;&#123;hero.id&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;hero.name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"delete"</span></span></span><br><span class="line"><span class="tag">    (<span class="attr">click</span>)=<span class="string">"delete(hero); $event.stopPropagation()"</span>&gt;</span>x<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>heroes.component.ts (delete)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>(hero: Hero): <span class="keyword">void</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.heroService</span><br><span class="line">      .delete(hero.id)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.heroes = <span class="keyword">this</span>.heroes.filter(<span class="function"><span class="params">h</span> =&gt;</span> h !== hero);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.selectedHero === hero) &#123; <span class="keyword">this</span>.selectedHero = <span class="literal">null</span>; &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>hero.service.ts (delete)</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>(id: number): <span class="built_in">Promise</span>&lt;<span class="keyword">void</span>&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="keyword">this</span>.heroesUrl + <span class="string">'/'</span> + id;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.http.delete(url, &#123;<span class="attr">headers</span>: <span class="keyword">this</span>.headers&#125;)</span><br><span class="line">    .toPromise()</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="literal">null</span>)</span><br><span class="line">    .catch(<span class="keyword">this</span>.handleError);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2017/12/21/webNotes/advanced/Angular/basicAngular/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2017/12/21/webNotes/advanced/Angular/basicAngular/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2017/12/21/webNotes/advanced/Angular/basicAngular/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2017/12/21/webNotes/advanced/Angular/basicAngular/', json.ip);
+    leanCloud.fetchCommentCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/');
+    leanCloud.fetchVisitCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/');
+    leanCloud.fetchThumbUpCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/');
+    leanCloud.getCommentCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2017/12/21/webNotes/advanced/Angular/basicAngular/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

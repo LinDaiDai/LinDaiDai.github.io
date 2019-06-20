@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>前端上传文件及进行文件类型大小限制 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/" data-name="前端上传文件及进行文件类型大小限制" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端进阶.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/">
+                前端上传文件及进行文件类型大小限制
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2018年06月06日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p><strong>前言</strong><br>产品又提需求了~<br>前段时间在公司的项目中接到这样一个需求：<br>用户需要上传多个特定格式(只能是图片/excal/word/txt)的文件存储至i服务器中，并可以进行查看。<br>当然，在这个需求中，我们前端要做的只是给用户一个选择文件的按钮，让用户能够选择本地文件，且筛选出特定格式的文件，并对用户选择的文件进行格式、大小的限制，然后将这些文件通过Ajax发送给后台就可以了。</p>
+<p>一步一步来…</p>
+<h3 id="一-选择文件的HTML代码"><a href="#一-选择文件的HTML代码" class="headerlink" title="一.选择文件的HTML代码"></a>一.选择文件的HTML代码</h3><p>博主项目使用的前端框架是angular4,所以其中可能使用了一些angular4的语法，不过前端框架之间都是异曲同工，相信一些简单的指令大家也能够猜到是什么意思。</p>
+<p>首先给大家演示一下我所要做的功能<br>如下图所示，我在页面中设置了一个选择文件的 + 号按钮，用户点击 + 号可以按住Ctrl键进行多选文件，选择完毕之后，可以根据选择的文件类型的不同展示给用户不同的文件logo。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7190596-d1a873540448d918.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这边先直接贴上所有HTML的代码，再来进行详细<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ui-g-3"</span> <span class="attr">style</span>=<span class="string">"width: 100%;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selectPic"</span>&gt;</span></span><br><span class="line">        选择文件</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"addPic"</span> (<span class="attr">click</span>)=<span class="string">"F_Open_dialog()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"plusSign"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"fileToUpload2"</span> <span class="attr">id</span>=<span class="string">"fileToUpload2"</span> (<span class="attr">change</span>)=<span class="string">"onSelectByButton()"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">multiple</span>=<span class="string">"multiple"</span> <span class="attr">style</span>=<span class="string">"display:none"</span>  <span class="attr">accept</span>=<span class="string">"image/*,text/plain ,</span></span></span><br><span class="line"><span class="tag"><span class="string">    application/vnd.ms-excel ,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, </span></span></span><br><span class="line"><span class="tag"><span class="string">    application/msword, application/msexcel,</span></span></span><br><span class="line"><span class="tag"><span class="string">    application/vnd.openxmlformats-officedocument.wordprocessingml.document,</span></span></span><br><span class="line"><span class="tag"><span class="string">    application/vnd.openxmlformats-officedocument.wordprocessingml.template"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">style</span>=<span class="string">"float:left;"</span> <span class="attr">id</span>=<span class="string">"deal"</span> <span class="attr">class</span>=<span class="string">"picList"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"fl text_center margin_left_5"</span> *<span class="attr">ngFor</span>=<span class="string">"let data of fileUploaded; let idx=index"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--上传的文件不同的类型显示不同的logo--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">"70"</span> <span class="attr">height</span>=<span class="string">"70"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;data.fileUrl&#125;&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--右上角的删除图片--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-fw fa-close"</span> (<span class="attr">click</span>)=<span class="string">"deletePicture(idx)"</span> <span class="attr">style</span>=<span class="string">"float: right;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--文件名--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"display: block"</span> [<span class="attr">title</span>]=<span class="string">"data.fileName"</span> <span class="attr">class</span>=<span class="string">"fileName"</span>&gt;</span>&#123;&#123;data.fileName&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--上传文件时的loading--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"fl"</span> *<span class="attr">ngFor</span>=<span class="string">"let dataLoading of loadingObj"</span> <span class="attr">style</span>=<span class="string">"float:left;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">"70"</span> <span class="attr">height</span>=<span class="string">"70"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;dataLoading.url&#125;&#125;"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="1-1选择文件"><a href="#1-1选择文件" class="headerlink" title="1.1选择文件"></a>1.1选择文件</h4><p>上面的HTML代码只是繁多，其实并不复杂。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"addPic"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">style</span>=<span class="string">"display: none"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这俩个标签构成了选择文件的加号<br>这里我习惯在页面中写一个display为none的input标签，然后用其他标签来控制其样式，如在这里我就用了另一个class为addPic的div来显示选择文件的按钮效果。<br>样式这里就不贴了很简单。<br><img src="https://upload-images.jianshu.io/upload_images/7190596-cec66330b6c792e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>当用户点击 + 号 会触发<code>F_Open_dialog()</code>这个方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F_Open_dialog() &#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"fileToUpload2"</span>).click();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它其实也就是触发了input的选择文件的事件</p>
+<p>此时页面中就会出现本地文件夹供用户选择文件。</p>
+<h4 id="2-input详解"><a href="#2-input详解" class="headerlink" title="2.input详解"></a>2.input详解</h4><p>在上面的HTML代码中，最繁琐的就是input标签了，下面对其中的各种属性做一个说明：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type=<span class="string">"file"</span> --》类型为文件的input标签</span><br><span class="line">multiple=<span class="string">"multiple"</span> --》 支持多选文件</span><br><span class="line">(change)=<span class="string">"onSelectByButton()"</span>  --》选择了文件触发onSelectByButton()方法</span><br><span class="line">accept=<span class="string">"image/*,text/plain, ......."</span>   --》用户能够看到的文件类型，定义了accept后，选择文件的类型会变为自定义文件，</span><br><span class="line">也就是只让用户能够看到你给其限制的类型的文件，但若是用户选择了全部文件，还是可以选择到其他类型的文件，</span><br><span class="line">所以我们在后面提交文件信息的时候在js中还要做一层判断</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7190596-3ffc8e8c188fe27e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>更多的accpet的内容信息可以自行度娘…</p>
+<h4 id="3-上传完文件之后的文件显示"><a href="#3-上传完文件之后的文件显示" class="headerlink" title="3.上传完文件之后的文件显示"></a>3.上传完文件之后的文件显示</h4><p>可以看到在HTML代码中是定义了ul标签和li标签来盛放上传成功之后的文件的。<br>简单说一下angular4语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*ngFor=<span class="string">"let data of fileUploaded; let idx=index"</span>   </span><br><span class="line"><span class="comment">//类似vue中的v-for</span></span><br><span class="line"><span class="comment">//fileUploaded 数组，所有已经上传的文件的集合，在js中定义</span></span><br><span class="line"><span class="comment">//data 每一个文件</span></span><br><span class="line"><span class="comment">//let idx = index 定义变量idx 为 index下标，其实也就是为了简写index单词而已</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看到我定义了俩种不同的li标签，一种是盛放上传成功的文件，一种盛放正在加载的图片</p>
+<p>###二.上传文件的js代码</p>
+<p>在上面的讲解中，我们在用户选择了文件之后会触发一个<code>onSelectByButton()</code>方法，该方法就是进行文件上传功能。<br>首先定义几个变量<br>…这里使用了TypeScript的写法，不过大家应该也能看懂<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fileObj: any = [];<span class="comment">//盛放所有要上传的文件</span></span><br><span class="line">fileUploaded: any = [];<span class="comment">//盛放已经上传成功的文件</span></span><br><span class="line">loadingObj: any = [];<span class="comment">//上传图片时的loading数组</span></span><br><span class="line">loadingImage = &#123; <span class="string">"url"</span>: <span class="string">"./assets/images/loading.gif"</span> &#125;;<span class="comment">//上传图片时的loading</span></span><br></pre></td></tr></table></figure></p>
+<p>然后就是设计上传的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">onSelectByButton() &#123;<span class="comment">//选择文件</span></span><br><span class="line">   <span class="keyword">let</span> fileObjSelect = <span class="built_in">document</span>.getElementById(<span class="string">"fileToUpload2"</span>)[<span class="string">"files"</span>];</span><br><span class="line">   <span class="keyword">let</span> reg = <span class="regexp">/\/(?:jpeg|png|jpg)|\-officedocument\.*|text\/\.*|vnd\.ms\-excel/i</span>;<span class="comment">//判断文件类型是不是图片/txt/Word文档格式/Excel格式</span></span><br><span class="line">   <span class="keyword">let</span> postfixReg = <span class="regexp">/.+\./</span>;<span class="comment">//获取文件名后缀的正则表达式</span></span><br><span class="line">   <span class="keyword">let</span> formdata = <span class="keyword">new</span> FormData();</span><br><span class="line"> </span><br><span class="line">   <span class="comment">/*限制用户选择的文件类型和大小*/</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fileObjSelect.length; i++) &#123;<span class="comment">//遍历所有选择的文件</span></span><br><span class="line">     <span class="keyword">let</span> file = fileObjSelect[i];</span><br><span class="line">     <span class="keyword">if</span> (reg.test(file.type)) &#123;<span class="comment">//判断文件类型</span></span><br><span class="line">       <span class="keyword">if</span> (file.size &gt; <span class="number">0</span> &amp;&amp; file.size &lt;= <span class="number">10485760</span>) &#123;<span class="comment">//判断文件大小</span></span><br><span class="line">         <span class="keyword">this</span>.fileObj.push(file);<span class="comment">//将要上传的文件推进数组中</span></span><br><span class="line">         <span class="keyword">this</span>.loadingObj.push(<span class="keyword">this</span>.loadingImage);<span class="comment">//推进一个加载loading的图片</span></span><br><span class="line">         formdata.append(<span class="string">"file"</span>, file);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         <span class="keyword">this</span>.growl(<span class="string">'error'</span>, <span class="string">'错误信息'</span>, <span class="string">'上传的文件不能小于0kb且不能大于10mb！'</span>);<span class="comment">//growl是自己封装的一个错误提示的方法</span></span><br><span class="line">       &#125;</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.growl(<span class="string">'error'</span>, <span class="string">'错误信息'</span>, <span class="string">'请选择excel、 word、 txt、 jpg、 png格式的文件！'</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/*这里是我自己封装的一个post请求的方法，第一个参数为所有要上传的文件，第二个为接口地址(后台会给你)*/</span></span><br><span class="line">   <span class="keyword">this</span>.httpService.httpPostAFile(formdata, <span class="string">"/file/setAttachment"</span>).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">     <span class="comment">// data就是你发送post请求之后后台返回给你的数据，其中可能包含所有你上传的文件的信息</span></span><br><span class="line">     <span class="keyword">if</span> (data != <span class="literal">null</span> &amp;&amp; data[<span class="string">"success"</span>] &amp;&amp; data[<span class="string">'data'</span>]) &#123;</span><br><span class="line">       data.data.forEach(<span class="function"><span class="params">dataFile</span> =&gt;</span> &#123;<span class="comment">//遍历文件数组</span></span><br><span class="line">         <span class="keyword">let</span> postfix = dataFile[<span class="string">'fileName'</span>].replace(postfixReg, <span class="string">""</span>);<span class="comment">//获取到每一个文件的后缀</span></span><br><span class="line">         <span class="keyword">if</span> (postfix === <span class="string">'jpeg'</span> || postfix === <span class="string">'png'</span> || postfix === <span class="string">'jpg'</span>) &#123;</span><br><span class="line">                 <span class="comment">//这里拿到的是图片文件，你可以在这里做一些事情</span></span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="comment">//这里拿到的是所有非图片的文件</span></span><br><span class="line">          <span class="comment">//我在这里定义了一个方法，用于对不同类型的文件显示给用户不同的logo</span></span><br><span class="line">           dataFile[<span class="string">'fileUrl'</span>] = <span class="keyword">this</span>.setFileUrl(postfix); <span class="comment">//dataFile是每一个文件，我定义一个属性fileUrl用于显示文件logo</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">this</span>.fileUploaded.push(dataFile);<span class="comment">//将上传成功的文件推进数组</span></span><br><span class="line">       &#125;);</span><br><span class="line">      <span class="keyword">this</span>.loadingObj = [];<span class="comment">//清空加载loading</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>贴一下上面用到的<code>setFileUrl()</code>方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">setFileUrl(postfix) &#123;<span class="comment">//设置文件在列表中的显示</span></span><br><span class="line">  <span class="keyword">if</span> (postfix === <span class="string">'docx'</span> || postfix === <span class="string">'docm'</span> || postfix === <span class="string">'dotx'</span> || postfix === <span class="string">'dotm'</span>) &#123;<span class="comment">//Word文档</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"./assets/images/member/doc.png"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (postfix === <span class="string">'xls'</span> || postfix === <span class="string">'xlsx'</span></span><br><span class="line">    || postfix === <span class="string">'xlsm'</span> || postfix === <span class="string">'xltx'</span> || postfix === <span class="string">'xltm'</span></span><br><span class="line">    || postfix === <span class="string">'xlsb'</span> || postfix === <span class="string">'xlam'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"./assets/images/member/excel.png"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (postfix === <span class="string">'txt'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"./assets/images/member/txt.png"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7190596-df3dbbfb08b96727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="doc.png"><br><img src="https://upload-images.jianshu.io/upload_images/7190596-d2ed7b46ee25ceea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="excel.png"><br><img src="https://upload-images.jianshu.io/upload_images/7190596-49a1718144606341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="txt.png"></p>
+<p>高清无码自己拿…<br>更多的矢量图可以到阿里巴巴矢量图标库中拿<br>前端应该都知道的iconfont</p>
+<h3 id="三-删除文件"><a href="#三-删除文件" class="headerlink" title="三.删除文件"></a>三.删除文件</h3><p>在用户上传完了文件之后，可以点击右上角的删除图标删除要上传的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deletePicture(idx) &#123;<span class="comment">//删除文件</span></span><br><span class="line">  <span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'deal'</span>);</span><br><span class="line">  <span class="keyword">var</span> aSpan = oBox.getElementsByTagName(<span class="string">"span"</span>);</span><br><span class="line">  oBox.removeChild(aSpan[idx].parentNode);</span><br><span class="line">  <span class="keyword">this</span>.fileUploaded.splice(idx, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">this</span>.fileObj.splice(idx, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不管是在vue还是在angular中，在对数组或者对象进行操作时，都尽量使用数组/对象自带的一些方法，如数组中的<code>splice slice sort push pop</code>等，而不要采用以下的方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">'newOne'</span>;</span><br><span class="line">arr.length = <span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>采用上面的方式会使得视图层不能够及时的更新<br>之前在倔金上看到一篇有关不能更新数组视图的详解，还写了一些vue的小技巧，有需要的小伙可以移步：<br><a href="https://juejin.im/post/5b1230c1f265da6e603933ad" target="_blank" rel="noopener">你或许不知道Vue的这些小技巧</a></p>
+<h3 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h3><p>2018年6月6日  深圳 台风<br>划水一天</p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', json.ip);
+    leanCloud.fetchCommentCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/');
+    leanCloud.fetchVisitCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/');
+    leanCloud.fetchThumbUpCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/');
+    leanCloud.getCommentCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2018/06/06/webNotes/advanced/JavaScript/uploadFiles/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

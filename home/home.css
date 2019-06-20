@@ -1,0 +1,144 @@
+.page{
+    max-width: 1200px;
+}
+.font-palation{
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
+}
+.home-content{
+    display: flex;
+    justify-content: space-around;
+}
+.home-main{
+    margin-right: 10px;
+}
+.home-main .main-tlt{
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
+}
+h2.main-tlt{
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+h3.main-tlt{
+    font-size: 2em;
+    margin: 10px 0 20px 0;
+}
+.home-main #home-main-image{
+    width: 650px;
+    margin: 0;
+    max-height: none;
+}
+.home-sidebar{
+    width: 280px;
+    margin-top: 20px;
+}
+.sidebar-ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-ul .sidebar-li{
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 3px 3px 12px 3px #eee;
+    margin-bottom: 60px;
+    padding: 40px 40px 30px;
+    width: 280px;
+}
+.sidebar-wrap{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-wrap .li-tlt{
+    position: absolute;
+    top: -60px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    line-height: 40px;
+    box-shadow: 3px 3px 12px 3px #eee;
+    left: 0px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.sidebar-wrap .li-image{
+    text-align: center;
+    height: 200px;
+}
+.sidebar-wrap .li-image img{
+    width: 180px;
+    height: 180px;
+    padding: 0;
+}
+.sidebar-list{
+    list-style: none;
+    padding-left: 6px;
+}
+.sidebar-list .list-item .link-tlt{
+    font-weight: 600;
+    color: #000;
+}
+#home-container .list-item .about-me{
+    color: #000;
+    font-size: 20px;
+}
+#home-container .sidebar-list .list-item .link-content{
+    font-weight: 400;
+    color: #000;
+    padding: 2px;
+}
+#home-container .sidebar-list .list-item .link-content:hover{
+    color:#5299e0;
+    background: #eee;
+    border-radius: 2px;
+}
+#home-container .link-tlt:hover{
+    color:#5299e0;
+}
+@media screen and (max-width: 1024px) {
+    .home-content{
+        flex-direction: column;
+    }
+    .home-main{
+        text-align: center;
+    }
+    .home-sidebar{
+        margin: 20px auto;
+    }
+}
+/* }
+.li-image{
+    position: relative;
+}
+.me1, .me2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.me1{
+    animation: fadeInUp 4s linear alternate;
+}
+.me2{
+    animation: fadeInDown 4s linear alternate;
+}
+@keyframes fadeInUp {
+    from {
+      opacity: 1;
+    }  
+    to {
+      opacity: 0：
+    }
+}
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+    }  
+    to {
+      opacity: 1：
+    }
+} */
+

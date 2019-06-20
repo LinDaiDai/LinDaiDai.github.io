@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>DOM基础 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/" data-name="DOM基础" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/">
+                DOM基础
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">第一章:DOM概述1.1DOM以及节点概念​    
+文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。
+​    DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。
+​    
+​   ...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h2 id="第一章-DOM概述"><a href="#第一章-DOM概述" class="headerlink" title="第一章:DOM概述"></a>第一章:DOM概述</h2><h3 id="1-1DOM以及节点概念"><a href="#1-1DOM以及节点概念" class="headerlink" title="1.1DOM以及节点概念"></a>1.1DOM以及节点概念</h3><p>​    </p>
+<p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。</p>
+<p>​    DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
+<p>​    <img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/JavaScript-event-img1.png" alt="img1"></p>
+<p>​    <strong>HTML</strong>文档可以说由节点构成的集合，DOM节点有:</p>
+<ol>
+<li><p>元素节点：<strong>上图中<html>、<body>、<p>等都是元素节点，即标签。</p></body></html></strong></p>
+<p>​</p>
+</li>
+<li><p>文本节点:<strong>向用户展示的内容，如<li>…</li>中的JavaScript、DOM、CSS等文本,即标签内部的纯文本.</strong></p>
+<p>​</p>
+</li>
+<li><p>属性节点:元素属性，如<a>标签的链接属性href=”<a href="http://www.imooc.com&quot;,即标签的属性" target="_blank" rel="noopener">http://www.imooc.com&quot;,即标签的属性</a>.</a></p>
+</li>
+</ol>
+<p> document节点是每个文档的根节点</p>
+<p>document节点下面只有一个 html节点，我们称之为<strong>文档元素</strong>。</p>
+<p>(documentElement)文档元素是文档的最外层元素，其他元素都包含在文档元素中。</p>
+<p>一个文档只能有一个文档元素，在html中文档元素永远是 <code>&lt;html&gt;</code>元素。</p>
+<p>在DOM树中，html文档中每一处标记都可以用树中的一个节点来表示。</p>
+<p>html(元素)标签，通过元素节点表示属性，通过属性节点来表示文档类型，通过文档类型节点来表示注释，通过注释类型来表示</p>
+<h3 id="1-2节点的属性-特性"><a href="#1-2节点的属性-特性" class="headerlink" title="1.2节点的属性(特性)"></a>1.2节点的属性(特性)</h3><p>每一个节点都有三个特点: </p>
+<p>​    1.nodeName      节点名称(只读)    </p>
+<p>​    2.nodeValue     节点值(设置或返回节点的值)     </p>
+<p>​    3.nodeType      节点类型</p>
+<p>1.<strong>nodeName</strong>：节点名称(nodeName 始终包含 HTML 元素的大写字母标签名) nodeName 是只读的</p>
+<p>2.元素节点的 nodeName 与标签名相同</p>
+<p>3.属性节点的 nodeName 与属性名相同（元素.getAttributeNode(“属性名”)获取属性节点）4.文本节点的 nodeName 始终是 #text（通过元素的子节点获取）</p>
+<p>5.注释节点的nodeName是#comment（通过元素的子节点获取）</p>
+<p>6.文档节点的 nodeName 始终是 #document</p>
+<p>7.<strong>nodeValue</strong>：节点值 （设置或返回节点的值）</p>
+<p>8.元素节点的 nodeValue 是 undefined 或 null</p>
+<p>9.属性节点的 nodeValue 是属性值</p>
+<p>10.文本节点的 nodeValue 是文本本身</p>
+<p>11.注释节点的nodeValue是注释里面的内容</p>
+<p>12.文档节点的nodeValue 是null</p>
+<p>13.<strong>nodeType</strong>：节点类型</p>
+<p>14.元素 element 1</p>
+<p>15.属性 attr 2</p>
+<p>16.文本 text 3</p>
+<p>17.注释 comments 8</p>
+<p>18.文档 document 9</p>
+<p><em>例:</em>    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id = &quot;p&quot; class = &quot;abc&quot;&gt;您好&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var p = document.getElementById(&apos;p&apos;);</span><br><span class="line">    p.nodeName      P</span><br><span class="line">    p.nodeValue     null</span><br><span class="line">    p.nodeType     1     元素节点</span><br><span class="line">    var text = p.firstChild;</span><br><span class="line">    text.nodeName     #text</span><br><span class="line">    text.nodeValue     您好</span><br><span class="line">    text.nodeType     3     文本节点</span><br><span class="line">    var attrNode = p.getAttributeNode(&quot;id&quot;);</span><br><span class="line">    attrNode.nodeName     id</span><br><span class="line">    attrNode.nodeValue     p</span><br><span class="line">    attrNode.nodeType     2     属性节点</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"> &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="第二章-document对象"><a href="#第二章-document对象" class="headerlink" title="第二章:document对象"></a>第二章:document对象</h2><h3 id="2-1获取节点"><a href="#2-1获取节点" class="headerlink" title="2.1获取节点"></a>2.1获取节点</h3><h4 id="1-getElementById-‘id名’"><a href="#1-getElementById-‘id名’" class="headerlink" title="1.getElementById(‘id名’)"></a>1.getElementById(‘id名’)</h4><p>​    根据元素的id名来获取节点</p>
+<p>​    <strong>IE5以下不兼容</strong></p>
+<div id="box"><br><br> <span>我是span</span><br><br> </div>
+
+<script>  
+
+<p>var box = document.getElementById(‘box’);</p>
+<p>  alert(typeof(box));  </p>
+<p>正常浏览器显示:   [object HTMLDivElement]; </p>
+<p> IE6                      [object]</p>
+<h4 id="2-getElementsByTagName-‘标签名’"><a href="#2-getElementsByTagName-‘标签名’" class="headerlink" title="2.getElementsByTagName(‘标签名’)"></a>2.getElementsByTagName(‘标签名’)</h4><p>​    根据元素的标签名来获取节点.一个文档中可能会存在很多相同的标签名,因此用此方法获取到的是多个element组成的集合</p>
+<h4 id="3-getElementsByName-‘name’"><a href="#3-getElementsByName-‘name’" class="headerlink" title="3.getElementsByName(‘name’)"></a>3.getElementsByName(‘name’)</h4><p>​    根据标签的name属性来获取节点,返回的也是多个element组成的集合;</p>
+<p>​    <strong>注:</strong>不是所有标签都有name属性,只有 <strong>表达标签</strong> 才有name属性(切某些低版浏览器不支持)</p>
+<h4 id="4-querySelector-‘css选择器’"><a href="#4-querySelector-‘css选择器’" class="headerlink" title="4.querySelector(‘css选择器’)"></a>4.querySelector(‘css选择器’)</h4><p>​    参数:指定一个或多个匹配元素的css选择器.可以用id, 类, 类型,属性,属性值等来选取元素.</p>
+<p>对于多个选择器,使用逗号隔开,返回一个匹配的元素,</p>
+<p>返回值:匹配指定css选择器的第一个元素, 若没找到,返回null.</p>
+<p>document.querySelector   获取第一个      </p>
+<p> var p = document.querySelector(“#box &gt; p”); //box 这个 id 下的 p标签       </p>
+<p>console.log(p);</p>
+<p>=&gt;<p>abc</p>  </p>
+<h4 id="5-querySelectorAll-‘css选择器’"><a href="#5-querySelectorAll-‘css选择器’" class="headerlink" title="5.querySelectorAll(‘css选择器’)"></a>5.querySelectorAll(‘css选择器’)</h4><p>​    获取满足选择器里的所有标签</p>
+<h4 id="6-documentElement-元素"><a href="#6-documentElement-元素" class="headerlink" title="6.documentElement(元素)"></a>6.documentElement(元素)</h4><blockquote>
+<p>documentElement 属性以一个元素对象返回一个文档的文档元素。HTML 文档返回对象为 <strong>HTML元素</strong>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        alert(document.documentElement.nodeName);    // html</span><br><span class="line">        alert(document.documentElement.nodeValue);    // null</span><br><span class="line">        alert(document.documentElement.nodeType);    // 1</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Node关系-获取操作"><a href="#2-2-Node关系-获取操作" class="headerlink" title="2.2 Node关系 获取操作"></a>2.2 Node关系 获取操作</h3><h4 id="1-节点与节点之间的关系"><a href="#1-节点与节点之间的关系" class="headerlink" title="1.节点与节点之间的关系"></a>1.节点与节点之间的关系</h4><p>父（parent）节点 父节点拥有任意数量的子节点</p>
+<p>子（child）节点 子节点拥有一个父节点</p>
+<p>兄弟（sibling）节点 同级的子节点被称为同胞（兄弟或姐妹）。</p>
+<p>同胞是拥有相同父节点的节点根 (root) 节点 </p>
+<p>一个文档只能有一个根节点。</p>
+<p>对html文档来说，根节点就是documentElement。</p>
+<p>根节点不可能有父节点</p>
+<p><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/JavaScript-event-img2.png" alt="img2"></p>
+<h4 id="2-获取操作"><a href="#2-获取操作" class="headerlink" title="2.获取操作"></a>2.获取操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var div = document.querySelector(&quot;div&quot;);</span><br><span class="line">var allNodes = div.childNodes;          //childNodes会把所有类型节点都获取到,包裹元素节点,文本节点(空格换行符等),属性节点;</span><br><span class="line"></span><br><span class="line">但主要是为了获取元素节点(nodeType为1)</span><br><span class="line">方法1:</span><br><span class="line">for( var c in allNode)&#123;</span><br><span class="line">if( c.nodeType ==1)&#123;</span><br><span class="line">document.write(c)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">方法2:</span><br><span class="line">var allNodes = div.children;          //div的所有子节点(只有元素节点,不包裹文本等其他节点)</span><br><span class="line">var count = div.childElementCount;     //div的所有子节点的个数 ,也可以之间用 allNodes.length;</span><br><span class="line">var firstChild = div.firstElementChild;     //div的第一个元素节点</span><br><span class="line">var lastChild = div.lastElementChild;          //div的最后一个元素节点</span><br><span class="line">var secondChild = div.firstElementChild.nextElementSibling;     //div的第二个元素节点</span><br><span class="line">var lastSecondChild = div.lastElementChild.previousElementSibling;     //div的倒数第二个元素节点</span><br><span class="line">div == div.firstElementChild.parentNode;                              //div的第一个元素节点的父节点就是div本身</span><br><span class="line">注:若把 children 换为childNodes 以及把后面全部的Element去掉,则会选取所有类型的节点</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建修改操作"><a href="#3-创建修改操作" class="headerlink" title="3.创建修改操作"></a>3.创建修改操作</h4><h5 id="3-1-createTextNode"><a href="#3-1-createTextNode" class="headerlink" title="3.1 createTextNode( )"></a>3.1 createTextNode( )</h5><p>​        创建文本节点</p>
+<p>​    <code>var text = document.createTextNode(&quot;这个是文本节点&quot;);</code></p>
+<h5 id="3-2-createElement"><a href="#3-2-createElement" class="headerlink" title="3.2 createElement( )"></a>3.2 createElement( )</h5><p>​        创建元素节点    </p>
+<p>​        可以是 div  p   span  ul  li 等</p>
+<p>​    <code>var ele = document.createElement(&quot;div&quot;);</code></p>
+<h5 id="3-3-appendChild"><a href="#3-3-appendChild" class="headerlink" title="3.3 appendChild( )"></a>3.3 appendChild( )</h5><p>​    给一个元素追加child节点</p>
+<p>​    <code>document.body.appendChild(ele); //添加到body的最后一个子节点之后;</code></p>
+<h5 id="3-4-insertBefore"><a href="#3-4-insertBefore" class="headerlink" title="3.4 insertBefore( )"></a>3.4 insertBefore( )</h5><p>​    fatherNode.insertBefore(newNode, existingNode);</p>
+<p>​    参数:    1.要插入的节点    2.目标节点</p>
+<p>​    在一个节点前插入一个节点</p>
+<p>将一个新创建的元素插入到某个元素之前</p>
+<pre><code>如:在ul中,有3个li ,要将新创建的一个li 插入到第一位,
+     ul.insertBefore(li,ul.firstElementChild);
+   将li 插入到最后一位:
+     1.ul.appendChild(li);
+     2.ul.insertBefore(li,null/undefined);            
+</code></pre><h5 id="3-5-removeChild"><a href="#3-5-removeChild" class="headerlink" title="3.5 removeChild( )"></a>3.5 removeChild( )</h5><p>​    移除子节点</p>
+<p>​    fatherNode.removeChild(node)</p>
+<h5 id="3-6-replaceChild"><a href="#3-6-replaceChild" class="headerlink" title="3.6 replaceChild( )"></a>3.6 replaceChild( )</h5><p>​    fatherNode.replaceChild(newNode,existingNode)</p>
+<p>​    替换子节点</p>
+<h5 id="3-7-cloneNode"><a href="#3-7-cloneNode" class="headerlink" title="3.7 cloneNode( )"></a>3.7 cloneNode( )</h5><p>​    node.cloneNode(deep)</p>
+<p>​    克隆节点</p>
+<p>​    参数 deep 可以指定节点的精确克隆</p>
+<p>​        1.若不写参数,只拷贝当前的这个元素节点,不包过它的子节点</p>
+<p>​        2.参数为 <strong>true</strong> ,<strong>它还将递归复制当前节点的所有子孙节点</strong>.    </p>
+<h4 id="4-元素属性操作"><a href="#4-元素属性操作" class="headerlink" title="4.元素属性操作"></a>4.元素属性操作</h4><pre><code>##### 4.1 getAttribute( ):获取属性值
+
+
+
+&lt;ul id = &quot;abc&quot; class = &quot;one&quot;&gt;
+如 获取 ul 的 id 
+     console.log(ul.getAttribute(&quot;id&quot;));
+ =&gt; abc
+##### 4.2 setAttribute( ):
+</code></pre><p>添加或设置属性值</p>
+<pre><code>      1.如将 ul 的 id 名更换  
+          div.setAttribute(&quot;id&quot; , &quot;box&quot;)
+          ul 的 id 变为 box 
+      2.将 ul 的class 再添加俩个类名
+           div.setAttribute(&quot;class&quot; , div.getAttribute(&quot;class&quot;) + &quot; two&quot;);
+##### 4.3 removeAttribute( )
+</code></pre><p>​    <em>element</em>.removeAttribute(<em>attributename</em>)</p>
+<p>​    参数：必需。规定要删除的属性的名称</p>
+<p>​    <em>例:</em> 一个可以转换形态的按钮</p>
+<pre><code>&lt;body&gt;  
+&lt;input id=&quot;input1&quot; type=&quot;button&quot; value=&quot;点我可以转换我的状态&quot; onclick=&quot;myFunction();&quot;&gt;
+&lt;script&gt;
+    function myFunction() {            
+        var input1 = document.getElementById(&quot;input1&quot;);
+        var typeValue = input1.getAttribute(&quot;type&quot;);
+        if(typeValue){
+            input1.removeAttribute(&quot;type&quot;);    //如果type属性有值就把这个属性去掉
+        }else {
+            input1.setAttribute(&quot;type&quot;, &quot;button&quot;);    //如果type属性不存就添加属性。
+        }
+    };
+&lt;/script&gt;   
+&lt;/body&gt;
+</code></pre><h5 id="4-4-hasAttribute"><a href="#4-4-hasAttribute" class="headerlink" title="4.4 hasAttribute( )"></a>4.4 hasAttribute( )</h5><p>​    element.hasAttribute(attributename)</p>
+<p>​    参数：必须。判断指定的属性名是否存在。</p>
+<h4 id="5-元素节点的常用属性"><a href="#5-元素节点的常用属性" class="headerlink" title="5.元素节点的常用属性"></a>5.元素节点的常用属性</h4><h5 id="5-1-基本属性"><a href="#5-1-基本属性" class="headerlink" title="5.1 基本属性"></a>5.1 基本属性</h5><p>​    div.nodeName   所有节点都有</p>
+<p>​    div.tagName     只针对元素节点</p>
+<p>​    div.id           获取id</p>
+<p>​    div.id = “abc”    增加/替换 id</p>
+<p>​    div.className = “one”    增加/替换 class</p>
+<p>​    checked 属性     表单标签特有的</p>
+<h5 id="5-2-innerHTML属性"><a href="#5-2-innerHTML属性" class="headerlink" title="5.2 innerHTML属性"></a>5.2 innerHTML属性</h5><p>​    innerHTML 属性设置或返回标签的开始和结束标签之间的 HTML。</p>
+<p>​    值为为文本    </p>
+<p>​    若要改变innerHTML(<strong>要改变的值一定要放在.innerHTML之后</strong>); </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var num =5;  num=&quot;我是字符串&quot;;   num=true;</span><br><span class="line">var span = document.getElementById(&apos;span&apos;).innerHTML=num;     正确写法</span><br><span class="line">alert(typeof(span));     //num是什么属性或者赋值给它的是什么属性, span就是什么属性;</span><br><span class="line">var span = document.getElementById(&apos;span&apos;).innerHTML;</span><br><span class="line">span = num;                                                  错误写法</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.利用innerHTML 获取标签内的所有内容,返回一个字符串</span><br><span class="line">alert(box.innerHTML); //获取这个元素节点里的文本(包含HTML标签),类型为string</span><br><span class="line">正常浏览器显示:    &lt;span&gt;我是span&lt;/span&gt;</span><br><span class="line">IE                 &lt;SPAN&gt;我是span&lt;/SPAN&gt;</span><br><span class="line"></span><br><span class="line">2.利用innerHTML 设置一个字符串,会把字符串中的有效的标签解析出来.</span><br><span class="line">  如,给div标签中添加一个内容是 &quot;abc&quot; 的p 标签</span><br><span class="line">        var div = document.querySelector(div);</span><br><span class="line">        div.innerHTML = &quot;&lt;p&gt;abc&lt;/p&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<h5 id="5-3-innerText属性"><a href="#5-3-innerText属性" class="headerlink" title="5.3 innerText属性"></a>5.3 innerText属性</h5><p>​    1.innerText值获取标签中的文本内容，子标签本身不会获取到。</p>
+<p>​    2.去修改的时候，即使带有标签也会把标签作为纯文本来对待，而不会解析为标签</p>
+<p>​    <strong>注:和innerHTML不同,它并不会解析有效的标签,而是把它作为纯文本对待</strong></p>
+<h5 id="5-4-outerHTML"><a href="#5-4-outerHTML" class="headerlink" title="5.4 outerHTML"></a>5.4 outerHTML</h5><p>​    1.<strong>读取值</strong> 把包过标签自身和它里面的内容都获取到    </p>
+<p>​    2.<strong>设置值</strong> 把标签用字符串来替换掉,如果字符串中有有效的标签,会被解析.</p>
+<p>​    <strong>注:和innerHTML不同,它可以读取包过标签自身</strong></p>
+<h5 id="5-5-value"><a href="#5-5-value" class="headerlink" title="5.5 value"></a>5.5 value</h5><p>​        如果一个标签可以拥有value值，则可以可以通过element.value来获取。</p>
+<p>​        一般表单数据才具有vlaue：input、textarea、select</p>
+<h5 id="5-6-获取元素的属性-offset"><a href="#5-6-获取元素的属性-offset" class="headerlink" title="5.6 获取元素的属性(offset)"></a>5.6 获取元素的属性(offset)</h5><p>​    <strong>注:</strong> 以下四个属性只能读取 不能对元素进行修改;</p>
+<p>​    1.offsetWidth      获取元素的实际宽度    包含border 和 padding 在内</p>
+<p>​    2.offsetHeight     获取元素的实际高度    包含border 和 padding 在内</p>
+<p>​    3.offsetLeft         元素定位之后相对于参照物父容器的偏移</p>
+<p>​    4.offsetTop         元素定位之后相对于参照物父容器的偏移</p>
+<p>​    </p>
+<h4 id="6-样式表的属性–css脚本化"><a href="#6-样式表的属性–css脚本化" class="headerlink" title="6.样式表的属性–css脚本化"></a>6.样式表的属性–css脚本化</h4><h5 id="6-1-获取和修改行内样式表"><a href="#6-1-获取和修改行内样式表" class="headerlink" title="6.1 获取和修改行内样式表"></a>6.1 获取和修改行内样式表</h5><p>​    2种方式访问到行内样式:</p>
+<p>​        1.element.style.css属性名    </p>
+<p>​           2.element.style[“css属性名”]</p>
+<h5 id="6-2-获取内部样式表和外部样式表"><a href="#6-2-获取内部样式表和外部样式表" class="headerlink" title="6.2 获取内部样式表和外部样式表"></a>6.2 获取内部样式表和外部样式表</h5><p>​    1.对于IE: 对象.currentStyle[“属性名”]     </p>
+<p>​        2.其他浏览器: window.getComputedStyle(对象,null)[“属性名”]</p>
+<h5 id="6-3-字符串模板"><a href="#6-3-字符串模板" class="headerlink" title="6.3 字符串模板"></a>6.3 字符串模板</h5><p><code>字符串${变量}</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">element.style.backgroundColor = `rgba(  </span><br><span class="line">       $&#123;randomInt(0,255)&#125;,</span><br><span class="line">       $&#123;randomInt(0,255)&#125;,</span><br><span class="line">       $&#123;randomInt(0,255)&#125;,</span><br><span class="line">       $&#123;Math.random()*0.+0.4&#125;`;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</script>
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>Angular4升级为Angular7进阶指南 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/01/26/webNotes/advanced/Angular/advanceAngular7/" data-name="Angular4升级为Angular7进阶指南" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/Angular.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/01/26/webNotes/advanced/Angular/advanceAngular7/">
+                Angular4升级为Angular7进阶指南
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年01月26日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/Angular/">Angular</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言光阴似箭，入职现在的公司已经一年多了，回想刚入职时还是第一次接触到angular，当时angular4出来也没有多久，所以对这门新技术也是报以期待。一年多内，我们的产品也从我刚来时的v1.03版本迭代到了v2.0。但在此过程中，我们前端团队一直忙于业务功能的开发，而忽视了“工具”本身的进阶。导致angular中很多新的功能甚至是很多新的UI组件不能使用。在年前开发完公司产品的v2.0版本之后，我终于能抽出来一些时间为整个项目做一个升级，以下为此次升级的一些步骤已经才到的坑，希望能对小伙们有一些帮助。
+1. 开始前准备1.备份你的项目2.确保你的环境满足一下要求12$ node -v...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p><strong>前言</strong><br>光阴似箭，入职现在的公司已经一年多了，<br>回想刚入职时还是第一次接触到<code>angular</code>，<br>当时<code>angular4</code>出来也没有多久，所以对这门新技术也是报以期待。<br>一年多内，我们的产品也从我刚来时的v1.03版本迭代到了v2.0。<br>但在此过程中，我们前端团队一直忙于业务功能的开发，而忽视了“工具”本身的进阶。<br>导致<code>angular</code>中很多新的功能甚至是很多新的<code>UI</code>组件不能使用。<br>在年前开发完公司产品的<code>v2.0</code>版本之后，我终于能抽出来一些时间为整个项目做一个升级，<br>以下为此次升级的一些步骤已经才到的坑，希望能对小伙们有一些帮助。</p>
+<h3 id="1-开始前准备"><a href="#1-开始前准备" class="headerlink" title="1. 开始前准备"></a>1. 开始前准备</h3><p>1.备份你的项目<br>2.确保你的环境满足一下要求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v node &gt;= 8.9.0  </span><br><span class="line">$ npm -v npm &gt;= 5.6.0</span><br></pre></td></tr></table></figure></p>
+<p>3.删除你项目根目录下的 package-lock.json 文件</p>
+<h3 id="2-Angular4升级为Angular5"><a href="#2-Angular4升级为Angular5" class="headerlink" title="2. Angular4升级为Angular5"></a>2. Angular4升级为Angular5</h3><p>由于整个项目过于庞大，也是为了试试水，所以在此次升级的过程中，我想先升级为<code>5.0</code>来看看。<br>查阅了一些资料，发现<code>Angular</code>官网是有一篇<a href="https://update.angular.io/" target="_blank" rel="noopener">升级指南</a>。<br>打开升级指南，将初始版本号选择<code>4.0</code>，升级到的版本号选择到<code>5.0</code>。点击<code>Show me how to update!</code>按钮，查看升级步骤。<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/JavaScript-angular-1.png" alt="image.png"><br>在升级步骤中，前面两个小步骤提示按上面的做法做就可以了。如果你的项目不是使用en-us以外的语言环境的应用程序，则直接在项目的根目录执行一下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @angular/animations@^5.0.0 @angular/common@^5.0.0 @angular/compiler@^5.0.0 @angular/compiler-cli@^5.0.0 @angular/core@^5.0.0 @angular/forms@^5.0.0 @angular/http@^5.0.0 @angular/platform-browser@^5.0.0 @angular/platform-browser-dynamic@^5.0.0 @angular/platform-server@^5.0.0 @angular/router@^5.0.0 typescript@2.4.2 rxjs@^5.5.2</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install typescript@2.4.2 --save-exact</span><br></pre></td></tr></table></figure>
+<p>或者使用淘宝镜像<code>cnpm</code>。</p>
+<p>升级完之后，如果你的项目中使用了<code>router</code>，会看到使用路由的地方爆一些错，查阅了一下资料，是<code>Angular5</code>中路由的一些改动，由于在后面的版本中也做了相应的调整，所以在这里我就没有管它，而是继续后面的升级。</p>
+<h3 id="3-升级本地的Angular-cli"><a href="#3-升级本地的Angular-cli" class="headerlink" title="3. 升级本地的Angular-cli"></a>3. 升级本地的Angular-cli</h3><p>在这里我是先卸载原先的<code>Angular-cli</code>，然后再安装最新版。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g @angular/cli    // 卸载旧版本cli。</span><br><span class="line">$ npm cache clean   // 清除缓存，确保卸载干净</span><br><span class="line">$ npm install -g @angular/cli@latest  //安装最新版本的cli</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：如果卸载全局包失败可以在本地目录下手动删除（window10）<br>C:\Users\HUAWEI\AppData\Roaming\npm\node_modules（一般存在于C盘的用户文件夹下）</strong><br>安装完毕之后使用指令查看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng -v</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-Angular5到Angular7"><a href="#4-Angular5到Angular7" class="headerlink" title="4. Angular5到Angular7"></a>4. Angular5到Angular7</h3><p>升级了本地的<code>Angular-cli</code>之后，就可以对项目进行升级了。<br>依次执行一下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install @angular/cli</span><br><span class="line">ng update @angular/cli</span><br><span class="line">ng update @angular/core</span><br><span class="line">ng update</span><br><span class="line">npm install -g rxjs-tslint</span><br><span class="line">rxjs-5-to-6-migrate -p src/tsconfig.app.json</span><br></pre></td></tr></table></figure></p>
+<p>上面依次更新的是<code>angular/cli</code>,<code>angular/core</code>，以及<code>rxjs</code>。</p>
+<h3 id="5-项目代码报错调整"><a href="#5-项目代码报错调整" class="headerlink" title="5. 项目代码报错调整"></a>5. 项目代码报错调整</h3><p>升级完毕之后，打开项目文件，许多代码可能会报错，一般都是在你的<code>http</code>方法中。</p>
+<h4 id="5-1-Observable和Subject"><a href="#5-1-Observable和Subject" class="headerlink" title="5.1 Observable和Subject"></a>5.1 Observable和Subject</h4><p>若是你的代码中有使用到<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Observable &#125; <span class="keyword">from</span> <span class="string">'rxjs/Observable'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs/Subject'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>的地方，则可能会报错，因为新版本的<code>rxjs</code>做了一些改变，你只需要按以下写法就可以<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Observable ,  Subject &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="5-2-timeout-map-filter-mergeMap等"><a href="#5-2-timeout-map-filter-mergeMap等" class="headerlink" title="5. 2 timeout, map, filter, mergeMap等"></a>5. 2 timeout, map, filter, mergeMap等</h4><p>同时有用到<code>timeout,map, filter, mergeMap</code>的地方(一般http请求的时候有用到),也需要进行响应调整<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; timeout, map, filter, mergeMap &#125; from &apos;rxjs/operators&apos;</span><br></pre></td></tr></table></figure></p>
+<p>新版本的<code>timeout,map, filter, mergeMap</code>在<code>rxjs/operators</code>中调用。<br>原来的引用方式是：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">this</span>.http</span><br><span class="line">.post(url, data, option)</span><br><span class="line">.timeout(<span class="number">60000</span>)</span><br><span class="line">.toPromise()</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>此时也要修改为<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xhr = <span class="keyword">this</span>.http</span><br><span class="line">.post(url, data, option)</span><br><span class="line">.pipe(timeout(<span class="number">60000</span>))</span><br><span class="line">.toPromise()</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在使用时需要用<code>pipe()</code>盛放起来。<br>同理：<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.router.events</span><br><span class="line">    .pipe(</span><br><span class="line">      filter(<span class="function"><span class="params">event</span> =&gt;</span> event <span class="keyword">instanceof</span> NavigationEnd),</span><br><span class="line">      map(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.activatedRoute),</span><br><span class="line">      map(<span class="function"><span class="params">route</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (route[<span class="string">'firstChild'</span>]) route = route[<span class="string">'firstChild'</span>];</span><br><span class="line">        <span class="keyword">return</span> route;</span><br><span class="line">      &#125;),</span><br><span class="line">      filter(<span class="function"><span class="params">route</span> =&gt;</span> route[<span class="string">'outlet'</span>] === <span class="string">'primary'</span>),</span><br><span class="line">      mergeMap(<span class="function"><span class="params">route</span> =&gt;</span> route[<span class="string">'data'</span>])</span><br><span class="line">    )</span><br><span class="line">  .subscribe(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>后语</strong><br>在将项目成功升级之后，就可以开心的使用<code>NG-ZORRO</code>了(原本使用的UI库为primeng)。在这里安利一波<code>antd</code>，这真的是一个很强大的UI库，现在前端主流的三大框架<code>vue, react, angular</code>，它都有对应的库，如<code>angular</code>中的<code>NG-ZORRO</code>。<br>升级参考：<br><a href="https://blog.csdn.net/Arabic1666/article/details/82313236" target="_blank" rel="noopener">记NG4 迁移到 NG6 的一次实践</a></p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', json.ip);
+    leanCloud.fetchCommentCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/');
+    leanCloud.fetchVisitCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/');
+    leanCloud.fetchThumbUpCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/');
+    leanCloud.getCommentCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/01/26/webNotes/advanced/Angular/advanceAngular7/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

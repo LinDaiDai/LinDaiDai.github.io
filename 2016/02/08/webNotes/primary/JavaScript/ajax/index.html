@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>Ajax实用篇 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/ajax/" data-name="Ajax实用篇" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/ajax/">
+                Ajax实用篇
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">在介绍ajax之前,博主想先介绍一些关于HTTP协议的知识.例如百度的网址: http://www.baidu.com  我们可以看到,在整个域名地址的开头,有一个http协议,类似的还有https协议.
+1.什么是Ajax?Ajax全称:Asynchronous JavaScript+XML
+它不是一个技术,实际上是几种技术的结合,合在一起就成了一个功能强大的新技术.
+主要作用是在无刷新页面的情况下向服务器读取数据,可以应用在用户登入,在线聊天室等地方
+2.编写一个AjaxAjax的核心实际是一个XMLHttpRequest对象,这个对象在目前的所有浏览器都支持，只是IE6 和...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p>在介绍ajax之前,博主想先介绍一些关于HTTP协议的知识.<br>例如百度的网址: <code>http://www.baidu.com</code>  我们可以看到,在整个域名地址的开头,有一个http协议,类似的还有https协议.</p>
+<h3 id="1-什么是Ajax"><a href="#1-什么是Ajax" class="headerlink" title="1.什么是Ajax?"></a>1.什么是Ajax?</h3><p>Ajax全称:Asynchronous JavaScript+XML</p>
+<p>它不是一个技术,实际上是几种技术的结合,合在一起就成了一个功能强大的新技术.</p>
+<p>主要作用是在无刷新页面的情况下向服务器读取数据,可以应用在用户登入,在线聊天室等地方</p>
+<h3 id="2-编写一个Ajax"><a href="#2-编写一个Ajax" class="headerlink" title="2.编写一个Ajax"></a>2.编写一个Ajax</h3><p>Ajax的核心实际是一个XMLHttpRequest对象,这个对象在目前的所有浏览器都支持，只是IE6 和 IE5的写法不一样而已。既然是一个对象的话,就存在它内置的属性和方法.</p>
+<h4 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h4><p>首先,我们要先创建XMLHttpRequest这么一个对象.<br>出于兼容性考虑,为了照顾IE5,6在这呢,我做了一个兼容性的处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var  xhr = window.XMLHttpRequest ? XMLHttpRequest( ) : ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br></pre></td></tr></table></figure></p>
+<p><code>XMLHttpRequest</code>对象实际也是属于window的,所以出于严谨并避免不必要的麻烦,还是<code>window.XMLHttpRequest</code>比较好.<br><code>XMLHttpRequest()</code>各大浏览器都支持<br><code>ActiveObject(&quot;Microsoft.XMLHTTP&quot;)</code>是IE5.6的写法</p>
+<h4 id="2-连接到服务器"><a href="#2-连接到服务器" class="headerlink" title="2.连接到服务器"></a>2.连接到服务器</h4><p>当xhr对象创建完毕之后,我们要使用一个open()的方法来连接到服务器<br>先来看下写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&apos;GET&apos;, &apos;msg.txt&apos;, true)</span><br></pre></td></tr></table></figure></p>
+<p>open()方法中有3个参数,我们分别来看下什么意思<br>第一个参数:<br>请求方法,一般是get或post<br>第二个参数:<br>请求是url<br>第三个参数:<br>是否为异步,默认true是异步,false是同步</p>
+<h4 id="3-监听请求状态"><a href="#3-监听请求状态" class="headerlink" title="3.监听请求状态"></a>3.监听请求状态</h4><p>使用onreadystatechange方法,来监听请求状态.<br>请求状态xhr.readyState的值保存了xhr的状态<br>然而xhr一共有5种状态,分别是:</p>
+<ul>
+<li>0    未初始化。对象new出来了，但是还没有调用open方法</li>
+<li>1    启动。 已经调用open，但是还没有调用send方法</li>
+<li>2    发送。 已经send方法，但是还没有接收到相应</li>
+<li>3    接收。 已经开始接收数据，但是还没有完全接收。</li>
+<li>4    完成。 已经完全接收数据。<br>我们主要监听的的第5种状态,也就是完全接收数据的状态.<br>注:xhr.readyState==4只是表示接收数据完成,可以对数据进行处理了,此时还得再做一个判断看看服务器是否响应成功,也就是判断xhr.status是否为200,200表示成功,304虽然也表示成功,但是有缓存.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=function()&#123;</span><br><span class="line">            if(xhr.readyState==4)&#123;</span><br><span class="line">                if(xhr.status==200||xhr.status==304)&#123;</span><br><span class="line">                    onSuccess(xhr.responseText);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    if(typeof onFail==&quot;function&quot;)&#123;</span><br><span class="line">                        onFail(xhr.status);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p>xhr.responseText指的是ajax向服务器请求之后返回的请求结果.</p>
+<h4 id="4-发送请求"><a href="#4-发送请求" class="headerlink" title="4.发送请求"></a>4.发送请求</h4><p>使用xhr.send()方法来向服务器发送请求<br>send()方法内也可以传递参数,当使用get请求时,只要传递null就行了<br>(若是使用post请求方式的时候,()内可以传入一个数据参数data,后面会提到)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.send(null)</span><br></pre></td></tr></table></figure></p>
+<p>通过以上四个步骤,我们已经会简单的使用ajax,但是在实际运用中,不可能要用到ajax的时候就再写一遍,那样很没有效率,所以我们可以将整段ajax代码封装到一个js代码中,在我们每次要用到ajax的时候,只需要调用这段js代码就可以了.<br>如下,我将以上的四个步骤封装到了一个myAjax对象中,这个对象中提供了俩个方法,一个是针对get调用,一个是针对post调用,俩个方法异曲同工,只不过在参数的使用上有一些的不同.具体代码如下:<br>文件名:    myAjax.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">var myAjax = &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 负责get请求</span><br><span class="line">     * @param url      url地址</span><br><span class="line">     * @param onSuccess ajax请求成功时候的回调</span><br><span class="line">     * @param onFail    ajax请求失败时候的回调</span><br><span class="line">     */</span><br><span class="line">    get:function (url,onSuccess,onFail) &#123;</span><br><span class="line">        if(!(typeof onSuccess==&quot;function&quot;)) return;</span><br><span class="line">        var xhr = XMLHttpRequest ? new XMLHttpRequest():new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);</span><br><span class="line">        xhr.open(&apos;GET&apos;,url);</span><br><span class="line">        xhr.onreadystatechange=function()&#123;</span><br><span class="line">            if(xhr.readyState==4)&#123;</span><br><span class="line">                if(xhr.status==200||xhr.status==304)&#123;</span><br><span class="line">                    onSuccess(xhr.responseText);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    if(typeof onFail==&quot;function&quot;)&#123;</span><br><span class="line">                        onFail(xhr.status);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        xhr.send(null);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 负责get请求</span><br><span class="line">     * @param url      url地址</span><br><span class="line">     * @param data     请求的数据</span><br><span class="line">     * @param onSuccess ajax请求成功时候的回调</span><br><span class="line">     * @param onFail    ajax请求失败时候的回调</span><br><span class="line">     */</span><br><span class="line">    post:function (url,data,onSuccess,onFail) &#123;</span><br><span class="line">		 if(!(typeof onSuccess==&quot;function&quot;)) return;</span><br><span class="line">        var xhr = XMLHttpRequest ? new XMLHttpRequest():new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);</span><br><span class="line">        xhr.open(&apos;POST&apos;,url);</span><br><span class="line">        xhr.onreadystatechange=function()&#123;</span><br><span class="line">            if(xhr.readyState==4)&#123;</span><br><span class="line">                if(xhr.status==200||xhr.status==304)&#123;</span><br><span class="line">                    onSuccess(xhr.responseText);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    if(typeof onFail==&quot;function&quot;)&#123;</span><br><span class="line">                        onFail(xhr.status);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        //在发送请求之前必须添加这个请求头,表示表单数据进行url编码</span><br><span class="line">        xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);</span><br><span class="line">        xhr.send(data);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样当我们要用到ajax对象的时候,引用这段js代码就ok了.<br>例:<br>编写一个剪短的登入程序,当用户输入的用户名和密码和后台设置的一样,即显示登入成功.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">1.编写一段php代码:</span><br><span class="line">文件名:    data.php</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">$name = $_POST[&quot;name&quot;];</span><br><span class="line">$age = $_POST[&quot;pwd&quot;];</span><br><span class="line">header(&apos;Content-type:text/html; charset=&quot;UTF-8&quot;&apos;);</span><br><span class="line">header(&quot;Access-Control-Allow-Origin:*&quot;);</span><br><span class="line">if($name == &quot;李四&quot;&amp;&amp;$pwd==&quot;123456&quot;)&#123;</span><br><span class="line">    echo $name . &quot;登入成功&quot; ;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    echo $name . &quot;登入失败&quot;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">2.HTML代码</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;data2.php&quot; method=&quot;post&quot; id=&quot;form1&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;pwd&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;</span><br><span class="line"> &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">3.引入ajax.js并编写js代码</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;myAjax.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var form1 = document.querySelector(&apos;#form1&apos;);</span><br><span class="line">    form1.onsubmit=function (e) &#123;</span><br><span class="line">        e.preventDefault();//阻止事件默认行为</span><br><span class="line">        var msg = &quot;name=&quot; + this.name.value+&apos;&amp;age=&quot;+this.age.value;</span><br><span class="line">        myAjax.post(&apos;data2.php&apos;,msg,function (result) &#123;</span><br><span class="line">            console.log(result);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h3><p>通过博主上面的描述,相信大家对ajax都有了一定的了解,那么ajax这么牛能够使Web页面不用打断交互流程进行重新加载，就可以动态地更新,就没有什么限制吗?答案是有的,ajax访问网页的时候,ajax的地址,必须和当前页面同源,否则ajax就不能访问.<br>那么这里就要介绍一下同源.<br>在页面的地址栏里,我们经常可以看到我们输入的地址,都有一些相似之处,简单来说,一个网页的地址主要有这样几个组成部分:<br><code>协议://域名:端口号/资源路径?查询参数</code><br><code>https://www.baidu.com/s?ie=UTF-8&amp;wd=王</code><br>那么只要俩个网址的 协议  域名  端口号  三个部分相同,这俩个网址就同源.<br>如:同源<br>​ <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a><br>​ <a href="http://www.baidu.com/abc/a.html" target="_blank" rel="noopener">http://www.baidu.com/abc/a.html</a><br>​    不同源:<br>​ <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a><br>​ <a href="https://www.baidu.com/abc/a.html" target="_blank" rel="noopener">https://www.baidu.com/abc/a.html</a></p>
+<p>不受同源策略的影响有:</p>
+<p>1.img标签加载图片</p>
+<p>2.script标签加载js文件</p>
+<h3 id="打破同源"><a href="#打破同源" class="headerlink" title="打破同源"></a>打破同源</h3><p>现在主要是用俩种方式来打破同源,一直是利用jsonp,还有一种是服务器打破同源</p>
+<h4 id="1-jsonp"><a href="#1-jsonp" class="headerlink" title="1.jsonp"></a>1.jsonp</h4><p>jsonp:  json padding的简称,实际就是把json数据伪造为一个合理的js代码.<br>我们在正常读取json数据,得通过ajax来从服务器读取,但对于一些不同源的json数据,我们就无法正常读取,所以这时可以采用一个投机取巧的办法吧,就是把json数据伪造为一个合理的js代码,这样就能通过调用js代码来成功读取json数据,如看下面的例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function foo(obj)&#123;</span><br><span class="line">  console.log(obj)</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type= &quot;text/script&quot; src= &quot;data.json&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data.json:</span><br><span class="line">foo(&#123;</span><br><span class="line">  name:&apos;王先生&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>将json数据用一个foo的函数封装起来,只要在要读取json数据的时候将json文件用script标签来引用,并通过foo函数调用就可以了.</p>
+<h4 id="2-服务器打破同源"><a href="#2-服务器打破同源" class="headerlink" title="2.服务器打破同源"></a>2.服务器打破同源</h4><p>就像前面说的,判断是否同源只要看协议域名端口号三个地方相同不相同,要是相同的话就是同源,我们的ajax就可以访问到.那么如果我们将服务器端口设置一下,也就是直接在我们的php文件中修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在php文件的判断之前加上:</span><br><span class="line">// *代表的就是所有域名都可以访问</span><br><span class="line">header(&quot;Access-Control-Allow-Origin:*&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="encodeURIComponent编码"><a href="#encodeURIComponent编码" class="headerlink" title="encodeURIComponent编码"></a>encodeURIComponent编码</h3><p>其实每个汉字都有对应的URI编码,window提供了一个全局的方法encodeURIcomponent(),将中文转换为URI编码<br>一个中文由3个%号组成,如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var name = encodeURIComponent(&apos;李四&apos;);</span><br><span class="line">console.log(name);</span><br><span class="line">=&gt;%E6%9D%8E%E5%9B%9B</span><br></pre></td></tr></table></figure></p>
+<h3 id="后文"><a href="#后文" class="headerlink" title="后文"></a>后文</h3><p>Ajax实际就是通过get或者post方法在js中从php文件或者json文件读取到数据,然后在js中对这些数据进行操作.在实际的开发中,我们看到页面上的很多图片信息或者产品信息,都是通过Ajax读取数据然后添加到页面中.<br>另外,要是有小伙学过JQuery的话,会知道JQuery有它内置的Ajax,我们可以直接利用<code>$.get(url,function(result){ })</code>来读取数据.</p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

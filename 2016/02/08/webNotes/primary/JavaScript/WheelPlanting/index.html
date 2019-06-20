@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>JS中常见的几种轮播 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/" data-name="JS中常见的几种轮播" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/">
+                JS中常见的几种轮播
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">轮播图1.无缝不停轮播​1. body布局:
+123456789&lt;div class="container"&gt;						//将ul和li包住,起显示图片的作用       &lt;ul&gt;									           &lt;li&gt;&lt;img src="img1.png"/&gt;&lt;/li&gt;           &lt;li&gt;&lt;img src="img2.png"/&gt;&lt;/li&gt;           &lt;li&gt;&lt;img src="img3.png"/&gt;&lt;/li&gt;       ...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><h3 id="1-无缝不停轮播"><a href="#1-无缝不停轮播" class="headerlink" title="1.无缝不停轮播"></a>1.无缝不停轮播</h3><p>​<strong>1. body布局:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>						//将ul和li包住,起显示图片的作用</span><br><span class="line">       <span class="tag">&lt;<span class="name">ul</span>&gt;</span>									</span><br><span class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img1.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img2.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img3.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img4.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img5.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    <strong>2. css样式:</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">       *&#123;</span><br><span class="line">           <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">           <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="selector-class">.container</span>&#123;</span><br><span class="line">           position: relative;		//给要动的元素也就是ul 它的父级加上相对定位</span><br><span class="line">           width: 600px;			//</span><br><span class="line">           <span class="selector-tag">height</span>: 400<span class="selector-tag">px</span>;</span><br><span class="line">           overflow: hidden;		//给要动的元素也就是ul 它的父级加上溢出隐藏</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span>&#123;</span><br><span class="line">           position: absolute;		//给要动的元素也就是ul 加上绝对定位,才能保证用left和top;</span><br><span class="line">           width: 3000px;			//ul 的宽度为 li 的个数 * li 的宽度</span><br><span class="line">           <span class="selector-tag">height</span><span class="selector-pseudo">:100</span>%;</span><br><span class="line">           <span class="selector-tag">list-style</span>: <span class="selector-tag">none</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span> &gt;<span class="selector-tag">li</span>&#123;</span><br><span class="line">           <span class="attribute">float</span>: left;	</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">           <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="selector-class">.container</span> &gt; <span class="selector-tag">ul</span> &gt;<span class="selector-tag">li</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">           <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">           <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>3. JS代码:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);	 <span class="comment">//获取ul</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;					<span class="comment">//设置定时器 </span></span><br><span class="line">            <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-2400</span>)&#123;				<span class="comment">//判断:若ul走到倒数第二张图的时候,让left从0开始运行</span></span><br><span class="line">                ul.style.left=<span class="number">0</span>+<span class="string">'px'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">var</span> left = ul.offsetLeft <span class="number">-3</span>;		<span class="comment">//给ul设置速度</span></span><br><span class="line">                ul.style.left=left+<span class="string">'px'</span>;			</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> time = <span class="number">10</span>;							<span class="comment">//设定一个时间,以控制其轮播的速度</span></span><br><span class="line">            setTimeout(step,time);					<span class="comment">//定时器内部调用定时器</span></span><br><span class="line">        &#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="2-无缝停顿轮播"><a href="#2-无缝停顿轮播" class="headerlink" title="2.无缝停顿轮播"></a>2.无缝停顿轮播</h3><blockquote>
+<p>停顿轮播在不停轮播的基础上加以改进,判断当ul走到li宽度的倍数时,让定时器的时间加大,就可以起到停顿的效果</p>
+</blockquote>
+<p>​    body布局以及css样式不变</p>
+<p><strong>JS代码:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);	 <span class="comment">//获取ul</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;					<span class="comment">//设置定时器 </span></span><br><span class="line">     <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-2400</span>)&#123;				<span class="comment">//判断:若ul走到倒数第二张图的时候,让left从0开始运行</span></span><br><span class="line">         ul.style.left = <span class="number">0</span> +<span class="string">'px'</span>;</span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         speed = <span class="number">-3</span>;		<span class="comment">//给ul设置速度			</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">var</span> time;				</span><br><span class="line">     <span class="keyword">if</span>(ul.offsetLeft%<span class="number">600</span>==<span class="number">0</span>)&#123;				<span class="comment">//做判断:当ul走到li宽度的倍数时</span></span><br><span class="line">       time = <span class="number">3000</span>;							<span class="comment">//设定一个很大的时间,也就是很小的速度</span></span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;									</span><br><span class="line">       time = <span class="number">10</span>;</span><br><span class="line">     &#125;</span><br><span class="line">  	ul.style.left=ul.offsetLeft+speed+<span class="string">'px'</span></span><br><span class="line">     setTimeout(step,time);					<span class="comment">//定时器内部调用定时器</span></span><br><span class="line"> &#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-无缝停顿反向轮播"><a href="#3-无缝停顿反向轮播" class="headerlink" title="3.无缝停顿反向轮播"></a>3.无缝停顿反向轮播</h3><blockquote>
+<p>反向轮播在停顿轮播的基础上加以改进,判断当ul最左边和ul走到最右边,将速度反向;</p>
+<p>将最后一张重复的li去掉并修改ul的宽度</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">".container &gt; ul"</span>);</span><br><span class="line">      <span class="keyword">var</span> speed = <span class="number">3</span>;</span><br><span class="line">          setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             <span class="keyword">if</span>(ul.offsetLeft&lt;=<span class="number">-1800</span>||ul.offsetLeft&gt;=<span class="number">0</span>)&#123;		<span class="comment">//判断当ul最左边和ul走到最右边,将速度反向;</span></span><br><span class="line">                  speed*=<span class="number">-1</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">var</span> time = <span class="number">0</span>;</span><br><span class="line">             <span class="keyword">if</span>(ul.offsetLeft%<span class="number">600</span>==<span class="number">0</span>)&#123;					<span class="comment">//做判断:当ul走到li宽度的倍数时</span></span><br><span class="line">        		   time = <span class="number">3000</span>;							    <span class="comment">//设定一个很大的时间,也就是很小的速度</span></span><br><span class="line">             &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                  time=<span class="number">10</span>;</span><br><span class="line">             &#125;</span><br><span class="line">             ul.style.left=ul.offsetLeft+speed+<span class="string">'px'</span>;	</span><br><span class="line">             setTimeout(step,time);						<span class="comment">//定时器内部调用定时器</span></span><br><span class="line">          &#125;,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="4-透明度普通轮播"><a href="#4-透明度普通轮播" class="headerlink" title="4. 透明度普通轮播"></a>4. 透明度普通轮播</h3><p>​    <strong>1.body布局上一样:</strong></p>
+<p>​    <strong>2.css样式</strong></p>
+<p>​    将所有li 绝对定位,重叠在一起</p>
+<p>​    <strong>3.JS:</strong>    </p>
+<p>​        先获取到ul 和 li   并对 li的数组进行遍历    赋值每个的opacity        </p>
+<p>​        <strong>注:要在js中遍历li 再给它赋值opacity,而不是在css中直接设置属性</strong></p>
+<p>​            <strong>是为了在js中好获取到opacity并给它进行修改设置</strong>                </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">var ul = document.querySelector(&quot;.container &gt; ul&quot;);	 //获取ul</span><br><span class="line">        var lis = document.querySelectorAll(&apos;.container &gt; ul &gt;li&apos;);</span><br><span class="line">        var i = 0;</span><br><span class="line">        for(var i=0;i&lt;lis.length;i++)&#123;</span><br><span class="line">            if(i==0)&#123;					//默认显示第一张图,让其透明度为1;</span><br><span class="line">                lis[i].style.opacity=1;</span><br><span class="line">            &#125;else&#123;						//其他图片透明度为0;</span><br><span class="line">                lis[i].style.opacity=0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        var i=0;						//重新赋值i </span><br><span class="line">        var time = 50;					//设置时间,控制图片转换的速度,时间越大,速度越慢</span><br><span class="line">        setTimeout(function step()&#123;					//设置定时器</span><br><span class="line">            lis[i%4].style.opacity-=0.05;	</span><br><span class="line">            lis[(i+1)%4].style.opacity=parseFloat(lis[(i+1)%4].style.opacity)+0.05;</span><br><span class="line">            if(lis[i%4].style.opacity==0)&#123;</span><br><span class="line">                i++;</span><br><span class="line">                time = 1000;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                time =50</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            setTimeout(step,time);</span><br><span class="line">        &#125;,0)</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<h3 id="5-透明度指示器轮播"><a href="#5-透明度指示器轮播" class="headerlink" title="5.透明度指示器轮播"></a>5.透明度指示器轮播</h3><p><strong>1.body布局:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span>						</span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"picture"</span>&gt;</span>							//轮播图片区</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img1.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img2.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img3.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img4.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img5.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>![](img6.png)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"arrow"</span>&gt;</span>							//左右切换</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"arrowLeft"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"arrowRight"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span> 						//指示器</span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"margin:0"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.css样式</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        .container &#123;						//整体样式</span><br><span class="line">            <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">            <span class="selector-tag">width</span>: 600<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">height</span>: 400<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line">            <span class="selector-tag">margin</span>: 20<span class="selector-tag">px</span> <span class="selector-tag">auto</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        .container &gt; .picture &#123;				//轮播图片区样式</span><br><span class="line">            <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">            <span class="selector-tag">width</span>: 600<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">height</span>: 100%;</span><br><span class="line">            <span class="selector-tag">list-style</span>: <span class="selector-tag">none</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.picture</span> &gt; <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.picture</span> &gt; <span class="selector-tag">li</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        .container &gt; .arrow&#123;					//左右切换区样式</span><br><span class="line">            <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">            <span class="selector-tag">height</span>: 70<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">width</span>: 100%;</span><br><span class="line">            <span class="selector-tag">top</span>: 40%;</span><br><span class="line">            <span class="selector-tag">left</span>: 0;</span><br><span class="line">            <span class="selector-tag">list-style</span>: <span class="selector-tag">none</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">70px</span>;</span><br><span class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">cursor</span>: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">            <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_left1.png"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">            <span class="attribute">float</span>: right;</span><br><span class="line">            <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_right1.png"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(1)</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">            <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_left2.png"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.arrow</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">            <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"img/arrow_right2.png"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        .container .bottom &#123;							//指示器样式</span><br><span class="line">            <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">            <span class="selector-tag">margin</span>: 0 <span class="selector-tag">auto</span>;</span><br><span class="line">            <span class="selector-tag">width</span>: 215<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">height</span>: 40<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">top</span>: 350<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">border-radius</span>: 20<span class="selector-tag">px</span>;</span><br><span class="line">            <span class="selector-tag">background-color</span>: <span class="selector-tag">grey</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.bottom</span> &gt; <span class="selector-tag">ul</span>&#123;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">205px</span>;</span><br><span class="line">            <span class="attribute">bottom</span>: <span class="number">20px</span>;</span><br><span class="line">            <span class="attribute">list-style</span>: none;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">5px</span>;</span><br><span class="line">            <span class="attribute">left</span>: <span class="number">5px</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.container</span> &gt; <span class="selector-class">.bottom</span> &gt; <span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span>&#123;</span><br><span class="line">            <span class="attribute">float</span>: left;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: white;</span><br><span class="line">            <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">            <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">            <span class="attribute">text-align</span>: center;</span><br><span class="line">            <span class="attribute">cursor</span>: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>3.JS代码:</strong>    </p>
+<p>​    代码分析:        </p>
+<p>​                1.先进行准备工作,    利用for循环将初始化的图片透明度已经指示器的背景色设定好</p>
+<p>​                2.给整个container添加事件,当鼠标上来的时候,让自动播放停止</p>
+<p>​                3.给左,右”按钮” 点击事件,用以切换上一张下一张图片;</p>
+<p>​                4.给指示器onmouseenter事件,使得图片与你的指示器同步,达到随意切换图片的效果;</p>
+<p>​                5.定义 图片切换的函数 ,使得以上事件都可以调用它</p>
+<p>​                6.定义自动播放的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> container = <span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>);</span><br><span class="line">    <span class="keyword">var</span> pictureLis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.container &gt; .picture &gt; li'</span>);</span><br><span class="line">    <span class="keyword">var</span> optionLis = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.container &gt; .bottom &gt;ul &gt; li'</span>);</span><br><span class="line">    <span class="keyword">var</span> arrowLeft = <span class="built_in">document</span>.querySelector(<span class="string">'.container .arrow  &gt; .arrowLeft'</span>);</span><br><span class="line">    <span class="keyword">var</span> arrowRight = <span class="built_in">document</span>.querySelector(<span class="string">'.container .arrow &gt; .arrowRight'</span>);</span><br><span class="line">    <span class="keyword">var</span> showIndex = <span class="number">0</span>;  <span class="comment">//当前正在显示的图片的下标</span></span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; pictureLis.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                optionLis[j].style.backgroundColor=<span class="string">'red'</span>;</span><br><span class="line">                pictureLis[j].style.opacity = <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                pictureLis[j].style.opacity = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//给整个container添加事件,当鼠标上来的时候,让自动播放停止</span></span><br><span class="line">        container.onmouseenter = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            clearTimeout(autoPlayId);</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">        container.onmouseleave = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            auto();</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//给左按钮和右按钮添加点击事件</span></span><br><span class="line">        arrowLeft.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            optionLis[showIndex % optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</span><br><span class="line">            <span class="keyword">var</span> preIndex = showIndex<span class="number">-1</span>+pictureLis.length;</span><br><span class="line">            move(showIndex,preIndex);</span><br><span class="line">            showIndex=preIndex;</span><br><span class="line">            optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        arrowRight.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            optionLis[showIndex % optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</span><br><span class="line">            move(showIndex,showIndex+<span class="number">1</span>);</span><br><span class="line">            showIndex++;</span><br><span class="line">            optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//给指示器添加onmouseenter事件,使得图片与指示器同步</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;optionLis.length;i++)&#123;</span><br><span class="line">            optionLis[i].onmouseenter=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">                move(showIndex,i);</span><br><span class="line">                optionLis[showIndex%optionLis.length].style.backgroundColor=<span class="string">'white'</span>;</span><br><span class="line">                optionLis[i%optionLis.length].style.backgroundColor=<span class="string">'red'</span>;</span><br><span class="line">                showIndex=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    init(); <span class="comment">//调用初始化</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//图片移动</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">showIndex,nextIndex</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            pictureLis[showIndex % pictureLis.length].style.opacity -= <span class="number">0.05</span>;</span><br><span class="line">            pictureLis[nextIndex % pictureLis.length].style.opacity =</span><br><span class="line">                +pictureLis[nextIndex % pictureLis.length].style.opacity + <span class="number">0.05</span>;</span><br><span class="line">            <span class="keyword">if</span> (pictureLis[showIndex % pictureLis.length].style.opacity &lt;= <span class="number">0</span>||pictureLis[nextIndex%pictureLis.length].style.opacity&gt;=<span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">            setTimeout(step, <span class="number">5</span>)</span><br><span class="line">        &#125;, <span class="number">0</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自动播放</span></span><br><span class="line">    <span class="keyword">var</span> autoPlayId;     <span class="comment">//自动播放定时器id</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">auto</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        autoPlayId = setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">autoStep</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            optionLis[showIndex].style.backgroundColor = <span class="string">"white"</span>;</span><br><span class="line">            move(showIndex,showIndex+<span class="number">1</span>);    <span class="comment">//切换下一张图片</span></span><br><span class="line">            showIndex++;</span><br><span class="line">            <span class="keyword">if</span> (showIndex == pictureLis.length) showIndex = <span class="number">0</span>;</span><br><span class="line">            optionLis[showIndex%optionLis.length].style.backgroundColor = <span class="string">"red"</span>;</span><br><span class="line">            autoPlayId = setTimeout(autoStep,<span class="number">2000</span>);</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    auto();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/WheelPlanting/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>使用Hexo快速搭建博客 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/" data-name="使用Hexo快速搭建博客" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/hexo.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/">
+                使用Hexo快速搭建博客
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年02月24日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/hexo/">Hexo</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">这是一篇教你快速搭建自己博客并进行上线部署的文章。不管你是不是前端，不管你对Hexo了解多少，只要你按照下面的步骤一步一步来，我保证你能够在个把小时里创建出你想要的个人博客。
+
+看下效果？我们在去做一件事之前肯定是抱有一定的目的性，在你被这个标题吸引进来之后我想我就知道你的目的了。所以先来看看接下来要搭建的博客的最终效果：霖呆呆的个人博客: https://lindaidai.wang
+30秒了解HexoHexo 是一个快速、简洁且高效的博客框架。它使用...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p>这是一篇教你快速搭建自己博客并进行上线部署的文章。<br>不管你是不是前端，不管你对<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>了解多少，只要你按照下面的步骤一步一步来，我保证你能够在个把小时里创建出你想要的个人博客。</p>
+<hr>
+<h2 id="看下效果？"><a href="#看下效果？" class="headerlink" title="看下效果？"></a>看下效果？</h2><p>我们在去做一件事之前肯定是抱有一定的目的性，在你被这个标题吸引进来之后我想我就知道你的目的了。所以先来看看接下来要搭建的博客的最终效果：<br><a href="https://lindaidai.wang" target="_blank" rel="noopener">霖呆呆的个人博客: https://lindaidai.wang</a></p>
+<h2 id="30秒了解Hexo"><a href="#30秒了解Hexo" class="headerlink" title="30秒了解Hexo"></a>30秒了解Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。<br>它使用 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>也就是能帮助我们快速的搭建自己的博客。<br>Hexo博客搭建的基础大致为：</p>
+<ul>
+<li>安装node.js</li>
+<li>安装Git</li>
+<li>安装Hexo</li>
+<li>创建Hexo项目并进行本地测试运行</li>
+<li>注册github并创建一个存放Hexo博客项目的仓库</li>
+<li>部署上你的博客项目</li>
+<li>修改博客主题theme</li>
+</ul>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>如果你的电脑上已经安装了node.js的话则你可以跳过这一步骤。<br>Hexo是基于node.js的, 所以我们在安装它之前需要用到npm安装工具, 这个工具是 node.js 安装包的工具, 所以, 我们先要安装 node.js。<br>安装node.js很简单，直接去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs官网</a>下载对应的版本就可以了。<br>下载安装完毕之后可以进行检测一下，看是否正常安装。<br>打开你的cmd(终端)，输入<code>node -v</code>回车，看是否显示了版本号。<br>比如我这里显示的是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v10.14.1</span><br></pre></td></tr></table></figure></p>
+<p>证明安装完毕。<br>安装完毕了nodejs之后，你的电脑就自带了<code>npm</code>，你就可以使用<code>npm</code>的指令来下载其它东西了。<br>比如我们可以先装一个<code>cnpm</code>。它其实就是一个淘宝<code>npm</code>镜像，在国内来说会使下载速度快一些。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install cnpm -g</span><br><span class="line">//或者</span><br><span class="line">$ npm i cnpm -g</span><br></pre></td></tr></table></figure></p>
+<p>(<code>$</code>符号不需要打出来，只是表示这个指令是在终端上运行的，<code>-g</code>表示的是全局安装，这样你就可以在你电脑的任意文件夹下使用)</p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>如果你的电脑上已经安装了Git的话则你可以跳过这一步骤。<br>直接去官网上下载安装：<br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git下载地址</a><br>我们知道Git的主要作用是代码托管，这里为什么也要用到Git呢。<br>是因为我们在创建完了博客项目之后需要将其部署到Git上，相当于上线这个博客，这样其他人就能通过一个网址直接访问你的博客了。<br>想了解Git的小伙可以看这里：<a href="https://lindaidai.wang/otherSkill/Git/basicGit/" target="_blank" rel="noopener">Git基础知识-霖呆呆</a></p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>现在我们可以使用<code>npm</code>或者<code>cnpm</code>来安装<code>hexo</code>了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<p>同样的你在安装完毕之后可以使用指令来查看是否安装成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure></p>
+<p>如下图：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/Hexo-hexo1.png" alt="hexo1"></p>
+<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p>前期准备都完毕之后，让我们来创建自己的第一个博客吧。</p>
+<h3 id="创建一个名为my-hexo-blog的网站"><a href="#创建一个名为my-hexo-blog的网站" class="headerlink" title="创建一个名为my-hexo-blog的网站"></a>创建一个名为my-hexo-blog的网站</h3><p>将终端上的路径设置为你想要放博客项目的路径。<br>比如我想把我的博客项目放到<code>D</code>盘的<code>projects</code>文件夹下，则在终端打开<code>D://projects</code>。<br>进入了文件夹下，在终端输入指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init my-hexo-blog</span><br></pre></td></tr></table></figure></p>
+<p>你不想用<code>my-hexo-blog</code>这个名字的话用其他的也可以。<br> (如果不写<code>my-hexo-blog</code>, 就会在当前目录进行初始化. 如果后面跟了名子就会创建目录并在目录进行初始化操作, 以这个名子为目录名.)</p>
+<h3 id="本地运行博客"><a href="#本地运行博客" class="headerlink" title="本地运行博客"></a>本地运行博客</h3><p>执行完<code>init</code>指令之后，会看到你的目录下多出了一个<code>my-hexo-blog</code>文件夹，这个就是你刚刚生成的博客项目。<br>你看到的应该是这样的文件夹：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/Hexo-hexo2.png" alt="hexo2"></p>
+<p>此时我们在进入这个项目的目录里。<br>使用指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd my-hexo-blog</span><br></pre></td></tr></table></figure></p>
+<p>跳转进项目目录。</p>
+<p>进入到项目目录之后，在执行指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">//或者</span><br><span class="line">$ npm i</span><br><span class="line">//或者</span><br><span class="line">$ cnpm i</span><br></pre></td></tr></table></figure></p>
+<p>用于安装项目的依赖(你可以把它理解为java中的各种包)。</p>
+<p>接下来我们就可以来启动它了，使用指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">//或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
+<p>此时，它会提示你<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
+<p>也就证明你的博客项目已经启动了，你只需要打开浏览器并在网址中输入<code>localhost:4000</code>即可访问你的博客了。<br>可以看到，博客应该是长这样的：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/Hexo-hexo3.png" alt="hexo3"></p>
+<h2 id="部署博客项目"><a href="#部署博客项目" class="headerlink" title="部署博客项目"></a>部署博客项目</h2><p>通过上面的步骤我们已经使博客项目在本地正常的跑去来了，下面该如何部署上线呢？</p>
+<h3 id="创建github账号并创建一个仓库"><a href="#创建github账号并创建一个仓库" class="headerlink" title="创建github账号并创建一个仓库"></a>创建github账号并创建一个仓库</h3><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>如果你有自己的github账号的话登录即可，没有的话在<a href="https://github.com/" target="_blank" rel="noopener">github</a>上先行创建。<br>登录成功之后点击右上角的<code>New repositories</code>创建一个新的仓库，用于你的博客部署。<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/Hexo-hexo4.png" alt="hexo4"><br><strong>这个仓库的名字需要和你的github名对应，格式: yourname.github.io</strong><br>由于我的github名为<code>LinDaiDai</code>，所以我创建的项目名为<code>LinDaiDai.github.io</code>。</p>
+<h4 id="查看SSH"><a href="#查看SSH" class="headerlink" title="查看SSH"></a>查看SSH</h4><p>SSH公钥默认储存在账户的主目录下的 ~/.ssh 目录。<br>在终端输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure></p>
+<p>如果返回 something 和 something.pub，说明已经有 SSH 公钥。<br>如下图：<br><img src="https://hexo-blog-1256114407.cos.ap-shenzhen-fsi.myqcloud.com/Hexo-hexo5.png" alt="hexo5"></p>
+<p>如是没有SSH的话则需要手动生成。<br>还是在<code>.ssh</code>目录下，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</span><br></pre></td></tr></table></figure></p>
+<p>按 3 个回车，密码为空。</p>
+<p>在 C:\Users\Administrator.ssh 下，得到两个文件 id_rsa 和 id_rsa.pub。</p>
+<h4 id="GitHub-上添加-SSH-密钥"><a href="#GitHub-上添加-SSH-密钥" class="headerlink" title="GitHub 上添加 SSH 密钥"></a>GitHub 上添加 SSH 密钥</h4><p>打开 id_rsa.pub，复制全文到 <a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a> ，Add SSH key，粘贴进去。</p>
+<h3 id="修改博客项目目录下的-config-yml配置文件"><a href="#修改博客项目目录下的-config-yml配置文件" class="headerlink" title="修改博客项目目录下的_config.yml配置文件"></a>修改博客项目目录下的_config.yml配置文件</h3><p>打开我们博客项目目录下的<code>_config.yml</code>文件(使用记事本或者Notepad++直接打开)<br>在该文件的最下面加上以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:LinDaiDai/LinDaiDai.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>将<code>repository</code>中的地址换成你刚刚新建的仓库的地址即可。<br><code>Ctrl + s</code>保存修改。<br>注意：在type前面需要增加两个空格, 在type的冒号后面需要增加一个空格。 请保持代码风格一致，否则会出现错误或是不正确的问题。</p>
+<h3 id="安装部署使用到的git插件"><a href="#安装部署使用到的git插件" class="headerlink" title="安装部署使用到的git插件"></a>安装部署使用到的git插件</h3><p>在这里我们使用的是<code>git</code>源码管理工具, 所以, 我们需要安装git包来进行部署, 安装这个插件才能使用<code>git</code>进行自动部署。<br>在博客项目目录下执行指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<h3 id="自动生成网站并部署"><a href="#自动生成网站并部署" class="headerlink" title="自动生成网站并部署"></a>自动生成网站并部署</h3><p>当我们部署网站前, 需要先生成静态网站。它会自动在目录下创建<code>public</code>的目录, 并将新生成的网页存放在这个目录里。<br>只需要在博客项目目录下执行指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></p>
+<p>此时就会生成<code>public</code>目录。</p>
+<p>然后进行自动部署网站：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>上面的两步你可以合成一步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure></p>
+<p>部署成功后会提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[INFO] Deploy done: git</span><br></pre></td></tr></table></figure></p>
+<p>如果在部署时出现一下错误信息，请参考上面的步骤进行git插件的安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure></p>
+<p>上面的步骤全部完成之后，恭喜你，你已经成功完成了个人博客的部署上线，此时打开你的浏览器并输入<code>https://userName.github.io</code>看看吧。    </p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', json.ip);
+    leanCloud.fetchCommentCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/');
+    leanCloud.fetchVisitCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/');
+    leanCloud.fetchThumbUpCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/');
+    leanCloud.getCommentCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/02/24/webNotes/advanced/Hexo/createHexoBlog/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

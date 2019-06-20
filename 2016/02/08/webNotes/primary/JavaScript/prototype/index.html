@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>prototype - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2016/02/08/webNotes/primary/JavaScript/prototype/" data-name="prototype" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端入门.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2016/02/08/webNotes/primary/JavaScript/prototype/">
+                Prototype
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端入门/" data-no-instant="">
+                    <img src="/images/前端入门.svg" alt="前端入门" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端入门">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2016年02月08日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <p>通过上一章节&lt;面向对象入门&gt;相信大家对于面向对象都有了一些很直白的了解,那么面向对象中一个很重要的概念”原型”又是个什么玩意呢?可以说,如果把”原型”给吃透了,那么你对于面向对象的知识点以及掌握50%了(当然,只是对于我们这些新手入门而已…).</p>
+<p>我们知道,一切皆是对象,当然函数也不例外.那么既然是个对象,就一定有它的属性,只是很多隐藏的属性我们以前不知道而已.这里我就先说说函数的第一个比较重要的属性–prototype.</p>
+<p>当我们创建了一个函数A之后(也就是申明),这个函数A就有了它默认的一个属性prototype,这个属性是内置好了.这时浏览器就会在内存中创建一个”对象B”,而前面函数A的prototype的属性的值指向的就是这个”对象B”,此时我们就称”对象B”为函数A的原型对象.他们之间的这种联系并不是简单的prototype的值指向”对象B”,其实在”对象B”中也有一个默认的属性constructor,它的值指向了这个函数A!(注:其实任意函数中都有prototype，只不过不是构造函数的时候prototype我们不关注而已)</p>
+<p>OK,说到这里,小伙们可能有点绕,那么我直接上图吧!(博主还是有一定美术功底的)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7190596-d158b2764d6c90d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img1.png"></p>
+<p>这是一张简易的原型解析图,就先看最上面俩个框吧.函数A创建完毕后,它的默认属性prototype指向的是浏览器自动生成的对象B,而对象B的内置属性constructor指向的是这个函数A,此时,对象B就是函数A的原型对象!</p>
+<p>好的,相信大家在博主生动形象的解析下对原型对象应该有了一个基本概念,那么这个原型对象它有什么用吗?诶,你们还别小看它,它的用处还真挺大的.</p>
+<p>这里要小伙们回忆一下了,在上节中,我们知道了创建一个对象可以通过构造函数的方式来进行创建.当我们用上面的函数A作为构造函数来创建一个对象A1时,也就是<code>var A1 = new A();</code> new一个对象出来.这时,对象A1其实也会有一个默认的属性值<a href="由于对象中的proto属性是不可访问的,所以用了俩个[]来括起来">[proto]</a>.就像上面描述的,构造函数A它的默认属性prototype指向的是原型对象B,[[proto]]属性指向的也是原型对象B.  同一个构造函数能用于创建不同的对象,再次利用构造函数A来创建一个对象A2,它的[[proto]]指向的当然也是原型对象B.(现在大家可以回头看看我的img1.png了)</p>
+<p>下面还是来看一个例子吧.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例1:</span><br><span class="line">function Person(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(&quot;王先生&quot;,22);</span><br><span class="line">var person2 = new Person(&quot;张先生&quot;,23);</span><br></pre></td></tr></table></figure>
+<p>person1 和 person2都是通过构造函数Person创建出的对象,所以他俩的proto指向的都是Person的对象原型.</p>
+<h3 id="hasOwnProperty-方法"><a href="#hasOwnProperty-方法" class="headerlink" title="hasOwnProperty( )方法"></a>hasOwnProperty( )方法</h3><p>用于判断一个对象中的属性是否来自对象本身,也就是能判断它的来源,它是来自对象本身,还是来自这个对象的[[proto]]属性指向的原型.</p>
+<p>若是来自于对象本身,则返回true,    来自于原型和不存在都返回fasle;</p>
+<p>将例1稍微改动一下,在Person的原型对象中添加一个eat函数.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">例2:</span><br><span class="line">function Person(name,age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.eat=function()&#123;</span><br><span class="line">    console.log(&apos;a&apos;);</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(&quot;王先生&quot;,22);</span><br><span class="line">var person2 = new Person(&quot;张先生&quot;,23);</span><br><span class="line">//给person1对象添加属性sex</span><br><span class="line">person1.sex = &quot;男&quot;;</span><br><span class="line">console.log(person1.hasOwnProperty(&apos;sex&apos;));</span><br><span class="line">console.log(person1.hasOwnProperty(&apos;eat&apos;));</span><br><span class="line">=&gt;true</span><br><span class="line">=&gt;false</span><br></pre></td></tr></table></figure></p>
+<p>可以看到不管是name,age属性都是eat函数都是在构造函数时就写入了的,也就是都存在于Person的原型对象中,所以第二个console.log输出的就是false,而sex这个属性是我们在创建完对象person1之后添加的属性,所以可以理解为是person1的私有属性,是存在于person1对象本身,所以第一个console.log返回的就是true.</p>
+<h3 id="instanceof操作符和isPrototypeOf-方法"><a href="#instanceof操作符和isPrototypeOf-方法" class="headerlink" title="instanceof操作符和isPrototypeOf( )方法"></a>instanceof操作符和isPrototypeOf( )方法</h3><p>俩个方法非常相似,都是用于检测一个对象是否来自于一个构造函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//使用instanceof操作符</span><br><span class="line">function A()&#123; &#125;</span><br><span class="line">var a1 = new A();</span><br><span class="line">console.log(a1 instanceof A);</span><br><span class="line">=&gt;true</span><br><span class="line"></span><br><span class="line">function A()&#123; &#125;</span><br><span class="line">var a1 = new A();</span><br><span class="line">console.log(A.prototype.isPrototypeOf(a1));</span><br><span class="line">=&gt;true</span><br></pre></td></tr></table></figure></p>
+<p>isPrototypeOf()函数用于指示对象是否存在于另一个对象的原型链中。如果存在，返回true，否则返回false。</p>
+<p>可以简单理解为一个对象是否是通过这个构造函数来创建的.</p>
+<p>和instanceof相似,但instanceof是操作符,而isPrototypeOf( )是方法</p>
+<h3 id="使用组合模型和动态模型"><a href="#使用组合模型和动态模型" class="headerlink" title="使用组合模型和动态模型"></a>使用组合模型和动态模型</h3><p>组合模型</p>
+<p>简单来说,就是属性在构造函数中创建,而方法在构造函数的原型中创建,如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">  this.name = name;						//直接在构造函数中封装属性;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.eat=function(food)&#123;	//在构造函数的原型(Person.prototype)中封装方法;</span><br><span class="line">  alert(this.name+&quot;like eat&quot;+food);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.play=function(playName)&#123;</span><br><span class="line">  alert(this.name+&quot;like play&quot;+playName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = new Person(&quot;王先生&quot;,22);</span><br><span class="line">var p2 = new Person(&quot;张先生&quot;,23);</span><br><span class="line"></span><br><span class="line">p1.eat(&quot;拨娜娜&quot;);</span><br><span class="line">p2.play(&quot;皮革&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>动态模型</p>
+<p>优点:封装性好<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  if(!Person.prototype.eat)&#123;							//判断原型中是否有eat函数</span><br><span class="line">    Person.prototype.eat=function(food)&#123;				//若没有的话则添加</span><br><span class="line">      console.log(this.name+&quot;like eat&quot;+food)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if(!Person.prototype.play)&#123;</span><br><span class="line">    Person.prototype.play=funciton(playName)&#123;</span><br><span class="line">      console.log(this.name+&quot;like play&quot;+playName)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">//在此可以理解为每调用一次构造函数就执行构造函数,所以每执行一次就会把原先在原型中的函数舍弃,更改为和它一样的函数,则造成了有废弃的函数产生;</span><br><span class="line">var p1 = new Person(&quot;王先生&quot;,22);		</span><br><span class="line">var p2 = new Person(&quot;张先生&quot;,23);</span><br></pre></td></tr></table></figure></p>
+<p>以上俩种模型都有其各自的优点和缺点,那么有没有好点的模型来完善这俩种模型呢,下面来看看这个动态组合模型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">  eat:function(food)&#123;				</span><br><span class="line">      console.log(this.name+&quot;like eat&quot;+food)</span><br><span class="line">    &#125;</span><br><span class="line">  play:funciton(playName)&#123;</span><br><span class="line">      console.log(this.name+&quot;like play&quot;+playName)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//在此可以理解为每调用一次构造函数就执行构造函数,所以每执行一次就会把原先在原型中的函数舍弃,更改为和它一样的函数,则造成了有废弃的函数产生;</span><br><span class="line">var p1 = new Person(&quot;王先生&quot;,22);		</span><br><span class="line">var p2 = new Person(&quot;张先生&quot;,23);</span><br></pre></td></tr></table></figure>
+<p>终极动态组合模型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Person(ldy)&#123;</span><br><span class="line">  this._init(ldy);</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">  _init:function(ldy)&#123;</span><br><span class="line">    this.name = ldy.name;</span><br><span class="line">    this.age = ldy.age;</span><br><span class="line">  &#125;</span><br><span class="line">  eat:function(food)&#123;				</span><br><span class="line">      console.log(this.name+&quot;like eat&quot;+food)</span><br><span class="line">    &#125;</span><br><span class="line">  play:funciton(playName)&#123;</span><br><span class="line">      console.log(this.name+&quot;like play&quot;+playName)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//通过向构造函数中传递一个对象opt,这个对象中将要添加的属性添加进去</span><br><span class="line">var p1 = new Person(&#123;</span><br><span class="line">  name:&quot;王先生&quot;,</span><br><span class="line">  age:22,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>最后这种终极动态组合模型摒弃了以往我们对于构造函数的看法,它在创建对象 p1的时候,传入进去的是一个对象,这样就可以传入不同数量的属性.<br>并且将要获取的属性全部直接封装到Person的原型对象中,这样构造函数Person中就只需要调用一下原型对象中的_init()函数就可以了(注:_init一般用于表示初始化),想要后续添加什么方法直接在Person的原型对象中添加.</p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
+    leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+    leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+    leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+    leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

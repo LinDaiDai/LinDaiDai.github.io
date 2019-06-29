@@ -123,16 +123,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -249,16 +249,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -746,6 +746,22 @@
             
           
         
+          
+          
+          
+            var postBadge = document.querySelector('# mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+          
+          
+          
+            var postBadge = document.querySelector('# mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
       }
     })
   
@@ -761,6 +777,66 @@
       success: function(){
           LeanCloud.init('', '');
           var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2019/06/27/webNotes/advanced/Functional/ch_3/', json.ip);
+          leanCloud.fetchCommentCount('/2019/06/27/webNotes/advanced/Functional/ch_3/');
+          leanCloud.fetchVisitCount('/2019/06/27/webNotes/advanced/Functional/ch_3/');
+          leanCloud.fetchThumbUpCount('/2019/06/27/webNotes/advanced/Functional/ch_3/');
+          leanCloud.getCommentCount('/2019/06/27/webNotes/advanced/Functional/ch_3/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2019/06/27/webNotes/advanced/Functional/ch_3/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2019/06/27/webNotes/advanced/Functional/ch_3/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2019/06/27/webNotes/advanced/Functional/ch_3/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2019/06/23/webNotes/advanced/Functional/ch_2/', json.ip);
+          leanCloud.fetchCommentCount('/2019/06/23/webNotes/advanced/Functional/ch_2/');
+          leanCloud.fetchVisitCount('/2019/06/23/webNotes/advanced/Functional/ch_2/');
+          leanCloud.fetchThumbUpCount('/2019/06/23/webNotes/advanced/Functional/ch_2/');
+          leanCloud.getCommentCount('/2019/06/23/webNotes/advanced/Functional/ch_2/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2019/06/23/webNotes/advanced/Functional/ch_2/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2019/06/23/webNotes/advanced/Functional/ch_2/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2019/06/23/webNotes/advanced/Functional/ch_2/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
         
           
           
@@ -1395,36 +1471,6 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', json.ip);
-          leanCloud.fetchCommentCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
-          leanCloud.fetchVisitCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
-          leanCloud.fetchThumbUpCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
-          leanCloud.getCommentCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
           leanCloud.fetchIsThumbUp('/2017/03/08/webNotes/primary/Vue/basicVue/', json.ip);
           leanCloud.fetchCommentCount('/2017/03/08/webNotes/primary/Vue/basicVue/');
           leanCloud.fetchVisitCount('/2017/03/08/webNotes/primary/Vue/basicVue/');
@@ -1442,6 +1488,36 @@
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2017/03/08/webNotes/primary/Vue/basicVue/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', json.ip);
+          leanCloud.fetchCommentCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
+          leanCloud.fetchVisitCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
+          leanCloud.fetchThumbUpCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/');
+          leanCloud.getCommentCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2017/03/08/webNotes/advanced/HTML/htmlNewAPI/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1545,83 +1621,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/CSS/basicCSS/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1665,83 +1681,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/CSS/basicCSS/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1785,23 +1741,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1815,23 +1771,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1845,23 +1801,53 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1905,23 +1891,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/this/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/this/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/this/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/this/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/this/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1965,23 +1951,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1995,23 +1981,83 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.fetchVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.getCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/this/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/this/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/this/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/this/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/this/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/this/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/box/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/box/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/box/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/HTML/box/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/box/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/form/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/form/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -2085,66 +2131,6 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDate/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
           leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/tag/', json.ip);
           leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/tag/');
           leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/tag/');
@@ -2162,6 +2148,36 @@
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/tag/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -2205,6 +2221,96 @@
           
           
           // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/calendarOfJs/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/ajax/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfDOM/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
           leanCloud.fetchIsThumbUp('/2016/02/08/otherSkill/Npm/npmOfPublic/', json.ip);
           leanCloud.fetchCommentCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
           leanCloud.fetchVisitCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
@@ -2235,53 +2341,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/form/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/form/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/form/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/form/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/box/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/box/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/box/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/HTML/box/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/HTML/box/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/box/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -2325,23 +2401,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
+          leanCloud.fetchVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
+          leanCloud.getCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){

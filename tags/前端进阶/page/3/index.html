@@ -123,16 +123,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -196,6 +196,60 @@
 
 
 
+<div class="Card-archive" id="" data-name="JQuery of DOM" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/">
+			
+			JQuery of DOM</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> Mar 8, 2016
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+	
+		
+
+
+
 <div class="Card-archive" id="" data-name="JQuery动画" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
@@ -250,14 +304,14 @@
 
 
 
-<div class="Card-archive" id="" data-name="JQuery事件" data-version="">
+<div class="Card-archive" id="" data-name="JQuery基础" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
 		<h3 class="Card-title">
 			
-				<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of Event/">
+				<a href="/2016/03/08/webNotes/primary/JQuery/basisJQuery/">
 			
-			JQuery事件</a>
+			JQuery基础</a>
 		</h3>
 		<div class="Card-meta">
 			<div class="Card-tags">
@@ -286,7 +340,61 @@
 					
 					
 					<li>
-						<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of Event/#article-comment">
+						<a href="/2016/03/08/webNotes/primary/JQuery/basisJQuery/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+	
+		
+
+
+
+<div class="Card-archive" id="" data-name="JQuery of Ajax" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/">
+			
+			JQuery of Ajax</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> Mar 8, 2016
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/#article-comment">
 							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
 						</a>
 					</li>
@@ -411,16 +519,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -500,6 +608,22 @@
             
           
         
+          
+          
+          
+            var postBadge = document.querySelector('# mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+          
+          
+          
+            var postBadge = document.querySelector('# mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
       }
     })
   
@@ -515,6 +639,36 @@
       success: function(){
           LeanCloud.init('', '');
           var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
         
           
           
@@ -549,23 +703,53 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', json.ip);
-          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
-          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', json.ip);
+          leanCloud.fetchCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
+          leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){

@@ -123,16 +123,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -196,60 +196,6 @@
 
 
 
-<div class="Card-archive" id="" data-name="JS正则基本知识" data-version="">
-	<mark class="Card-badge"></mark>
-	<div class="Card-body">
-		<h3 class="Card-title">
-			
-				<a href="/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/">
-			
-			JS正则基本知识</a>
-		</h3>
-		<div class="Card-meta">
-			<div class="Card-tags">
-<div class="tags">
-	
-		
-			
-				<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
-			
-		
-	
-		
-			
-				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
-			
-		
-	
-	</div>
-</div>
-			<ul>
-					<li>
-						<a href="/archives/">
-							<i class="fa fa-calendar"></i> Feb 8, 2016
-						</a>
-					</li>
-					
-					
-					<li>
-						<a href="/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/#article-comment">
-							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
-						</a>
-					</li>
-					<li>
-						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
-					</li>
-					
-					
-			</ul>
-		</div>
-	</div>
-</div>
-	
-		
-
-
-
 <div class="Card-archive" id="" data-name="作用域和闭包" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
@@ -287,6 +233,60 @@
 					
 					<li>
 						<a href="/2016/02/08/webNotes/primary/JavaScript/basicOfScope/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+	
+		
+
+
+
+<div class="Card-archive" id="" data-name="JS正则基本知识" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/">
+			
+			JS正则基本知识</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> Feb 8, 2016
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/#article-comment">
 							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
 						</a>
 					</li>
@@ -452,16 +452,16 @@
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/mySql/">
-						<span>Mysql</span>
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
 					</a>
 				</div>
 		</div>
 		
 		<div class="nav-more-item">
 				<div class="nav-name">
-					<a class="nav-link" href="/categories/php/">
-						<span>Php</span>
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
 					</a>
 				</div>
 		</div>
@@ -568,36 +568,6 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
-          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
-          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-comment-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-visit-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
-              if(el) el.innerHTML = count;
-          });
-          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
-              if(el){
-                if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
-                }else{
-                  el.className = 'far fa-thumbs-up';
-                }
-              }
-          });
-        
-          
-          
-          // start caching post visit and comment counts
           leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', json.ip);
           leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
           leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/');
@@ -615,6 +585,36 @@
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfScope/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){

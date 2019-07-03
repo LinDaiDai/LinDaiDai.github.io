@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>9012年了你还在用单色图标？(iconfont多色图标详解) - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/07/03/webNotes/advanced/CSS/iconSvg/" data-name="9012年了你还在用单色图标？(iconfont多色图标详解)" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/css.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/07/03/webNotes/advanced/CSS/iconSvg/">
+                9012年了你还在用单色图标？(iconfont多色图标详解)
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年07月03日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/css/">Css</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言记录iconfont的三种使用方式多色图标出来已经很久了，现在才拿出来说貌似有点过时…但为了方便自己以后知道怎么使用，也为了让更多刚入门的新手熟悉iconfont，还是决定写一篇比较详细的文章来记录它的使用方式。本文主要是参考花叔的文章：手摸手，带你优雅的使用...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记录<code>iconfont</code>的三种使用方式<br>多色图标出来已经很久了，现在才拿出来说貌似有点过时…<br>但为了方便自己以后知道怎么使用，也为了让更多刚入门的新手熟悉<code>iconfont</code>，还是决定写一篇比较详细的文章来记录它的使用方式。<br>本文主要是参考花叔的文章：<a href="https://juejin.im/post/59bb864b5188257e7a427c09" target="_blank" rel="noopener">手摸手，带你优雅的使用 icon</a></p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>在<a href="[https://www.iconfont.cn/](https://www.iconfont.cn/">iconfont</a><br>)官网上创建一个自己的账号，并创建一个项目。在官网上挑选响应的图标添加进项目中。比如我这里有一个名为<code>vuepress-bolg</code>的项目，添加了一个<code>github</code>的图标。<br><img src="https://upload-images.jianshu.io/upload_images/7190596-3af9eb6b121c043f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h2><p>最基础的一种使用方式，就是使用<code>unicode</code>。<br>它的主要<strong>优点</strong>是：</p>
+<ul>
+<li>兼容性最好，支持ie6+</li>
+<li>支持按字体的方式去动态调整图标大小，颜色等等<br>但是<strong>缺点</strong>也很明显：</li>
+<li>不支持多色图标</li>
+<li>在不同的设备浏览器字体的渲染会略有差别，在不同的浏览器或系统中对文字的渲染不同，其显示的位置和大小可能会受到font-size、line-height、word-spacing等CSS属性的影响，而且这种影响调整起来较为困难<br><strong>第一步</strong><br>在你项目的css中引入字体<br>如果你的项目是使用像<code>vue</code>这样的前端框架开发的话，你可以在公共的<code>css</code>中引入它：<br>比如我的<code>vue</code>项目下有一个<code>common.css</code>:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* common.css */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;  <span class="comment">/* project id 872514 */</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot'</span>);</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.svg#iconfont'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>注</strong>：上面的内容不是复制我的，而是复制你在<code>iconfont</code>项目上<code>Unicode</code>下的内容。这段代码的作用是远程的引入<code>iconfont</code>  字体。你可以不需要下载到本地。<br><strong>第二步</strong><br>定义字体<br>将字体引入到了项目中的话，你需要定一个类，让它的字体类型为<code>iconfont</code>：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* common.css */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;  <span class="comment">/* project id 872514 */</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot'</span>);</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.svg#iconfont'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.icon-online</span> &#123; <span class="comment">/* 定义一个类 */</span></span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"iconfont"</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">font-style</span>:normal;</span><br><span class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</span><br><span class="line">  <span class="attribute">-webkit-text-stroke-width</span>: <span class="number">0.2px</span>;</span><br><span class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>由于我的字体是远程引入的，所以这里我就取名为<code>icon-online</code>，当然你也可以使用其它的命名。<br><strong>第三步</strong><br>页面上使用<code>unicode</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;icon-online&quot;&gt;&amp;#xe68c;&lt;/i&gt;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个<code>i</code>标签，然后给它设置<code>class</code>，之后在标签中写上你要使用的字体的代码。这样在页面上显示的就是你在对应的图标啦。<br>可以看到上面的这种<code>unicode</code>有一个很大的弊端，就是你看到代码里的这串<code>&amp;#xe68c;</code>，根本不知道它是个什么图标，需要打开<code>iconfont</code>在你的项目上找对应的代码才知道。所以有了另一种<code>font-class</code>的方式。</p>
+<h2 id="font-class"><a href="#font-class" class="headerlink" title="font-class"></a>font-class</h2><p>第二种方式就是使用<code>font-class</code><br>它的<strong>优点</strong>是：</p>
+<ul>
+<li>兼容性良好，支持ie8+</li>
+<li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。<br><strong>第一步</strong><br>找到<code>iconfont</code>项目下的<code>Font class</code>,并复制它：<br><img src="https://upload-images.jianshu.io/upload_images/7190596-c5a4f828bb5dddcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fontClass"><br>然后在<code>css</code>中引用：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* common.css */</span></span><br><span class="line"></span><br><span class="line">@<span class="keyword">import</span> <span class="string">"//at.alicdn.com/t/font_872514_urq1z9ughp.css"</span>;</span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;  <span class="comment">/* project id 872514 */</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot'</span>);</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</span><br><span class="line">  <span class="built_in">url</span>(<span class="string">'//at.alicdn.com/t/font_872514_urq1z9ughp.svg#iconfont'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.icon-online</span> &#123; <span class="comment">/* 定义一个类 */</span></span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">"iconfont"</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">font-style</span>:normal;</span><br><span class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</span><br><span class="line">  <span class="attribute">-webkit-text-stroke-width</span>: <span class="number">0.2px</span>;</span><br><span class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>第二步</strong><br>然后你在使用的时候就可以将<code>unicode</code>的方式改为<code>font-class</code>啦：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;icon-online icon-github&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意⚠️</strong>：<br>不过你的前端项目要是用到了多组<code>iconfont</code>，一定要主要命名空间的问题。</p>
+<p>不管是<code>unicode</code>还是<code>font-class</code>都只支持单色的图标，设置了<code>iconfont</code>的<code>i</code>标签其实就相当于一个字了，也就是可以根据<code>color</code>来控制它的字体颜色。但是你并不能使用多色。</p>
+<h2 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h2><p>随着<code>IE</code>慢慢的退出历史舞台，<code>svg-icon</code>使用形式慢慢成为主流和推荐的方法。<br>它主要有一下几个<strong>优点</strong>：</p>
+<ul>
+<li>支持多色图标了，不再受单色限制。</li>
+<li>支持像字体那样通过font-size,color来调整样式。</li>
+<li>支持 ie9+</li>
+<li>可利用CSS实现动画。</li>
+<li>减少HTTP请求。</li>
+<li>矢量，缩放不失真</li>
+<li>可以很精细的控制SVG图标的每一部分<br>使用方式：<br><strong>第一步</strong><br>引入<code>js</code><br>引入的方式有两种：</li>
+</ul>
+<ol>
+<li><p>在<code>iconfont</code>的项目里，点击下载至本地，它会把这个项目相关的字体文件都下载下来。找到下载下来里面的<code>iconfont.js</code>文件，把它拷贝到你的前端项目里(只需要拷贝这一个文件就可以了)，然后在前端代码里引用这个<code>js</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./iconfont.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程引入，不需要下载这个<code>iconfont.js</code>，而是直接用<code>iconfont</code>项目里生成的那个地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;//at.alicdn.com/t/font_872514_urq1z9ughp.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>第二步</strong><br>设置通用的类名<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* common.css */</span></span><br><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">       <span class="attribute">width</span>: <span class="number">1em</span>; <span class="attribute">height</span>: <span class="number">1em</span>;</span><br><span class="line">       <span class="attribute">vertical-align</span>: -<span class="number">0.15em</span>;</span><br><span class="line">       <span class="attribute">fill</span>: currentColor;</span><br><span class="line">       <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>第三步</strong><br>挑选相应图标并获取类名，应用于页面：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">class</span>=<span class="string">"icon"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">use</span> <span class="attr">xlink:href</span>=<span class="string">"#icon-github"</span>&gt;</span><span class="tag">&lt;/<span class="name">use</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意⚠️</strong><br>在<code>xlink:href=&quot;#&quot;</code>后面接的就是你图标的<code>font-class</code>，比如我这里<code>github</code>的图标就是<code>icon-github</code>。前缀<code>icon-</code>并不是所有图标都会有，要根据自己图标的<code>font-class</code>来填写它。<br>另外，使用<code>symbol</code>这种方式是不需要引用<code>woff|eot|ttf|</code>这些字体库的，也就是上面的<code>unicon</code>和<code>font-class</code>两步都可以省去。</p>
+<p>现在你可以去<code>iconfont</code>彩色图标库挑选你想要的彩色图标应用在页面中啦。</p>
+<h2 id="创建公共的多色图标组件"><a href="#创建公共的多色图标组件" class="headerlink" title="创建公共的多色图标组件"></a>创建公共的多色图标组件</h2><p>完成上面的第三步，你已经可以在项目中使用多色的图标了。<br>但是作为一个有”追求”的前端，怎么能允许在每次要用到图标的时候就写那么一长串的<code>html</code>标签呢。我相信，你首先想到的就是把它封装成一个组件。(如果你真的想到了，恭喜你，和我心有灵犀🧡)<br>下面以在<code>vue</code>中创建多色图标组件为例：<br><strong>第一步</strong></p>
+<blockquote>
+<p>创建<code>IconSvg</code>组件</p>
+</blockquote>
+<p>首先在你的组件文件夹中创建一个<code>IconSvg.vue</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;svg class=&quot;svg-icon&quot; aria-hidden=&quot;true&quot;&gt;</span><br><span class="line">    &lt;use :xlink:href=&quot;iconName&quot;&gt;&lt;/use&gt;</span><br><span class="line">  &lt;/svg&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;icon-svg&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    iconClass: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    iconName() &#123;</span><br><span class="line">      return `#$&#123;this.iconClass&#125;`</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.svg-icon &#123;</span><br><span class="line">  width: 1em;</span><br><span class="line">  height: 1em;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  vertical-align: -0.15em;</span><br><span class="line">  fill: currentColor;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>第二步</strong></p>
+<blockquote>
+<p>注册为全局组件</p>
+</blockquote>
+<p>由于多色图标可能会在多处使用，所以我建议你将这个组件注册为全局的组件。<br>比如我会在<code>components</code>文件夹下创建一个<code>GlobalComponent</code>文件夹，文件夹目录为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-src</span><br><span class="line">  |-components</span><br><span class="line">    |-GlobalComponent</span><br><span class="line">      |-index.js</span><br><span class="line">      |-IconSvg.vue</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>index.js</code>中，将其注册为全局组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存放一些全局的组件</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> IconSvg <span class="keyword">from</span> <span class="string">'./components/IconSvg'</span></span><br><span class="line"><span class="comment">//全局注册icon-svg</span></span><br><span class="line">Vue.component(<span class="string">'icon-svg'</span>, IconSvg)</span><br></pre></td></tr></table></figure></p>
+<p><strong>第三步</strong></p>
+<blockquote>
+<p>使用多色图标组件</p>
+</blockquote>
+<p>使用的时候只需要指定对应的<code>font-class</code>就可以了：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon-svg</span> <span class="attr">icon-class</span>=<span class="string">"icon-github"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>是不是感觉方便多了呢？<br>由于<code>icon-svg</code>也是一个组件，所以你还可以给它加上额外的属性，比如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon-svg</span></span></span><br><span class="line"><span class="tag">   <span class="attr">class</span>=<span class="string">"cur_pointer"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">style</span>=<span class="string">"font-size: 20px;"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">icon-class</span>=<span class="string">"icon-github"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">title</span>=<span class="string">"我是github图标"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>但是在使用过程中，我碰到了一个问题。<br>就是在你想给图标添加一个事件的时候，却是无效的。<br>比如我先给图标添加一个点击事件：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon-svg</span> <span class="attr">icon-class</span>=<span class="string">"icon-github"</span>  @<span class="attr">click</span>=<span class="string">"onClick"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>click</code>事件并没有触发。<br>暂时的解决方案：使用事件修饰符<code>native</code>：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon-svg</span> <span class="attr">icon-class</span>=<span class="string">"icon-github"</span>  @<span class="attr">click.native</span>=<span class="string">"onClick"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>有更好解决方案的大佬请评论区留言，谢谢…</p>
+<p><strong>注⚠️</strong><br>我喜欢使用<code>iconfont</code>的还一个好处是它可以在一个项目中添加多个项目成员，这样在团队进行项目开发的时候是十分方便的。</p>
+<h2 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h2><p>参考文章：<a href="https://juejin.im/post/59bb864b5188257e7a427c09" target="_blank" rel="noopener">手摸手，带你优雅的使用 icon</a><br>知识无价，支持原创</p>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/07/03/webNotes/advanced/CSS/iconSvg/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/07/03/webNotes/advanced/CSS/iconSvg/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/07/03/webNotes/advanced/CSS/iconSvg/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/07/03/webNotes/advanced/CSS/iconSvg/', json.ip);
+    leanCloud.fetchCommentCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/');
+    leanCloud.fetchVisitCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/');
+    leanCloud.fetchThumbUpCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/');
+    leanCloud.getCommentCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/07/03/webNotes/advanced/CSS/iconSvg/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

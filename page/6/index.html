@@ -295,7 +295,91 @@
 
 
 
-<div class="Card Card-hover Card-index-2" id="" data-name="JS中常见的几种轮播" data-version="">
+<div class="Card Card-hover Card-index-2" id="" data-name="基本的表单标签" data-version="">
+	
+		
+			
+				
+				
+			
+		
+	
+	<mark class="Card-badge" style="{visibility: " hidden"}"=""></mark>
+	<div class="Card-figure">
+		
+			<a href="/2016/02/08/webNotes/primary/HTML/form/">
+		
+
+		
+			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " ""=""> 
+	  
+		</a>
+	</div>
+	<div class="Card-body">
+
+			<div class="Card-title">
+				<h2>
+				
+					<a href="/2016/02/08/webNotes/primary/HTML/form/">
+				
+				基本的表单标签</a></h2>
+			</div>
+			<div class="Card-excerpt">
+				<p>
+				
+					<a href="/2016/02/08/webNotes/primary/HTML/form/">
+				
+				
+				
+				
+				</a></p>
+				
+			</div>
+
+			
+			
+			<div class="Card-meta">
+				
+				<ul>
+						<li class="card-calendar">
+							<a href="/archives/">
+								<i class="fa fa-calendar"></i> 2016年02月08日
+							</a>
+						</li>
+						
+						
+						<li class="card-comment">
+							<a href="/2016/02/08/webNotes/primary/HTML/form/#article-comment">
+								<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+							</a>
+						</li>
+						<li class="card-visitor"><i class="fa fa-eye"></i> <span class="card-visit-count">0</span></li>
+						<li class="card-thumbup-container"><i class="far fa-thumbs-up"></i> <span class="card-thumbup-count">0</span></li>
+						
+						
+				</ul>
+			</div>
+		
+	</div>
+</div>
+
+		
+			
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+<div class="Card Card-hover Card-index-3" id="" data-name="JS中常见的几种轮播" data-version="">
 	
 		
 			
@@ -379,7 +463,7 @@
 
 
 
-<div class="Card Card-hover Card-index-3" id="" data-name="面试题" data-version="">
+<div class="Card Card-hover Card-index-4" id="" data-name="面试题" data-version="">
 	
 		
 			
@@ -463,7 +547,7 @@
 
 
 
-<div class="Card Card-hover Card-index-4" id="" data-name="在npm上发布模块" data-version="">
+<div class="Card Card-hover Card-index-5" id="" data-name="在npm上发布模块" data-version="">
 	
 		
 			
@@ -547,7 +631,7 @@
 
 
 
-<div class="Card Card-hover Card-index-5" id="" data-name="作用域和闭包" data-version="">
+<div class="Card Card-hover Card-index-6" id="" data-name="作用域和闭包" data-version="">
 	
 		
 			
@@ -631,7 +715,7 @@
 
 
 
-<div class="Card Card-hover Card-index-6" id="" data-name="php中使用SDK完成微博授权" data-version="">
+<div class="Card Card-hover Card-index-7" id="" data-name="JS基础知识" data-version="">
 	
 		
 			
@@ -643,11 +727,11 @@
 	<mark class="Card-badge" style="{visibility: " hidden"}"=""></mark>
 	<div class="Card-figure">
 		
-			<a href="/2016/02/08/phpNotes/phpAndSinaSDK/">
+			<a href="/2016/02/08/webNotes/primary/JavaScript/basicJS/">
 		
 
 		
-			<img class="grow" src="/images/php.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " ""=""> 
 	  
 		</a>
 	</div>
@@ -656,14 +740,14 @@
 			<div class="Card-title">
 				<h2>
 				
-					<a href="/2016/02/08/phpNotes/phpAndSinaSDK/">
+					<a href="/2016/02/08/webNotes/primary/JavaScript/basicJS/">
 				
-				php中使用SDK完成微博授权</a></h2>
+				JS基础知识</a></h2>
 			</div>
 			<div class="Card-excerpt">
 				<p>
 				
-					<a href="/2016/02/08/phpNotes/phpAndSinaSDK/">
+					<a href="/2016/02/08/webNotes/primary/JavaScript/basicJS/">
 				
 				
 				
@@ -685,7 +769,7 @@
 						
 						
 						<li class="card-comment">
-							<a href="/2016/02/08/phpNotes/phpAndSinaSDK/#article-comment">
+							<a href="/2016/02/08/webNotes/primary/JavaScript/basicJS/#article-comment">
 								<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
 							</a>
 						</li>
@@ -955,6 +1039,14 @@
             
           
         
+          
+          
+          
+            var postBadge = document.querySelector('# mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
       }
     })
   
@@ -991,6 +1083,36 @@
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfEvent/', function(isThumbUp){
+              var el = document.querySelector('# .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/HTML/form/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/HTML/form/', function(count){
+              var el = document.querySelector('# .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/HTML/form/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
@@ -1124,23 +1246,23 @@
           
           
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', json.ip);
-          leanCloud.fetchCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.fetchVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.fetchThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/');
-          leanCloud.getCommentCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.fetchIsThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicJS/', json.ip);
+          leanCloud.fetchCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/');
+          leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/');
+          leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/');
+          leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/', function(count){
               var el = document.querySelector('# .card-comment-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getVisitCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/', function(count){
               var el = document.querySelector('# .card-visit-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.getThumbUpCount('/2016/02/08/phpNotes/phpAndSinaSDK/', function(count){
+          leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicJS/', function(count){
               var el = document.querySelector('# .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
-          leanCloud.isThumbUp('/2016/02/08/phpNotes/phpAndSinaSDK/', function(isThumbUp){
+          leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicJS/', function(isThumbUp){
               var el = document.querySelector('# .card-thumbup-container i');
               if(el){
                 if(isThumbUp){

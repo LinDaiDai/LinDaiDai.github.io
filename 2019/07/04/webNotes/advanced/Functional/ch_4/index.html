@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>霖呆呆的函数式编程之路(四) - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-text-no-image">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>王霈霖的个人博客</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/07/04/webNotes/advanced/Functional/ch_4/" data-name="霖呆呆的函数式编程之路(四)" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端进阶.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/07/04/webNotes/advanced/Functional/ch_4/">
+                霖呆呆的函数式编程之路(四)
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年07月04日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                <a href="mailto:">禁止转载</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/Functional/">Functional</a></label>
+		
+	
+		
+			<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h1 id="组合函数"><a href="#组合函数" class="headerlink" title="组合函数"></a>组合函数</h1><p>到了第四章了，函数式编程的魅力似乎越来越大。</p>
+<p>对于函数式编程者，他们会将每个函数都当成是一个“部件”，在需要时通过组装不同的“部件”，来拼凑出一个自己想要的“模型”。</p>
+<p>专业点的角度来说，就是我们能够定义某种组合方式，来让它们成为一种新的组合函数，程序中不同的部分都可以使用这个函数。这种将函数一起使用的过程叫做组合。</p>
+<p>再介绍组合函数的概念之前，我们就已经使用过组合了。</p>
+<p>例如在之前我们的一个案例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unary(adder(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>上面的表达式，我们将两个函数整合起来，然后将第一个函数调用产生的值(输出)当成第二个函数调用的实参(输入)。画个简图，也就是这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">functionValue &lt;-- unary &lt;-- adder &lt;-- 3</span><br></pre></td></tr></table></figure>
+<p><code>3</code> 是 <code>adder(..)</code> 的输入。而 <code>adder(..)</code> 的输出是 <code>unary(..)</code> 的输入。<code>unary(..)</code> 的输出是 <code>functionValue</code>。 这就是 <code>unary(..)</code> 和 <code>adder(..)</code> 的组合。</p>
+<h3 id="Compose2函数"><a href="#Compose2函数" class="headerlink" title="Compose2函数"></a>Compose2函数</h3><p>为了满足上面组合函数的要求，我们可以来构造这么一个简单的函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose2</span>(<span class="params">fn2,fn1</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">composed</span>(<span class="params">origValue</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> fn2( fn1( origValue ) );</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式写法</span></span><br><span class="line"><span class="keyword">var</span> compose2 =</span><br><span class="line">	(fn2,fn1) =&gt;</span><br><span class="line">		origValue =&gt;</span><br><span class="line">			fn2( fn1( origValue ) );</span><br></pre></td></tr></table></figure>
+<p>它能够自动创建两个函数的组合，这和我们手动做的是一模一样的。</p>
+<h3 id="Words案例"><a href="#Words案例" class="headerlink" title="Words案例"></a>Words案例</h3><p>现在有这么一个需求，需要将给定的一个英文字符串，提取其中全部的英文单词，先全部转化小写，然后去除其中重复的单词。</p>
+<p>我们可以先来创建这么2个函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">words</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">String</span>( str )</span><br><span class="line">		.toLowerCase()</span><br><span class="line">		.split( <span class="regexp">/\s|\b/</span> )</span><br><span class="line">		.filter( <span class="function"><span class="keyword">function</span> <span class="title">alpha</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="regexp">/^[\w]+$/</span>.test( v );</span><br><span class="line">		&#125; );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> uniqList = [];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">		<span class="comment">// value not yet in the new list?</span></span><br><span class="line">		<span class="keyword">if</span> (uniqList.indexOf( list[i] ) === <span class="number">-1</span> ) &#123;</span><br><span class="line">			uniqList.push( list[i] );</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> uniqList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来我们解析文本字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"To compose two functions together, pass the \</span></span><br><span class="line"><span class="string">output of the first function call as the input of the \</span></span><br><span class="line"><span class="string">second function call."</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wordsFound = words( text );</span><br><span class="line"><span class="keyword">var</span> wordsUsed = unique( wordsFound );</span><br><span class="line"></span><br><span class="line">wordsUsed;</span><br><span class="line"><span class="comment">// ["to","compose","two","functions","together","pass",</span></span><br><span class="line"><span class="comment">// "the","output","of","first","function","call","as",</span></span><br><span class="line"><span class="comment">// "input","second"]</span></span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，我们将该过程分为了2步来做。</p>
+<p>并且先创建了<code>wordsFound</code>函数，然后将该函数的输出再传递给<code>unique</code>,实际上，上面的效果等同于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wordsUsed = unique( words(text) )</span><br></pre></td></tr></table></figure>
+<p>所以我们可以将其封装一层：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueWords</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> unique( words( str ) );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wordsUsed = uniqueWords(text)</span><br></pre></td></tr></table></figure>
+<p>你会发现，其实我们还可以这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uniqueWords = compose2( unique, words )</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wordsUsed = uniqueWords(text)</span><br></pre></td></tr></table></figure>
+<p>这样我们就成功将<code>uniqueWords</code>转化为了无形参的函数。</p>
+<p><code>uniqueWords(..)</code> 接收一个字符串并返回一个数组。它是 <code>unique(..)</code> 和 <code>words(..)</code> 的组合，并且满足我们的数据流向要求：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wordsUsed &lt;-- unique &lt;-- words &lt;-- text</span><br></pre></td></tr></table></figure>
+<h3 id="compose函数"><a href="#compose函数" class="headerlink" title="compose函数"></a>compose函数</h3><p>在上面我们构造了<code>compose2</code>函数，它能接收2个函数，并将2个函数从右向左的执行。</p>
+<p>如果我们能够定义两个函数的组合，我们也同样能够支持组合任意数量的函数。任意数目函数的组合的通用可视化数据流如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">finalValue &lt;-- func1 &lt;-- func2 &lt;-- ... &lt;-- funcN &lt;-- origValue</span><br></pre></td></tr></table></figure>
+<p>我们能够像这样实现一个通用 <code>compose(..)</code> 实用函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">composed</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">		<span class="comment">// 拷贝一份保存函数的数组</span></span><br><span class="line">		<span class="keyword">var</span> list = fns.slice();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (list.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="comment">// 将最后一个函数从列表尾部拿出</span></span><br><span class="line">			<span class="comment">// 并执行它</span></span><br><span class="line">			result = list.pop()( result );</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式写法</span></span><br><span class="line"><span class="keyword">var</span> compose =</span><br><span class="line">	(...fns) =&gt;</span><br><span class="line">		result =&gt; &#123;</span><br><span class="line">			<span class="keyword">var</span> list = fns.slice();</span><br><span class="line"></span><br><span class="line">			<span class="keyword">while</span> (list.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="comment">// 将最后一个函数从列表尾部拿出</span></span><br><span class="line">				<span class="comment">// 并执行它</span></span><br><span class="line">				result = list.pop()( result );</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;;</span><br></pre></td></tr></table></figure>
+<p>现在看一下组合超过两个函数的例子。回想下我们的 <code>uniqueWords(..)</code> 组合例子，让我们增加一个 <code>skipShortWords(..)</code>，它将所有单词字母数大于4的提取出来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipShortWords</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> list.filter(<span class="function"><span class="params">str</span> =&gt;</span> str.length &gt; <span class="number">4</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>让我们再定义一个 <code>biggerWords(..)</code> 来包含 <code>skipShortWords(..)</code>。我们期望等价的手工组合方式是 <code>skipShortWords(unique(words(text)))</code>，所以让我们采用 <code>compose(..)</code> 来实现它：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"To compose two functions together, pass the \</span></span><br><span class="line"><span class="string">output of the first function call as the input of the \</span></span><br><span class="line"><span class="string">second function call."</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> biggerWords = compose( skipShortWords, unique, words );</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wordsUsed = biggerWords( text );</span><br><span class="line"></span><br><span class="line">wordsUsed;</span><br><span class="line"><span class="comment">// ["compose","functions","together","output","first",</span></span><br><span class="line"><span class="comment">// "function","input","second"]</span></span><br></pre></td></tr></table></figure>
+<p>现在，让我们回忆一下第 3 章中出现的 <code>partialRight(..)</code> 来让组合变的更有趣。我们能够构造一个由 <code>compose(..)</code> 自身组成的右偏函数应用，通过提前定义好第二和第三参数（<code>unique(..)</code> 和 <code>words(..)</code>）；我们把它称作 <code>filterWords(..)</code>（如下）。</p>
+<p>然后，我们能够通过多次调用 <code>filterWords(..)</code> 来完成组合，但是每次的第一参数却各不相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipShortWords</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> list.filter(<span class="function"><span class="params">str</span> =&gt;</span> str.length &gt; <span class="number">4</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipLongWords</span>(<span class="params">list</span>) </span>&#123; </span><br><span class="line">	<span class="keyword">return</span> list.filter(<span class="function"><span class="params">str</span> =&gt;</span> str.length &lt;= <span class="number">4</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filterWords = partialRight( compose, unique, words );</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> biggerWords = filterWords( skipShortWords );</span><br><span class="line"><span class="keyword">var</span> shorterWords = filterWords( skipLongWords );</span><br><span class="line"></span><br><span class="line">biggerWords( text );</span><br><span class="line"><span class="comment">// ["compose","functions","together","output","first",</span></span><br><span class="line"><span class="comment">// "function","input","second"]</span></span><br><span class="line"></span><br><span class="line">shorterWords( text );</span><br><span class="line"><span class="comment">// ["to","two","pass","the","of","call","as"]</span></span><br></pre></td></tr></table></figure>
+<p>花些时间考虑一下基于 <code>compose(..)</code> 的右偏函数应用给了我们什么。</p>
+<p> 甚至我们可以结合前面一章的<code>not</code>和<code>when</code>、<code>identity</code>函数来重构一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 取反辅助函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">not</span>(<span class="params">predicate</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">negated</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !predicate(...args)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 判断某个条件成立之后执行fn</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">when</span>(<span class="params">predicate, fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">conditional</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (predicate(...args)) &#123;</span><br><span class="line">            <span class="keyword">return</span> fn(...args)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 传一个返回一个</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">identity</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isLong = <span class="function">(<span class="params">str</span>) =&gt;</span> str.length &gt; <span class="number">4</span>;</span><br><span class="line"><span class="keyword">var</span> isShort = not(isLong)</span><br><span class="line"><span class="keyword">var</span> returnLong = when(isLong, identity)</span><br><span class="line"><span class="keyword">var</span> returnShort = when(isShort, identity)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipShortWords</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> list.filter(<span class="function"><span class="params">str</span> =&gt;</span> returnLong(str))</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">skipLongWords</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> list.filter(<span class="function"><span class="params">str</span> =&gt;</span> returnShort(str))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filterWords = partialRight(compose, unique, words)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> biggerWords = filterWords(skipShortWords)</span><br><span class="line"><span class="keyword">var</span> shorterWords = filterWords(skipLongWords)</span><br><span class="line"></span><br><span class="line">biggerWords( text );</span><br><span class="line"><span class="comment">// ["compose","functions","together","output","first",</span></span><br><span class="line"><span class="comment">// "function","input","second"]</span></span><br><span class="line"></span><br><span class="line">shorterWords( text );</span><br><span class="line"><span class="comment">// ["to","two","pass","the","of","call","as"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="compose的不同实现方式"><a href="#compose的不同实现方式" class="headerlink" title="compose的不同实现方式"></a>compose的不同实现方式</h3><h4 id="reduce实现"><a href="#reduce实现" class="headerlink" title="reduce实现"></a>reduce实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> fns.reverse().reduce( <span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">fn1,fn2</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">composed</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> fn2( fn1( ...args ) );</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125; );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式写法</span></span><br><span class="line"><span class="keyword">var</span> compose =</span><br><span class="line">	(...fns) =&gt;</span><br><span class="line">		fns.reverse().reduce( <span class="function">(<span class="params">fn1,fn2</span>) =&gt;</span></span><br><span class="line">			(...args) =&gt;</span><br><span class="line">				fn2( fn1( ...args ) )</span><br><span class="line">		);</span><br></pre></td></tr></table></figure>
+<h4 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 拿出最后两个参数</span></span><br><span class="line">	<span class="keyword">var</span> [ fn1, fn2, ...rest ] = fns.reverse();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> composedFn = <span class="function"><span class="keyword">function</span> <span class="title">composed</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> fn2( fn1( ...args ) );</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (rest.length == <span class="number">0</span>) <span class="keyword">return</span> composedFn;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> compose( ...rest.reverse(), composedFn );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式写法</span></span><br><span class="line"><span class="keyword">var</span> compose =</span><br><span class="line">	(...fns) =&gt; &#123;</span><br><span class="line">		<span class="comment">// 拿出最后两个参数</span></span><br><span class="line">		<span class="keyword">var</span> [ fn1, fn2, ...rest ] = fns.reverse();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> composedFn =</span><br><span class="line">			(...args) =&gt;</span><br><span class="line">				fn2( fn1( ...args ) );</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (rest.length == <span class="number">0</span>) <span class="keyword">return</span> composedFn;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> compose( ...rest.reverse(), composedFn );</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="pipe函数"><a href="#pipe函数" class="headerlink" title="pipe函数"></a>pipe函数</h3><p>我们早期谈及的是从右往左顺序的标准 <code>compose(..)</code> 实现。这么做的好处是能够和手工组合列出参数（函数）的顺序保持一致。</p>
+<p>不足之处就是它们排列的顺序和它们执行的顺序是相反的，这将会造成困扰。同时，不得不使用 <code>partialRight(compose, ..)</code> 提早定义要在组合过程中 <strong>第一个</strong> 执行的函数。</p>
+<p>相反的顺序，从右往左的组合，有个常见的名字：<code>pipe(..)</code>。</p>
+<p><code>pipe(..)</code> 与 <code>compose(..)</code> 一模一样，除了它将列表中的函数从左往右处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pipe</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">piped</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> list = fns.slice();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (list.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="comment">// 从列表中取第一个函数并执行</span></span><br><span class="line">			result = list.shift()( result );</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上，我们只需将 <code>compose(..)</code> 的参数反转就能定义出来一个 <code>pipe(..)</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pipe = reverseArgs( compose );</span><br></pre></td></tr></table></figure>
+<p>回忆下之前的通用组合的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> biggerWords = compose( skipShortWords, unique, words );</span><br></pre></td></tr></table></figure>
+<p>以 <code>pipe(..)</code> 的方式来实现，我们只需要反转参数的顺序：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> biggerWords = pipe( words, unique, skipShortWords );</span><br></pre></td></tr></table></figure>
+<p><code>pipe(..)</code> 的优势在于它以函数执行的顺序排列参数，某些情况下能够减轻阅读者的疑惑</p>
+<h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>先来介绍2个简单且实用的函数</p>
+<h3 id="prop函数"><a href="#prop函数" class="headerlink" title="prop函数"></a>prop函数</h3><p>将任意对象的任意属性通过属性名提取出来。让我们把这个实用函数称为 <code>prop(..)</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">prop</span>(<span class="params">name,obj</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> obj[name];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式</span></span><br><span class="line"><span class="keyword">var</span> prop =</span><br><span class="line">	(name,obj) =&gt;</span><br><span class="line">		obj[name];</span><br></pre></td></tr></table></figure>
+<p>使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; x: 1, y: 2 &#125;</span><br><span class="line"></span><br><span class="line">prop(&apos;x&apos;, obj)</span><br><span class="line">// 1</span><br></pre></td></tr></table></figure>
+<h3 id="setProp函数"><a href="#setProp函数" class="headerlink" title="setProp函数"></a>setProp函数</h3><p>我们处理对象属性的时候，也需要定义下反操作的工具函数：<code>setProp(..)</code>，为了将属性值设到某个对象上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setProp</span>(<span class="params">name,obj,val</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="built_in">Object</span>.assign( &#123;&#125;, obj );</span><br><span class="line">	o[name] = val;</span><br><span class="line">	<span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = setProp(<span class="string">'z'</span>, obj, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// &#123; x: 1, y: 2, z: 3 &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="makeObjProp函数"><a href="#makeObjProp函数" class="headerlink" title="makeObjProp函数"></a>makeObjProp函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeObjProp</span>(<span class="params">name,value</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> setProp( name, &#123;&#125;, value );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 箭头函数形式</span></span><br><span class="line"><span class="keyword">var</span> makeObjProp =</span><br><span class="line">	(name,value) =&gt;</span><br><span class="line">		setProp( name, &#123;&#125;, value );</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong> 这个实用函数在 Ramda 库中被称为 <code>objOf(..)</code>。</p>
+<h3 id="回顾ajax案例"><a href="#回顾ajax案例" class="headerlink" title="回顾ajax案例"></a>回顾ajax案例</h3><p>让我们回顾一下第二章介绍的<code>ajax</code>案例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">url, data, callback</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> getUser = partial( ajax, <span class="string">"/api/user"</span> );</span><br><span class="line"><span class="keyword">var</span> getLastOrder = partial( ajax, <span class="string">"/api/order"</span>, &#123; <span class="attr">orderId</span>: <span class="number">-1</span> &#125; );</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> output = <span class="function">(<span class="params">str</span>) =&gt;</span> <span class="built_in">console</span>.log(sgr);</span><br><span class="line"></span><br><span class="line">getLastOrder(<span class="function"><span class="keyword">function</span> <span class="title">orderFound</span>(<span class="params">order</span>) </span>&#123;</span><br><span class="line">  getUser(&#123; <span class="attr">userId</span>: order.userId &#125;, <span class="function"><span class="keyword">function</span> <span class="title">userFound</span> (<span class="params">user</span>) </span>&#123;</span><br><span class="line">    output(user.name)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>如上，我们在给<code>getLastOrder</code>函数传递最后一个参数(一个回调函数<code>orderFound</code>)</p>
+<p>该函数用查询到的订单信息<code>order</code>中的<code>userId</code>查询当前订单的用户，并输出用户的姓名<code>name</code>.</p>
+<p>可以看到上面的函数需要<code>order</code>和<code>user</code>两个形参。</p>
+<p>我们可以用现有的函数式编程的知识将其转化为一个无形参的函数<code>getLastOrder</code>.</p>
+<h4 id="移除user形参"><a href="#移除user形参" class="headerlink" title="移除user形参"></a>移除user形参</h4><p>从里向外，我们先想想如何移除<code>user</code>这个形参。</p>
+<p>首先<code>output</code>函数是需要接收<code>user.name</code>这个参数的。我们可以用什么样的方式来移除这个参数呢。</p>
+<p>在这里我们的目的是想要获取<code>user</code>中的<code>name</code>属性：</p>
+<p>定义一个<code>extractName</code>函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> extractName = partial(prop, <span class="string">'name'</span>)</span><br></pre></td></tr></table></figure>
+<p>之后我们就可以直接用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extractName(user)</span><br></pre></td></tr></table></figure>
+<p>这样的方式获取到<code>user.name</code></p>
+<p>接着你是不是也想到可以用<code>compose</code>了呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> outputUserName = compose( output, extractName )</span><br></pre></td></tr></table></figure>
+<p>想一下我们需要的数据流是什么样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output &lt;-- extractName &lt;-- user</span><br></pre></td></tr></table></figure>
+<p>下一步，让我们缩小关注点，看下例子中嵌套的这块查找操作的调用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getLastOrder( <span class="function"><span class="keyword">function</span> <span class="title">orderFound</span>(<span class="params">order</span>)</span>&#123;</span><br><span class="line">	getUser( &#123; <span class="attr">userId</span>: order.userId&#125;, outputUserName );</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+<p>我们刚刚创建的 <code>outputUserName(..)</code> 函数是提供给 <code>getUser(..)</code> 的回调。所以我们还能定义一个函数叫做 <code>processUser(..)</code> 来处理回调参数，使用 <code>partialRight(..)</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> processUser = partialRight( getUser, outputUserName )</span><br></pre></td></tr></table></figure>
+<p>让我们用新函数来重构下之前的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getLastOrder(<span class="function"><span class="keyword">function</span> <span class="title">orderFound</span>(<span class="params">order</span>) </span>&#123;</span><br><span class="line">	processUser(&#123; <span class="attr">userId</span>: order.userId &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Ok，至此，<code>user</code>这个形参已经被我们干掉了。</p>
+<h4 id="移除order形参"><a href="#移除order形参" class="headerlink" title="移除order形参"></a>移除order形参</h4><p>接下来你可以用类似的方式移除掉<code>order</code>形参。</p>
+<p>首先是获取<code>userId</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> extractUserId = partial(prop, <span class="string">'userId'</span>)</span><br></pre></td></tr></table></figure>
+<p>接着你需要定义一个函数来解决<code>{ userId: order.userId }</code>这个问题。我们可以使用上面的<code>makeObjProp</code>函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userData = partial(makeObjProp, <span class="string">'userId'</span>)</span><br></pre></td></tr></table></figure>
+<p>为了使用 <code>processUser(..)</code> 来完成通过 <code>order</code> 值查找一个人的功能，我们需要的数据流如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">processUser &lt;-- userData &lt;-- extractUserId &lt;-- user</span><br></pre></td></tr></table></figure>
+<p>所以我们只需要再使用一次 <code>compose(..)</code> 来定义一个 <code>lookupUser(..)</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var lookupUser = compose( processUser, userData, extractUserId )</span><br></pre></td></tr></table></figure>
+<h4 id="完整流程"><a href="#完整流程" class="headerlink" title="完整流程"></a>完整流程</h4><p>然后，就是这样了！把这整个例子重新组合起来，不带任何的“形参”：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span> (<span class="params">url, data, callback</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> getUser = partial( ajax, <span class="string">"/api/user"</span> );</span><br><span class="line"><span class="keyword">var</span> getLastOrder = partial( ajax, <span class="string">"/api/order"</span>, &#123; <span class="attr">orderId</span>: <span class="number">-1</span> &#125; );</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> output = <span class="function">(<span class="params">str</span>) =&gt;</span> <span class="built_in">console</span>.log(sgr);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> extractName = partial(prop, <span class="string">'name'</span>);</span><br><span class="line"><span class="keyword">var</span> outputUserName = compose( output, extractName );</span><br><span class="line"><span class="keyword">var</span> processUser = partialRight( getUser, outputUserName )</span><br><span class="line"><span class="keyword">var</span> extractUserId = partial(prop, <span class="string">'userId'</span>)</span><br><span class="line"><span class="keyword">var</span> userData = partial(makeObjProp, <span class="string">'userId'</span>)</span><br><span class="line"><span class="keyword">var</span> lookupUser = compose( processUser, userData, extractUserId )</span><br><span class="line"></span><br><span class="line">getLastOrder( lookupUser )</span><br></pre></td></tr></table></figure>
+<p>Look!不带任何的形参。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>函数组合是一种定义函数的模式，它能将一个函数调用的输出路由到另一个函数的调用上，然后一直进行下去。</p>
+<p>因为 JS 函数只能返回单个值，这个模式本质上要求所有组合中的函数（可能第一个调用的函数除外）是一元的，当前函数从上一个函数输出中只接收一个输入。</p>
+<p>相较于在我们的代码里详细列出每个调用，函数组合使用 <code>compose(..)</code> 实用函数来提取出实现细节，让代码变得更可读，让我们更关注组合完成的<strong>是什么</strong>，而不是它具体<strong>做什么</strong>。</p>
+<p>组合 ———— 声明式数据流 ———— 是支撑函数式编程其他特性的最重要的工具之一。</p>
+</blockquote>
+
+    
+    </div>
+    
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons//toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons//archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons//search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons//menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('').update('', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/07/04/webNotes/advanced/Functional/ch_4/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/07/04/webNotes/advanced/Functional/ch_4/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/07/04/webNotes/advanced/Functional/ch_4/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/07/04/webNotes/advanced/Functional/ch_4/', json.ip);
+    leanCloud.fetchCommentCount('/2019/07/04/webNotes/advanced/Functional/ch_4/');
+    leanCloud.fetchVisitCount('/2019/07/04/webNotes/advanced/Functional/ch_4/');
+    leanCloud.fetchThumbUpCount('/2019/07/04/webNotes/advanced/Functional/ch_4/');
+    leanCloud.getCommentCount('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/07/04/webNotes/advanced/Functional/ch_4/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

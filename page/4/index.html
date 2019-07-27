@@ -39,6 +39,8 @@
 
     <link rel="stylesheet" href="/css/taurus.css">
     
+        <link rel="stylesheet" href="/css/scheme-taurus/animations.css">
+    
 
 
 <link rel="stylesheet" href="/.css">
@@ -65,6 +67,9 @@
 
   <!-- include comment system code -->
   
+    <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/wang.png">
@@ -76,11 +81,18 @@
 <header id="header" class="header">
 	<div class="header-title">
 		
-		<div class="header-text-no-image">
+		<div class="header-logo">
+			<a href="/">
+				<img src="/images/lindaidai-logo.jpg">
+			</a>
+		</div>
+		<div class="header-text">
 			<h1>
 				<a href="/">LinDaiDai</a>
 			</h1>
-			<subtitle>王霈霖的个人博客</subtitle>
+			<subtitle>
+				王霈霖的个人博客
+			</subtitle>
 		</div>
 		
 	</div>
@@ -92,13 +104,43 @@
 <nav id="nav">
 	
 	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/home/">
+						<span>首页 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/about/">
+						<span>关于 </span>
+					</a>
+				</div>
+			</div>
+		
+	
 	
 	<div class="nav-item" id="nav-item-archive">
 		
 				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
-			<img src="/images/icons//archive.svg" alt="">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
 	</div>
@@ -107,18 +149,66 @@
 		<div class="nav-icon">
 		
 			<a href="/search/" title="搜索">
-			<img src="/images/icons//search.svg" alt="">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
 	</div>
 	<div class="nav-item" id="nav-item-more">
 		<div class="nav-icon">
 				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
-				<img src="/images/icons//menu.svg" alt="">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
 				</a>
 		</div>
 		<div class="nav-more-menu">
 				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
 		
 		
 		<div class="nav-more-item">
@@ -182,6 +272,32 @@
 
 
 
+<script type="text/javascript" src="/libs/noty/lib/noty.min.js"></script>
+<script>
+    loadjs(['/libs/noty/lib/noty.min.js', '/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/announcement.js'], 'announcement');
+    loadjs.ready('announcement', {
+      success: function(){
+        new Announcement('Welcome to my blog').show();
+      },
+      error: function(err){
+        console.log(err);
+      }
+    });
+</script>
+
+<style>
+  #announcement{
+    width: 40vw;
+    padding: 0.1em;
+  }
+  #announcement a:link{
+    color: white
+  }
+  #announcement a:visited{
+    color: white
+  }
+</style>
+
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -191,7 +307,7 @@
 
 <div class="index-container" id="/page/4/index.html" data-name="index" data-version="2.1.3">
 	<div class="index-intro">
-		
+		change the world by program!
 	</div>
 	
 		<div class="grid-2_md-1 grid-equalHeight index-cards">
@@ -211,7 +327,7 @@
 
 
 
-<div class="Card Card-hover Card-index-1" id="" data-name="CSS的基本知识" data-version="">
+<div class="Card Card-hover Card-index-1" id="hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e" data-name="CSS的基本知识" data-version="">
 	
 		
 			
@@ -227,7 +343,7 @@
 		
 
 		
-			<img class="grow" src="/images/css.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/css.svg" alt="" onerror="this.src = " images="" jdenticon="" a9790dd14130b73c0211b40ba057a4378f9538d2bf9e2531e79e9706ce4f4308.png""=""> 
 	  
 		</a>
 	</div>
@@ -247,7 +363,13 @@
 				
 				
 				
-				
+				1.CSS的作用:
+作用：将标签的样式进行修改
+
+2. CSS的引入方式2.1内联样式1&lt;div style="width:100px;height:100px;"&gt; &lt;/div&gt;
+​ 优点：优先级最高；
+​ 缺点： 代码冗余、代码混乱、维护困难；
+​...
 				</a></p>
 				
 			</div>
@@ -255,6 +377,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/css/">Css</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -295,7 +435,7 @@
 
 
 
-<div class="Card Card-hover Card-index-2" id="" data-name="JQuery of DOM" data-version="">
+<div class="Card Card-hover Card-index-2" id="hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32" data-name="JQuery of DOM" data-version="">
 	
 		
 			
@@ -311,7 +451,7 @@
 		
 
 		
-			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " images="" jdenticon="" a3e5bf678148352aeab238c204d9e96bb9c9198c21c3e26913326c9c7eb59269.png""=""> 
 	  
 		</a>
 	</div>
@@ -331,7 +471,8 @@
 				
 				
 				
-				
+				第一章:创建节点#### 1.创建元素节点
+12$body =...
 				</a></p>
 				
 			</div>
@@ -339,6 +480,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -379,7 +538,7 @@
 
 
 
-<div class="Card Card-hover Card-index-3" id="" data-name="JQuery事件" data-version="">
+<div class="Card Card-hover Card-index-3" id="hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c" data-name="JQuery事件" data-version="">
 	
 		
 			
@@ -395,7 +554,7 @@
 		
 
 		
-			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " images="" jdenticon="" 7e351d5f8e2019c9564bfb8f44cab0c3323c203e462650be3a1c1937fe07f38f.png""=""> 
 	  
 		</a>
 	</div>
@@ -415,7 +574,13 @@
 				
 				
 				
-				
+				第一章:鼠标事件1. .click( )
+鼠标点击事件
+ele.click(function( ){
+})
+click事件其实是由mousedown于mouseup 2个动作构成，所以点击的动作只有在松手后才触发
+
+12345例1:&lt;div...
 				</a></p>
 				
 			</div>
@@ -423,6 +588,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -463,7 +646,7 @@
 
 
 
-<div class="Card Card-hover Card-index-4" id="" data-name="JQuery基础" data-version="">
+<div class="Card Card-hover Card-index-4" id="hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba" data-name="JQuery基础" data-version="">
 	
 		
 			
@@ -479,7 +662,7 @@
 		
 
 		
-			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " images="" jdenticon="" 12ca7f21c157d86e4d8f471e913201baca1bb4cf35c5be17e9caa014fcdbfa02.png""=""> 
 	  
 		</a>
 	</div>
@@ -499,7 +682,7 @@
 				
 				
 				
-				
+				...
 				</a></p>
 				
 			</div>
@@ -507,6 +690,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -547,7 +748,7 @@
 
 
 
-<div class="Card Card-hover Card-index-5" id="" data-name="JQuery动画" data-version="">
+<div class="Card Card-hover Card-index-5" id="hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5" data-name="JQuery动画" data-version="">
 	
 		
 			
@@ -563,7 +764,7 @@
 		
 
 		
-			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " images="" jdenticon="" a4393fafd31365d61764df4b51a6b3d7056fad58b38daa2cfe58fc1e12fe4605.png""=""> 
 	  
 		</a>
 	</div>
@@ -583,7 +784,8 @@
 				
 				
 				
-				
+				第一章:动画基础显示和隐藏1. hide( )js中隐藏元素ele.style.display = &#39;none&#39; jquery中从显示到隐藏元素调用hide方法 $ele.hide()
+hide( )...
 				</a></p>
 				
 			</div>
@@ -591,6 +793,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -631,7 +851,7 @@
 
 
 
-<div class="Card Card-hover Card-index-6" id="" data-name="JQuery of Ajax" data-version="">
+<div class="Card Card-hover Card-index-6" id="hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc" data-name="JQuery of Ajax" data-version="">
 	
 		
 			
@@ -647,7 +867,7 @@
 		
 
 		
-			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/JQuery.svg" alt="" onerror="this.src = " images="" jdenticon="" a10465766f3766451ffba7e9b370f1170dacc1fd2d2b044634c02cea6977f4fe.png""=""> 
 	  
 		</a>
 	</div>
@@ -667,7 +887,13 @@
 				
 				
 				
-				
+				第一章:load( )方法
+.load(url, [data], [callback])
+[ ]内的参数表示可选
+load一般用来读取静态html页面(动态也可以)。如果想方便传递数据到服务器，更多的使用get或post。
+
+url:待装入 HTML 网页网址。
+data:发送至服务器的...
 				</a></p>
 				
 			</div>
@@ -675,6 +901,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JQuery/">Jquery</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -715,7 +959,7 @@
 
 
 
-<div class="Card Card-hover Card-index-7" id="" data-name="canvas基础" data-version="">
+<div class="Card Card-hover Card-index-7" id="hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd" data-name="canvas基础" data-version="">
 	
 		
 			
@@ -731,7 +975,7 @@
 		
 
 		
-			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " images="" jdenticon="" afe1bc9244e6f9da17ab37879892eedf40b2f36753652b43de6e7a93d570058f.png""=""> 
 	  
 		</a>
 	</div>
@@ -751,7 +995,7 @@
 				
 				
 				
-				
+				第一章: canvas简介&lt;canvas&gt; 是 HTML5 新增的，一个可以使用脚本(通常为JavaScript)在其中绘制图像的 HTML...
 				</a></p>
 				
 			</div>
@@ -759,6 +1003,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/canvas/">Canvas</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -799,7 +1061,7 @@
 
 
 
-<div class="Card Card-hover Card-index-8" id="" data-name="nth伪类选择器" data-version="">
+<div class="Card Card-hover Card-index-8" id="hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224" data-name="nth伪类选择器" data-version="">
 	
 		
 			
@@ -815,7 +1077,7 @@
 		
 
 		
-			<img class="grow" src="/images/css.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/css.svg" alt="" onerror="this.src = " images="" jdenticon="" 0b01f2fd2235d6309a53a8bd58b60f54a1f75342e9572488582a691780b8b7ce.png""=""> 
 	  
 		</a>
 	</div>
@@ -835,7 +1097,8 @@
 				
 				
 				
-				
+				1 :nth-child(){ }
+作用：...
 				</a></p>
 				
 			</div>
@@ -843,6 +1106,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/css/">Css</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -883,7 +1164,7 @@
 
 
 
-<div class="Card Card-hover Card-index-9" id="" data-name="JS正则基本知识" data-version="">
+<div class="Card Card-hover Card-index-9" id="hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b" data-name="JS正则基本知识" data-version="">
 	
 		
 			
@@ -899,7 +1180,7 @@
 		
 
 		
-			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " images="" jdenticon="" 194f68f1f69cf95ce083c3a1c32a480f84f6b18965c4c6f0c9aded6996ce73d9.png""=""> 
 	  
 		</a>
 	</div>
@@ -919,7 +1200,10 @@
 				
 				
 				
-				
+				第一章:基本概念概念:
+ 正则表达式(regular expression)是一个描述字符模式的对象，ECMAScript的RegExp 类表示正则表达式，
+ 而String和RegExp都定义了使用正则表达式进行强大的模式匹配和文本检索与替换的函数。
+...
 				</a></p>
 				
 			</div>
@@ -927,6 +1211,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -967,7 +1269,7 @@
 
 
 
-<div class="Card Card-hover Card-index-10" id="" data-name="prototype" data-version="">
+<div class="Card Card-hover Card-index-10" id="hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1" data-name="prototype" data-version="">
 	
 		
 			
@@ -983,7 +1285,7 @@
 		
 
 		
-			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " ""=""> 
+			<img class="grow" src="/images/前端入门.svg" alt="" onerror="this.src = " images="" jdenticon="" b34563e2ebeb771708ba0648c9385383f61cc11e86af6076848433059c14b2df.png""=""> 
 	  
 		</a>
 	</div>
@@ -1003,7 +1305,7 @@
 				
 				
 				
-				
+				...
 				</a></p>
 				
 			</div>
@@ -1011,6 +1313,24 @@
 			
 			
 			<div class="Card-meta">
+				
+				<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/JavaScript/">Javascript</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/前端入门/">前端入门</a></label>
+			
+		
+	
+	</div>
+</div>
 				
 				<ul>
 						<li class="card-calendar">
@@ -1140,11 +1460,25 @@
     <div class="footer-copyright">
         <div>
             <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
-            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
         </div>
     </div>
     
     <div class="footer-social">
+        
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-weixin fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-qq fa-2x" aria-hidden="true"></i></a></div>
+                
+            
         
     </div>
 </footer>
@@ -1159,13 +1493,25 @@
 <nav id="nav">
 	
 	
+		
+			
+				
+			
+		
+		
+	
+		
+			
+		
+		
+	
 	
 	<div class="nav-item" id="nav-item-archive">
 		
 				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
-			<img src="/images/icons//archive.svg" alt="">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
 	</div>
@@ -1174,18 +1520,66 @@
 		<div class="nav-icon">
 		
 			<a href="/search/" title="搜索">
-			<img src="/images/icons//search.svg" alt="">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
 	</div>
 	<div class="nav-item" id="nav-item-more">
 		<div class="nav-icon">
 				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
-				<img src="/images/icons//menu.svg" alt="">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
 				</a>
 		</div>
 		<div class="nav-more-menu">
 				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
 		
 		
 		<div class="nav-more-item">
@@ -1246,9 +1640,47 @@
 
 
 
+    
+
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: '0Nyr31J74bB24hrKnRrheEdf-gzGzoHsz',
+        appKey: 'RYPhOnr007gXeWPQr3V1VFHH',
+        placeholder: '说点什么吧...',
+        path:window.location.pathname, 
+        avatar:'monsterid',
+        lang: 'zh-cn',
+        visitor: true // 阅读量统计
+    });
+</script>
 
 
 
+
+
+
+
+
+
+    <script src="/js/lightgallery.min.js"></script>
+<script src="/js/lg-zoom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+        $(".article-content img").each(function(){
+            console.log($(this).attr('src'))
+            $(this).attr('data-src', $(this).attr('src')).lightGallery({
+                selector: 'this'
+            })
+        });
+    });
+</script>
 
 
 
@@ -1266,7 +1698,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1274,7 +1706,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1282,7 +1714,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1290,7 +1722,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1298,7 +1730,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1306,7 +1738,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1314,7 +1746,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1322,7 +1754,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1330,7 +1762,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1338,7 +1770,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -1367,19 +1799,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/CSS/basicCSS/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_6269d8aeea4030a85607c2803430ddb8328d41bc4dccc11e18839bb01eb6792e .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1397,19 +1829,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of DOM/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_5cb3fc04708bab0191f538208adefb31bb8da8227bd0476eca91d6f8d1111e32 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1427,19 +1859,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Event/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_6f037276e189c42b3f63b5d3c103a88f8f1c2dcd37b5e94fc772a262f3acec0c .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1457,19 +1889,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/basisJQuery/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_1312b05c3886085b4a236c5a6d41f222d9470b289d42511ce0fc7bc16c1a8dba .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1487,19 +1919,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of animation/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_33c43e41040d8fa13ab9850a399d5640546c92d31aa43e76ebeeb6d88e508ab5 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1517,19 +1949,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JQuery/JQuery of Ajax/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_4ca57f86319542dcb4c0fd331294561eb79f12280739d5a258a953b5646f11fc .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1547,19 +1979,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/JavaScript/Canvas/basicCanvas/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_7b7b005b496f4b228727eae8041e97bc2df9998c0f439a0e363d780cfd77abfd .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1577,19 +2009,19 @@
           leanCloud.fetchVisitCount('/2016/03/08/webNotes/primary/CSS/pseudo/');
           leanCloud.fetchThumbUpCount('/2016/03/08/webNotes/primary/CSS/pseudo/');
           leanCloud.getCommentCount('/2016/03/08/webNotes/primary/CSS/pseudo/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/03/08/webNotes/primary/CSS/pseudo/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/03/08/webNotes/primary/CSS/pseudo/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/03/08/webNotes/primary/CSS/pseudo/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_213cb42e8695ca07de9497dde03f40165f8ceac6e5ebc6afac09c530ddb14224 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1607,19 +2039,19 @@
           leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
           leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/');
           leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/basicOfRegExp/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_0e66a972ef5b04e9fe2222dd7163537466d40d547cb1603f0953d21c0a06174b .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -1637,19 +2069,19 @@
           leanCloud.fetchVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
           leanCloud.fetchThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/');
           leanCloud.getCommentCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/webNotes/primary/JavaScript/prototype/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_199c454f5f1e99593bbc2b744e6038a1edb8db15dea23bdaf48564b4cb271ce1 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';

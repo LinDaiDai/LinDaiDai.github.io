@@ -39,6 +39,8 @@
 
     <link rel="stylesheet" href="/css/taurus.css">
     
+        <link rel="stylesheet" href="/css/scheme-taurus/animations.css">
+    
 
 
 <link rel="stylesheet" href="/.css">
@@ -65,6 +67,9 @@
 
   <!-- include comment system code -->
   
+    <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/wang.png">
@@ -76,11 +81,18 @@
 <header id="header" class="header">
 	<div class="header-title">
 		
-		<div class="header-text-no-image">
+		<div class="header-logo">
+			<a href="/">
+				<img src="/images/lindaidai-logo.jpg">
+			</a>
+		</div>
+		<div class="header-text">
 			<h1>
 				<a href="/">LinDaiDai</a>
 			</h1>
-			<subtitle>王霈霖的个人博客</subtitle>
+			<subtitle>
+				王霈霖的个人博客
+			</subtitle>
 		</div>
 		
 	</div>
@@ -92,13 +104,43 @@
 <nav id="nav">
 	
 	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/home/">
+						<span>首页 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/about/">
+						<span>关于 </span>
+					</a>
+				</div>
+			</div>
+		
+	
 	
 	<div class="nav-item" id="nav-item-archive">
 		
 				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
-			<img src="/images/icons//archive.svg" alt="">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
 	</div>
@@ -107,18 +149,66 @@
 		<div class="nav-icon">
 		
 			<a href="/search/" title="搜索">
-			<img src="/images/icons//search.svg" alt="">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
 	</div>
 	<div class="nav-item" id="nav-item-more">
 		<div class="nav-icon">
 				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
-				<img src="/images/icons//menu.svg" alt="">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
 				</a>
 		</div>
 		<div class="nav-more-menu">
 				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
 		
 		
 		<div class="nav-more-item">
@@ -196,7 +286,7 @@
 
 
 
-<div class="Card-archive" id="" data-name="vue-cli" data-version="">
+<div class="Card-archive" id="hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641" data-name="vue-cli" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
 		<h3 class="Card-title">
@@ -250,7 +340,7 @@
 
 
 
-<div class="Card-archive" id="" data-name="vue基础" data-version="">
+<div class="Card-archive" id="hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a" data-name="vue基础" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
 		<h3 class="Card-title">
@@ -304,7 +394,7 @@
 
 
 
-<div class="Card-archive" id="" data-name="在npm上发布模块" data-version="">
+<div class="Card-archive" id="hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07" data-name="在npm上发布模块" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
 		<h3 class="Card-title">
@@ -391,11 +481,25 @@
     <div class="footer-copyright">
         <div>
             <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
-            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
         </div>
     </div>
     
     <div class="footer-social">
+        
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-weixin fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-qq fa-2x" aria-hidden="true"></i></a></div>
+                
+            
         
     </div>
 </footer>
@@ -410,13 +514,25 @@
 <nav id="nav">
 	
 	
+		
+			
+				
+			
+		
+		
+	
+		
+			
+		
+		
+	
 	
 	<div class="nav-item" id="nav-item-archive">
 		
 				<div class="nav-icon">
 				
 			<a href="/archives/" title="归档">
-			<img src="/images/icons//archive.svg" alt="">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
 			</a>
 		</div>
 	</div>
@@ -425,18 +541,66 @@
 		<div class="nav-icon">
 		
 			<a href="/search/" title="搜索">
-			<img src="/images/icons//search.svg" alt="">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
 			</a>
 		</div>
 	</div>
 	<div class="nav-item" id="nav-item-more">
 		<div class="nav-icon">
 				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
-				<img src="/images/icons//menu.svg" alt="">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
 				</a>
 		</div>
 		<div class="nav-more-menu">
 				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
 		
 		
 		<div class="nav-more-item">
@@ -497,9 +661,47 @@
 
 
 
+    
+
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: '0Nyr31J74bB24hrKnRrheEdf-gzGzoHsz',
+        appKey: 'RYPhOnr007gXeWPQr3V1VFHH',
+        placeholder: '说点什么吧...',
+        path:window.location.pathname, 
+        avatar:'monsterid',
+        lang: 'zh-cn',
+        visitor: true // 阅读量统计
+    });
+</script>
 
 
 
+
+
+
+
+
+
+    <script src="/js/lightgallery.min.js"></script>
+<script src="/js/lg-zoom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+        $(".article-content img").each(function(){
+            console.log($(this).attr('src'))
+            $(this).attr('data-src', $(this).attr('src')).lightGallery({
+                selector: 'this'
+            })
+        });
+    });
+</script>
 
 
 
@@ -517,7 +719,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -525,7 +727,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -533,7 +735,7 @@
           
           
           
-            var postBadge = document.querySelector('# mark.Card-badge');
+            var postBadge = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 mark.Card-badge');
             $(postBadge).fadeOut();
             
           
@@ -562,19 +764,19 @@
           leanCloud.fetchVisitCount('/2017/03/09/webNotes/primary/Vue/vue-cli/');
           leanCloud.fetchThumbUpCount('/2017/03/09/webNotes/primary/Vue/vue-cli/');
           leanCloud.getCommentCount('/2017/03/09/webNotes/primary/Vue/vue-cli/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2017/03/09/webNotes/primary/Vue/vue-cli/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2017/03/09/webNotes/primary/Vue/vue-cli/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2017/03/09/webNotes/primary/Vue/vue-cli/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_6ca41daa0fc8147339ef0a581490fe134a0243dc12aa787160f837457566d641 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -592,19 +794,19 @@
           leanCloud.fetchVisitCount('/2017/03/08/webNotes/primary/Vue/basicVue/');
           leanCloud.fetchThumbUpCount('/2017/03/08/webNotes/primary/Vue/basicVue/');
           leanCloud.getCommentCount('/2017/03/08/webNotes/primary/Vue/basicVue/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2017/03/08/webNotes/primary/Vue/basicVue/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2017/03/08/webNotes/primary/Vue/basicVue/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2017/03/08/webNotes/primary/Vue/basicVue/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_7f813546e949897dd89d0d4f6ea06e58798b12d0ec75a8c584634a429878179a .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';
@@ -622,19 +824,19 @@
           leanCloud.fetchVisitCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
           leanCloud.fetchThumbUpCount('/2016/02/08/otherSkill/Npm/npmOfPublic/');
           leanCloud.getCommentCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
-              var el = document.querySelector('# .card-comment-count');
+              var el = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 .card-comment-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getVisitCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
-              var el = document.querySelector('# .card-visit-count');
+              var el = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 .card-visit-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.getThumbUpCount('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(count){
-              var el = document.querySelector('# .card-thumbup-count');
+              var el = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 .card-thumbup-count');
               if(el) el.innerHTML = count;
           });
           leanCloud.isThumbUp('/2016/02/08/otherSkill/Npm/npmOfPublic/', function(isThumbUp){
-              var el = document.querySelector('# .card-thumbup-container i');
+              var el = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';

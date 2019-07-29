@@ -1,0 +1,45 @@
+/* html {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        color: #fff;
+    } */
+    #emjioContainer
+    div,
+    #emjioContainer
+    img,
+    #emjioContainer
+    svg,
+    #emjioContainer
+    canvas,
+    #emjioContainer
+    video,
+    #emjioContainer
+    text {
+        position: absolute;
+    }
+
+    /* body, */
+    #emjioContainer {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.75px;
+
+    }
+
+    #emjioContainer {
+        max-width: 1024px;
+        max-height: 960px;
+        left: 50%;
+        /* transform: translate(-50%); */
+    }
+
+    .fs {
+        width: 1024px;
+        height: 560px;
+    }

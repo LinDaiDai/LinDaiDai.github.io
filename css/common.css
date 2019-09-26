@@ -35,13 +35,21 @@
     cursor: pointer;
     min-height: 200px;
 }
+.grid-item {
+    display: block;
+    min-height: 170px;
+}
 .grid-title {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 .grid-img {
     width: 100%;
+    height: 100%;
     position: relative;
+    min-height: 170px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .grid-img img {
     width: 100%;

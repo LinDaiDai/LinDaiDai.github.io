@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>怎样让后台小哥哥快速对接你的前端页面 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+        <link rel="stylesheet" href="/css/scheme-taurus/animations.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+    <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-logo">
+			<a href="/">
+				<img src="/images/lindaidai-logo.jpg">
+			</a>
+		</div>
+		<div class="header-text">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>
+				王霈霖的个人博客
+			</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/home/">
+						<span>首页 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/about/">
+						<span>关于 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/projects/">
+						<span>project </span>
+					</a>
+				</div>
+			</div>
+		
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现思路"><span class="toc-number">2.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端网络请求适配"><span class="toc-number">3.</span> <span class="toc-text">前端网络请求适配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台如何使用"><span class="toc-number">4.</span> <span class="toc-text">后台如何使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测是否配置成功"><span class="toc-number">5.</span> <span class="toc-text">检测是否配置成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">6.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/projects/">
+							<span>Project</span>
+						</a>
+					</div>
+			</div>
+		
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+    
+        
+    
+
+    
+        
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/" data-name="怎样让后台小哥哥快速对接你的前端页面" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端进阶.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/">
+                怎样让后台小哥哥快速对接你的前端页面
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年09月24日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                    
+                
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言首先需要澄清一下，该篇文章并非标题党。这里介绍需要实现的效果是让后台工作人员不需要前端改动网络请求基础地址的前提下，使用前端代码便于本地调试。
+不好意思这里说的可能有点绕了，待我给你简单的说明一下你就明白了。
+我们知道前端在对接后台的时候都有这么一个基础地址，所有的后台接口调用都是通过它：
+123456let _baseURL = 'http://api.xxx.develop.com'const service = axios.create(&#123; // 创建 axios 实例  baseURL: _baseURL, // api base_url  timeout:...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现思路"><span class="toc-number">2.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端网络请求适配"><span class="toc-number">3.</span> <span class="toc-text">前端网络请求适配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台如何使用"><span class="toc-number">4.</span> <span class="toc-text">后台如何使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测是否配置成功"><span class="toc-number">5.</span> <span class="toc-text">检测是否配置成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">6.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先需要澄清一下，该篇文章并非标题党。这里介绍需要实现的效果是<strong>让后台工作人员不需要前端改动网络请求基础地址的前提下，使用前端代码便于本地调试</strong>。</p>
+<p>不好意思这里说的可能有点绕了，待我给你简单的说明一下你就明白了。</p>
+<p>我们知道前端在对接后台的时候都有这么一个基础地址，所有的后台接口调用都是通过它：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> _baseURL = <span class="string">'http://api.xxx.develop.com'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> service = axios.create(&#123; <span class="comment">// 创建 axios 实例</span></span><br><span class="line">  baseURL: _baseURL, <span class="comment">// api base_url</span></span><br><span class="line">  timeout: <span class="number">120000</span> <span class="comment">// 请求超时时间</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>现在假设有这么一个场景：</p>
+<p>后台和前端一起开发某个需求，前端童鞋比较勤(huo)劳(shao)已经开发完页面并将代码都部署到了公司的开发环境<code>http://xxx.develop.com</code>上。</p>
+<p>此时后台小哥哥<code>A</code>想找你对接接口，你会运行本地的前端项目，然后将配置中的<code>_baseURL</code>改为同事<code>A</code>的<code>IP</code>地址(假设为<code>10.0.17.231:1001</code>);</p>
+<p>但同事<code>B</code>也开发完了想与你对接，你会怎么做？</p>
+<p>“稍等一下哈，小张现在在和我对接”</p>
+<p>“要不你先自己用<code>postman</code>自测一下你的接口？”</p>
+<p>好为南啊，前端童鞋想做到雨露均沾啊，怎么办…</p>
+<p>此时你多么希望能把你的前端项目当成一个静态的页面，让后台小哥哥只要配置上自己的<code>IP</code>地址就可以查看前端页面并进行本地调试，而不再需要前端开启服务。</p>
+<p>该篇文章就是针对以上这种情况提供一种简单的方案，若还有更优的解决方案请评论区留言，一起学习一下😊</p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><ol>
+<li>利用浏览器的<code>Local Storage</code>将后台的<code>IP</code>地址存储在其中;</li>
+<li>前端在<strong>网络请求</strong>代码层上做一些适配,判断<code>Local Storage</code>中是否有指定的<code>IP</code>地址,若是有的话则使用该地址。</li>
+</ol>
+<h2 id="前端网络请求适配"><a href="#前端网络请求适配" class="headerlink" title="前端网络请求适配"></a>前端网络请求适配</h2><p>这里我以使用<code>axios</code>为例进行讲解，你的代码中可能存在这么一段东西：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request.js</span></span><br><span class="line"><span class="keyword">let</span> _baseURL = <span class="string">'http://api.xxx.develop.com'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> service = axios.create(&#123; <span class="comment">// 创建 axios 实例</span></span><br><span class="line">  baseURL: _baseURL, <span class="comment">// api base_url</span></span><br><span class="line">  timeout: <span class="number">120000</span>, <span class="comment">// 请求超时时间</span></span><br><span class="line">  headers: &#123; <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> &#125;</span><br><span class="line">&#125;)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>(<code>request.js</code>是项目中的网络请求配置)</p>
+<p>我们只需要将<code>baseURL</code>做一个简单的适配就可以了,</p>
+<p>定义一个<code>setBaseURL</code>的函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function setBaseURL () &#123;</span><br><span class="line">  const webHost = localStorage.getItem(&apos;webHost&apos;) // 获取浏览器本地存储中Key为webHost那一项的值</span><br><span class="line">    if (location.origin === &apos;http://xxx.develop.com&apos; &amp;&amp; webHost) &#123; // 判断当前的环境以及是否存在webHost</span><br><span class="line">    _baseURL = &apos;http://&apos; + webHost // 将_baseURL重新赋值</span><br><span class="line">  &#125;</span><br><span class="line">  return _baseURL</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后使用它：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request.js</span></span><br><span class="line"><span class="keyword">let</span> _baseURL = <span class="string">'http://api.xxx.develop.com'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setBaseURL</span> (<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line"><span class="keyword">const</span> service = axios.create(&#123; <span class="comment">// 创建 axios 实例</span></span><br><span class="line">  baseURL: setBaseURL(), <span class="comment">// api base_url</span></span><br><span class="line">  timeout: <span class="number">120000</span>, <span class="comment">// 请求超时时间</span></span><br><span class="line">  headers: &#123; <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这样项目在生成<code>axios</code>实例的时候，就会判断你当前的环境(假设你只想要在开发环境上这样做),然后判断浏览器的<code>LocalStorage</code>中有没有需要指定的<code>IP</code>地址，从而返回新的<code>_baseURL</code>。</p>
+<p>做好了这层适配之后，前端就可以将项目<code>build</code>之后放到服务器上，后台小哥哥要使用的时候做一些配置就可以了。</p>
+<p><strong>注</strong><br>这里的<code>webHost</code>字符串并非为固定写法，你也可以写成<code>apiHost</code>、<code>host</code>等等字段，只要和后台约定好就可以咯。</p>
+<h2 id="后台如何使用"><a href="#后台如何使用" class="headerlink" title="后台如何使用"></a>后台如何使用</h2><p>后台小哥哥在使用的时候只需要在浏览器上配置一下就可以了。</p>
+<p>假设前端项目放到的是<code>http://xxx.develop.com</code>上</p>
+<ol>
+<li>打开<code>http://xxx.develop.com</code>，并打开控制台(<code>window</code>快捷键<code>F12</code>, <code>Mac</code>快捷键<code>option＋command＋i</code>);</li>
+<li>找到<code>Application</code>下的<code>Local Storage</code>;</li>
+<li>展开<code>Local Storage</code>, 找到当前网址的那一项;</li>
+<li>在右边添加<code>Key</code>为<code>webHost</code>, <code>Value</code>为后台本地的<code>IP</code>地址(包括端口号)的键值对。</li>
+<li>刷新一下页面</li>
+</ol>
+<p>如下图：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/24/16d629e0cbd45e6b?w=880&amp;h=933&amp;f=png&amp;s=63386" alt=""><br>配置完之后可能长这样：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/24/16d62a0cba198dc0?w=878&amp;h=932&amp;f=png&amp;s=54561" alt=""></p>
+<p><strong>注</strong></p>
+<ol>
+<li><code>webHost</code>的拼写;</li>
+<li>填入的<code>IP</code>地址一定要带上端口号</li>
+<li>配置完之后刷新下页面</li>
+<li>该配置针对的只是你本机的浏览器</li>
+<li>不想要本地调试的时候记得将这项配置清除，不然它会一直存在于你的浏览器中 </li>
+<li>若是想删除这项配置只需要将<code>Value</code>设置为空字符串, 或删除这一项，如下图</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/24/16d6285b44134c69?w=681&amp;h=241&amp;f=png&amp;s=14653" alt=""></p>
+<h2 id="检测是否配置成功"><a href="#检测是否配置成功" class="headerlink" title="检测是否配置成功"></a>检测是否配置成功</h2><p>检测是否配置成功只需要查看一下发送的网络请求的<code>Request URL</code>是否已经改变就可以了。</p>
+<p>还是打开控制台，然后找到<code>NetWork</code>那一项，筛选一下只查看<code>XHR</code>的网络请求</p>
+<p>假设原来应该请求的地址为<code>http://api.xxx.develop.com</code></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/24/16d626ac54c4fc04" alt=""></p>
+<p>配置之后要请求的地址 <code>10.0.17.231:1001</code></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/9/24/16d626ff0f1975df?w=877&amp;h=775&amp;f=png&amp;s=87252" alt=""></p>
+<p>查看此时发起网络请求是不是你配置之后的地址即可。</p>
+<h2 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h2><p>该解决方案是前公司的前端大哥提供的，我只是将它写成文章分享给大家，在这里也要感谢前端大哥在职业道路上对我的帮助。</p>
+<p>觉得有帮助的小伙可以点个👍支持一下 😊</p>
+<p>知识无价，支持原创</p>
+<p>更多推荐：</p>
+<ul>
+<li><a href="https://juejin.im/post/5a20bfaa5188255851327dbc" target="_blank" rel="noopener">适合初学者的TCP讲解</a></li>
+<li><a href="https://juejin.im/post/5b685ed1e51d4533f52859e8" target="_blank" rel="noopener">ES9已经来了 Are you ready?</a></li>
+<li><a href="https://juejin.im/post/5d74f364518825415d063169" target="_blank" rel="noopener">微信小程序使用多色图标详解</a></li>
+</ul>
+
+    
+    </div>
+    
+    
+        <div class="article-comment" id="article-comment">
+            
+
+<h1>评论</h1>
+
+  
+    <div id="valine"></div>
+  
+
+
+        </div>
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-weixin fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-qq fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+		
+			
+				
+			
+		
+		
+	
+		
+			
+		
+		
+	
+		
+			
+		
+		
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现思路"><span class="toc-number">2.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端网络请求适配"><span class="toc-number">3.</span> <span class="toc-text">前端网络请求适配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后台如何使用"><span class="toc-number">4.</span> <span class="toc-text">后台如何使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测是否配置成功"><span class="toc-number">5.</span> <span class="toc-text">检测是否配置成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">6.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/projects/">
+							<span>Project</span>
+						</a>
+					</div>
+			</div>
+		
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+    
+
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: '0Nyr31J74bB24hrKnRrheEdf-gzGzoHsz',
+        appKey: 'RYPhOnr007gXeWPQr3V1VFHH',
+        placeholder: '说点什么吧...',
+        path:window.location.pathname, 
+        avatar:'monsterid',
+        lang: 'zh-cn',
+        visitor: true // 阅读量统计
+    });
+</script>
+
+
+
+
+
+
+
+
+
+    <script src="/js/lightgallery.min.js"></script>
+<script src="/js/lg-zoom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+        $(".article-content img").each(function(){
+            console.log($(this).attr('src'))
+            $(this).attr('data-src', $(this).attr('src')).lightGallery({
+                selector: 'this'
+            })
+        });
+    });
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('hashit_cab4b80ae2c1882308fc12b93fed0b93435f5f65dc7fc305863e93d7f2383bbc').update('hashit_67e87362860c2fb3ed6779590504cb934601831f02e2dd2eaa928f003d71df0c', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', json.ip);
+    leanCloud.fetchCommentCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/');
+    leanCloud.fetchVisitCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/');
+    leanCloud.fetchThumbUpCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/');
+    leanCloud.getCommentCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/09/24/webNotes/advanced/JavaScript/怎样让后台小哥哥快速对接你的前端页面/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

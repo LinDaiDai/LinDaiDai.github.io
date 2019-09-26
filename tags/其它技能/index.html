@@ -433,6 +433,60 @@
 
 
 
+<div class="Card-archive" id="hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7" data-name="配置flutter全局命令-bash- flutter- command not found" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/">
+			
+			配置Flutter全局命令-Bash- Flutter- Command Not Found</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/npm/">Npm</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/其它技能/">其它技能</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> Aug 8, 2016
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+	
+		
+
+
+
 <div class="Card-archive" id="hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07" data-name="在npm上发布模块" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
@@ -803,6 +857,14 @@
           
           
           
+            var postBadge = document.querySelector('#hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7 mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+          
+          
+          
             var postBadge = document.querySelector('#hashit_0aed6fd4b7c1773402f359dc5f96c13da466172c7b7d7f78413509ffa4600b07 mark.Card-badge');
             $(postBadge).fadeOut();
             
@@ -875,6 +937,36 @@
           });
           leanCloud.isThumbUp('/2017/02/08/otherSkill/Git/basicGit/', function(isThumbUp){
               var el = document.querySelector('#hashit_944ff8b48d39ede7af5c76be505d97d872c9f8142afbef53309a864de5c89798 .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/', json.ip);
+          leanCloud.fetchCommentCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/');
+          leanCloud.fetchVisitCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/');
+          leanCloud.fetchThumbUpCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/');
+          leanCloud.getCommentCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/', function(count){
+              var el = document.querySelector('#hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7 .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/', function(count){
+              var el = document.querySelector('#hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7 .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/', function(count){
+              var el = document.querySelector('#hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7 .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2016/08/08/otherSkill/Npm/配置flutter全局命令-bash- flutter- command not found/', function(isThumbUp){
+              var el = document.querySelector('#hashit_65a57d0505ab076d444948de3d4a7e3289b4cab030d50fb20a81859bb41f30e7 .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
                   el.className = 'fas fa-thumbs-up';

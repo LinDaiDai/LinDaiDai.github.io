@@ -325,6 +325,60 @@
 
 
 
+<div class="Card-archive" id="hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f" data-name="微信小程序使用多色图标详解" data-version="">
+	<mark class="Card-badge"></mark>
+	<div class="Card-body">
+		<h3 class="Card-title">
+			
+				<a href="/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/">
+			
+			微信小程序使用多色图标详解</a>
+		</h3>
+		<div class="Card-meta">
+			<div class="Card-tags">
+<div class="tags">
+	
+		
+			
+				<label class="tag-1"><a href="/tags/前端进阶/">前端进阶</a></label>
+			
+		
+	
+		
+			
+				<label class="tag-2"><a href="/tags/微信小程序/">微信小程序</a></label>
+			
+		
+	
+	</div>
+</div>
+			<ul>
+					<li>
+						<a href="/archives/">
+							<i class="fa fa-calendar"></i> Sep 8, 2019
+						</a>
+					</li>
+					
+					
+					<li>
+						<a href="/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/#article-comment">
+							<i class="fa fa-comments"></i> <span class="card-comment-count">0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class="card-visit-count">0</span>
+					</li>
+					
+					
+			</ul>
+		</div>
+	</div>
+</div>
+	
+		
+
+
+
 <div class="Card-archive" id="hashit_bac55140bd6b45970905f66de3ab367b2d0a3ccf2767c9e8c01ada8133ccf839" data-name="微信小程序自定义组件" data-version="">
 	<mark class="Card-badge"></mark>
 	<div class="Card-body">
@@ -727,6 +781,14 @@
           
           
           
+            var postBadge = document.querySelector('#hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f mark.Card-badge');
+            $(postBadge).fadeOut();
+            
+          
+        
+          
+          
+          
             var postBadge = document.querySelector('#hashit_bac55140bd6b45970905f66de3ab367b2d0a3ccf2767c9e8c01ada8133ccf839 mark.Card-badge');
             $(postBadge).fadeOut();
             
@@ -755,6 +817,36 @@
       success: function(){
           LeanCloud.init('', '');
           var leanCloud = LeanCloud.getInstance();
+        
+          
+          
+          // start caching post visit and comment counts
+          leanCloud.fetchIsThumbUp('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/', json.ip);
+          leanCloud.fetchCommentCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/');
+          leanCloud.fetchVisitCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/');
+          leanCloud.fetchThumbUpCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/');
+          leanCloud.getCommentCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/', function(count){
+              var el = document.querySelector('#hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f .card-comment-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getVisitCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/', function(count){
+              var el = document.querySelector('#hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f .card-visit-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.getThumbUpCount('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/', function(count){
+              var el = document.querySelector('#hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f .card-thumbup-count');
+              if(el) el.innerHTML = count;
+          });
+          leanCloud.isThumbUp('/2019/09/08/webNotes/advanced/Weixin/微信小程序使用多色图标详解/', function(isThumbUp){
+              var el = document.querySelector('#hashit_ba7c1c5cfedc9e5e435aeeeb77d9779634a1591bdc4ccd7359a79bfc6a1af25f .card-thumbup-container i');
+              if(el){
+                if(isThumbUp){
+                  el.className = 'fas fa-thumbs-up';
+                }else{
+                  el.className = 'far fa-thumbs-up';
+                }
+              }
+          });
         
           
           

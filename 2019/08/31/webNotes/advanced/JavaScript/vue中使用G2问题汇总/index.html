@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  
+      <title>vue中使用G2问题汇总 - LinDaiDai</title>
+  
+
+  
+  
+  <meta name="description" content="">
+  <meta name="author" content="LinDaiDai">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- load loadjs.js -->
+  <script src="/libs/loadjs/dist/loadjs.min.js"></script>
+
+<link rel="stylesheet" href="/libs/animate.css/animate.min.css">
+  <!-- load lightgallery -->
+<link rel="stylesheet" href="/css/lightgallery.css">
+<link rel="stylesheet" href="/libs/noty/lib/noty.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <link rel="stylesheet" href="/css/taurus.css">
+    
+        <link rel="stylesheet" href="/css/scheme-taurus/animations.css">
+    
+
+
+<link rel="stylesheet" href="/.css">
+
+  <!-- load font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- load js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+  <!-- include cookie.js -->
+  
+  
+
+  <!-- include comment system code -->
+  
+    <script src="//cdn1.lncld.net/static/js/3.6.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/wang.png">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+ 
+
+<header id="header" class="header">
+	<div class="header-title">
+		
+		<div class="header-logo">
+			<a href="/">
+				<img src="/images/lindaidai-logo.jpg">
+			</a>
+		</div>
+		<div class="header-text">
+			<h1>
+				<a href="/">LinDaiDai</a>
+			</h1>
+			<subtitle>
+				王霈霖的个人博客
+			</subtitle>
+		</div>
+		
+	</div>
+	<div id="header-nav">
+		
+
+
+
+<nav id="nav">
+	
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/home/">
+						<span>首页 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/about/">
+						<span>关于 </span>
+					</a>
+				</div>
+			</div>
+		
+	
+		
+			
+		
+		
+			<div class="nav-item">
+				
+					<div class="nav-name">
+				
+					<a class="nav-link" href="/projects/">
+						<span>project </span>
+					</a>
+				</div>
+			</div>
+		
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、forceFit属性宽度自适应问题"><span class="toc-number">1.1.</span> <span class="toc-text">一、forceFit属性宽度自适应问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、自定义图表的高度问题"><span class="toc-number">1.2.</span> <span class="toc-text">二、自定义图表的高度问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、图表内容太小变形问题"><span class="toc-number">1.3.</span> <span class="toc-text">三、图表内容太小变形问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、字段格式为时间戳报错"><span class="toc-number">1.4.</span> <span class="toc-text">四、字段格式为时间戳报错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">2.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/projects/">
+							<span>Project</span>
+						</a>
+					</div>
+			</div>
+		
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+</header>
+
+ 
+
+  
+
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div style="flex: 1;">
+      <style>
+    body {
+        background-color: white;
+    }
+</style>
+
+
+
+
+	
+	
+	
+	
+
+
+
+    
+        
+            
+            
+        
+    
+
+
+
+
+
+
+    
+    
+        
+    
+
+    
+        
+    
+
+
+
+
+
+
+
+
+
+<article class="article" id="/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/" data-name="vue中使用G2问题汇总" data-version="">
+
+    <!-- Title -->
+    <div class="article-header">
+         
+         <div class="article-logo">
+            <a href="#" data-no-instant="">
+                <img src="/images/前端进阶.svg" alt="" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="">
+            </a>
+         </div>
+         
+         <h1 class="article-title">
+            <a href="/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/">
+                vue中使用G2问题汇总
+            </a>
+        </h1>
+        <!-- TODO: support nested categories,display them nicely -->
+        
+        <ul class="article-categories">
+            
+            
+                <li><a href="/categories/前端进阶/" data-no-instant="">
+                    <img src="/images/前端进阶.svg" alt="前端进阶" onerror="if(this.src != " images="" uncategorized.svg")="" this.src="/images/uncategorized.svg" "="" title="前端进阶">
+                </a></li>
+            
+        </ul>
+        
+    </div>
+    
+    <!-- Date and Author -->
+    <div class="article-meta">
+    <ul>
+            <li><i class="fa fa-calendar"></i> 2019年08月31日</li>
+            
+            <li class="comment-button"><a href="#article-comment"><i class="fa fa-comments"></i> <span id="article-comment-count">0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id="article-visit-count">0</span></li>
+            <li class="thumb-up-button" id="thumb-up-button"><i class="far fa-thumbs-up fa-lg" id="thumb-up-icon"></i> <span id="article-thumbup-count">0</span></li>
+            
+            <li><i class="fa fa-user"></i> LinDaiDai</li>
+            <li><i class="fas fa-copyright"></i>
+            
+                
+                
+            
+            
+                
+                    
+                
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a>
+            
+            </li>
+    </ul>
+    
+<div class="tags">
+	
+		
+			<label class="tag-1"><a href="/tags/前端进阶/">前端进阶</a></label>
+		
+	
+	</div>
+
+    </div>
+    <div class="article-cards">
+        <!-- Author Card -->
+        <!---
+        <div class='Card-article Card-author'>
+            <div class='card-title'>
+                <h3></h3>
+            </div>
+            <div class='card-content'>
+                    <div class="author-meta">
+                            <div class='author-figure'>
+                                <img src="" alt="">
+                            </div>
+                            <div class='author-name'>
+                                LinDaiDai
+                            </div>
+                        </div>
+                        <div class="author-ai">
+                            <div class='author-intro'>
+                                <!-- TODO: auto generating author description -->
+                                <!-- 
+                            </div>
+                            <div class="author-articles">
+                                <!-- TODO: auto generating author articles -->
+                                <!-- <ul>
+                                    <li>Article 1</li>
+                                    <li>Article 2</li>
+                                    <li>Article 3</li>
+                                    <li>Article 4</li>
+                                    <li>Article 5</li>
+                                    <li>Article 6</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            
+        </div> -->
+
+        <!-- Visit Card -->
+        <!-- <div class="Card-article Card-visit"> -->
+            <!-- <div class="card-title">
+  <h3>Post Visit</h3>
+</div>
+<div class="card-chart">
+  <div id="chart-post-visit"></div>
+</div> -->
+        <!-- </div> -->
+        
+        <!-- Auto Excerpt Card -->
+        <!-- <div class="Card-article Card-excerpt">
+            <div class="card-title">
+  <h3>Quick Read</h3>
+</div>
+<div class="card-text">
+  <p id="text-post-summary">前言忙活完动态表单,动态附件,动态表格等等事情后,最近公司又在进军报表可视化问题了,对于我们前端而言如何将一份份数据美美的展示在页面上实为一项艰巨的任务.
+对比了现有的几个比较有名的可视化工具之后,最终还是决定使用G2来进行项目开发.
+G2的使用方式及作用我这里就不展开了,想了解的小伙伴可以撮这里:...</p>
+</div>
+        </div> -->
+    </div>
+    
+    <!-- Gallery -->
+    <!-- TODO: add a slider to gallery -->
+    
+
+    <!-- Content -->
+    <!-- TODO: support table of content -->
+    <div class="article-toc" id="article-toc">
+    
+        
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、forceFit属性宽度自适应问题"><span class="toc-number">1.1.</span> <span class="toc-text">一、forceFit属性宽度自适应问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、自定义图表的高度问题"><span class="toc-number">1.2.</span> <span class="toc-text">二、自定义图表的高度问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、图表内容太小变形问题"><span class="toc-number">1.3.</span> <span class="toc-text">三、图表内容太小变形问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、字段格式为时间戳报错"><span class="toc-number">1.4.</span> <span class="toc-text">四、字段格式为时间戳报错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">2.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+    </div>
+    <div class="article-content">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>忙活完动态表单,动态附件,动态表格等等事情后,最近公司又在进军报表可视化问题了,对于我们前端而言如何将一份份数据美美的展示在页面上实为一项艰巨的任务.</p>
+<p>对比了现有的几个比较有名的可视化工具之后,最终还是决定使用<code>G2</code>来进行项目开发.</p>
+<p><code>G2</code>的使用方式及作用我这里就不展开了,想了解的小伙伴可以撮这里: <a href="https://www.jianshu.com/p/377a52a2aabb" target="_blank" rel="noopener">vue中使用G2(一)</a></p>
+<p>该篇文章主要是记录一下近期在使用<code>G2</code>所遇到的一些比较坑的问题,如果正好你也在使用<code>G2</code>,且不巧的遇到了和我一样的问题,那么应该能帮助到你一些.</p>
+<h3 id="一、forceFit属性宽度自适应问题"><a href="#一、forceFit属性宽度自适应问题" class="headerlink" title="一、forceFit属性宽度自适应问题"></a>一、<code>forceFit</code>属性宽度自适应问题</h3><p>在创建<code>chart</code>图表的时候,要是你图表的宽度设置为自适应模式,切页面为栏栅布局的时候,如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chart = <span class="keyword">new</span> G2.Chart(&#123;</span><br><span class="line">          container: <span class="string">'g1'</span>,</span><br><span class="line">          forceFit: <span class="literal">true</span>,</span><br><span class="line">          height: <span class="number">270</span></span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>将<code>forceFit</code>属性设置为<code>true</code>.<br>此时打开这个有图表的页面,会发现图表产生样式错乱的情况,比如这样:<br><img src="https://user-gold-cdn.xitu.io/2019/8/31/16ce34b261aab4c5?w=1240&amp;h=430&amp;f=png&amp;s=60076" alt="image.png"><br>canvas超出了父元素的宽度。如果改变浏览器的大小，window.resize的时候才会触发forceFit: true这个属性，才会自适应屏幕的宽度，这时图表的大小是正常的。</p>
+<p>解决方式为:在vue生命周期mounted初始化图表之后,加入以下代码即可:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> e = <span class="built_in">document</span>.createEvent(<span class="string">'Event'</span>)</span><br><span class="line">e.initEvent(<span class="string">'resize'</span>, <span class="literal">true</span>, <span class="literal">true</span>)</span><br><span class="line"><span class="built_in">window</span>.dispatchEvent(e)</span><br></pre></td></tr></table></figure></p>
+<p>比如我的项目中:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mounted () &#123;</span><br><span class="line">  <span class="keyword">this</span>.initComponent()</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  initComponent () &#123;</span><br><span class="line">    <span class="keyword">const</span> chart = <span class="keyword">new</span> G2.Chart(&#123;</span><br><span class="line">          container: <span class="string">'g1'</span>,</span><br><span class="line">          forceFit: <span class="literal">true</span>,</span><br><span class="line">          height: <span class="number">270</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> e = <span class="built_in">document</span>.createEvent(<span class="string">'Event'</span>)</span><br><span class="line">    e.initEvent(<span class="string">'resize'</span>, <span class="literal">true</span>, <span class="literal">true</span>)</span><br><span class="line">    <span class="built_in">window</span>.dispatchEvent(e)</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时页面正常了:<br><img src="https://user-gold-cdn.xitu.io/2019/8/31/16ce34b26d4c7e6d?w=1240&amp;h=439&amp;f=png&amp;s=61133" alt="image.png"></p>
+<h3 id="二、自定义图表的高度问题"><a href="#二、自定义图表的高度问题" class="headerlink" title="二、自定义图表的高度问题"></a>二、自定义图表的高度问题</h3><p>如上所述, <code>G2</code>中提供了<code>forceFit</code> 属性使得图表宽度能自适应,但是在实际开发中我们可能希望图表的高度随父级容器的高度变化而变化.</p>
+<p>文档中规定高度<code>height</code>属性必需传递一个数字.这样就打破了我想直接设置高度为<code>100%</code>的幻想.</p>
+<p>既然高度必需规定为一个数字的话,那么我们就可以获取包裹图表的父元素的高度,然后再赋值给图表就可以了.<br>例如下面这个栗子🌰:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div ref=&quot;element&quot; class=&quot;element&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    const offsetHeight = this.$refs.element.offsetHeight // 获取父级高度 200</span><br><span class="line">    const chart = new G2.Chart(&#123;</span><br><span class="line">      container: &apos;chart&apos;,</span><br><span class="line">      forceFit: true,</span><br><span class="line">      height: offsetHeight,</span><br><span class="line">    &#125;)</span><br><span class="line">    ....</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.element &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 200px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong><code>vue</code>中获取元素高度的几种方式:</strong><br>例如下面的<code>DOM</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"element"</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> .element &#123;</span></span><br><span class="line"><span class="undefined">  width: 200px;</span></span><br><span class="line"><span class="undefined">  height: 200px;</span></span><br><span class="line"><span class="undefined">  background-color: red;</span></span><br><span class="line"><span class="undefined">  padding: 10px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>获取高度值 （内容高+padding+边框）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let height = this.$refs.element.offsetHeight // 220</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取元素样式值 （存在单位）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let height = window.getComputedStyle(this.$refs.element).height // 200px</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取元素内联样式值（存在单位, 非内联样式无法获取）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"element"</span> <span class="attr">class</span>=<span class="string">"element"</span> <span class="attr">style</span>=<span class="string">"height: 300px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> height = <span class="keyword">this</span>.$refs.element.style.height <span class="comment">// 300px</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>不过我在项目中是将图表封装到了一个组件中,所以可以使用<code>$el</code>直接获取这个组件的属性.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&apos;width_full height_full&apos;&gt;</span><br><span class="line">    &lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    const offsetHeight = this.$el.offsetHeight // 获取组件高度</span><br><span class="line">    const chart = new G2.Chart(&#123;</span><br><span class="line">      container: &apos;chart&apos;,</span><br><span class="line">      forceFit: true,</span><br><span class="line">      height: offsetHeight,</span><br><span class="line">    &#125;)</span><br><span class="line">    ....</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>该组件的高度由调用它的父级组件控制.</p>
+<h3 id="三、图表内容太小变形问题"><a href="#三、图表内容太小变形问题" class="headerlink" title="三、图表内容太小变形问题"></a>三、图表内容太小变形问题</h3><p>在使用图表时,有时候可能需要一些特别小的图作为仪表盘看板的一部分.比如构建一个宽<code>200px</code>,高<code>150px</code>的图表,此时图表会出现挤压变形的情况.</p>
+<p>我在最开始遇到这个问题的时候也是各种找解决方案.最终还是在<code>G2</code>的<code>Issues</code>上找到了解决方案.只需要在创建图表的时候,将<code>padding</code>设置为<code>auto</code>就可以了,如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chart = <span class="keyword">new</span> G2.Chart(&#123;</span><br><span class="line">    container: <span class="string">'chart'</span>,</span><br><span class="line">    widht: <span class="number">200</span>,</span><br><span class="line">    height: <span class="number">150</span>,</span><br><span class="line">    padding: <span class="string">'auto'</span> <span class="comment">// 为了防止小图时图表变形</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、字段格式为时间戳报错"><a href="#四、字段格式为时间戳报错" class="headerlink" title="四、字段格式为时间戳报错"></a>四、字段格式为时间戳报错</h3><p>若是x轴字段的格式为时间戳:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span><span class="number">-09</span><span class="number">-17</span></span><br><span class="line"><span class="number">2019.09</span><span class="number">.17</span></span><br></pre></td></tr></table></figure></p>
+<p>比如后台给我的数据结构为:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    time: <span class="string">'2019-09-17'</span>,</span><br><span class="line">    amount: <span class="number">100</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    time: <span class="string">'2019-09-18'</span>,</span><br><span class="line">    amount: <span class="number">200</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p><code>G2</code>中需要生成一张柱状图<br>此时,控制台会报错:<br><img src="https://user-gold-cdn.xitu.io/2019/8/31/16ce34b292d1c3e5?w=1102&amp;h=130&amp;f=png&amp;s=28844" alt="image.png"><br>解决方案:<br>x 轴默认为解析为 time linear 类型了，这个类型不能堆叠。</p>
+<p>将 x 轴scale 配置为 catTime 就可以。</p>
+<p>在创建的图表的时候,添加上:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">chart.scale(<span class="string">'time'</span>, &#123; <span class="comment">// time为你的x轴时间的字段</span></span><br><span class="line">    type:<span class="string">'timeCat'</span></span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 若是使用options配置, 则添加:</span></span><br><span class="line">options: &#123;</span><br><span class="line">  scales: &#123;</span><br><span class="line">    time: &#123;</span><br><span class="line">      type: <span class="string">'timeCat'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="后语"><a href="#后语" class="headerlink" title="后语"></a>后语</h2><p>项目还在开发中,对于我来说<code>G2</code>还有很多需要掌握的,后期使用上要是还遇到比较坑的点还会在此篇文章上进行更新.</p>
+<p>很多时候解决问题的方案可能是你在深夜中辗转难眠时的灵光乍现,也可能是在地铁上刷博客时的惊鸿一瞥,希望这篇文章也能成为你的惊鸿一瞥.</p>
+
+    
+    </div>
+    
+    
+        <div class="article-comment" id="article-comment">
+            
+
+<h1>评论</h1>
+
+  
+    <div id="valine"></div>
+  
+
+
+        </div>
+        
+</article>
+  </div>
+
+  
+
+<footer id="footer">
+    <div class="footer-copyright">
+        <div>
+            <p> 版权所有 <a href="">LinDaiDai </a> @ 2019</p>
+            <!--<p>设计: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> 和 <i class="fas fa-graduation-cap"></i> <a href="https://qutang.github.io">Qu Tang</a> &bull; 主题: <a href="https://qutang.github.io/cutie/">Cutie 2.1.3-Taurus</a> &bull; 由 <a href="http://hexo.io">Hexo.</a> 强力驱动</p>-->
+        </div>
+    </div>
+    
+    <div class="footer-social">
+        
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-weixin fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+                
+                    <div class="footer-social-item"><a href="https://github.com/LinDaiDai" target="_blank"><i class="fab fa-qq fa-2x" aria-hidden="true"></i></a></div>
+                
+            
+        
+    </div>
+</footer>
+
+  <br>
+
+  <div id="footer-nav" class='footer-nav'>
+		
+
+
+
+<nav id="nav">
+	
+	
+		
+			
+				
+			
+		
+		
+	
+		
+			
+		
+		
+	
+		
+			
+		
+		
+	
+	
+	<div class="nav-item" id="nav-item-toc">
+		
+
+
+<div class="toc-container">
+<i class="far fa-times-circle" id="toc-close" onclick="closeTOC(event);" ontouchstart="closeTOC(event);"></i>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、forceFit属性宽度自适应问题"><span class="toc-number">1.1.</span> <span class="toc-text">一、forceFit属性宽度自适应问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、自定义图表的高度问题"><span class="toc-number">1.2.</span> <span class="toc-text">二、自定义图表的高度问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、图表内容太小变形问题"><span class="toc-number">1.3.</span> <span class="toc-text">三、图表内容太小变形问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、字段格式为时间戳报错"><span class="toc-number">1.4.</span> <span class="toc-text">四、字段格式为时间戳报错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后语"><span class="toc-number">2.</span> <span class="toc-text">后语</span></a></li></ol>
+</div>
+<div class="toc-button" onclick="toggleTOC(event);" ontouchstart="toggleTOC(event);">
+    <img src="/images/icons/blue-shadow/toc.svg" alt="">
+</div>
+
+	</div>
+	
+	<div class="nav-item" id="nav-item-archive">
+		
+				<div class="nav-icon">
+				
+			<a href="/archives/" title="归档">
+			<img src="/images/icons/blue-shadow/archive.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-search">
+		
+		<div class="nav-icon">
+		
+			<a href="/search/" title="搜索">
+			<img src="/images/icons/blue-shadow/search.svg" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id="nav-item-more">
+		<div class="nav-icon">
+				<a href="#" onclick="onClickMenuIcon(event);" ontouchstart="onClickMenuIcon(event);">
+				<img src="/images/icons/blue-shadow/menu.svg" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id="nav-more-menu-close" onclick="onClickNavMenuClose(event);" ontouchstart="onClickNavMenuClose(event);"></i>
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/home/">
+							<span>首页</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/about/">
+							<span>关于</span>
+						</a>
+					</div>
+			</div>
+		
+		
+			
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+		
+			<div class="nav-more-item">
+					<div class="nav-name">
+						<a class="nav-link" href="/projects/">
+							<span>Project</span>
+						</a>
+					</div>
+			</div>
+		
+		
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/mySql/">
+						<span>Mysql</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/php/">
+						<span>Php</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/其它技能/">
+						<span>其它技能</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/vscode/">
+						<span>Vscode</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端进阶/">
+						<span>前端进阶</span>
+					</a>
+				</div>
+		</div>
+		
+		<div class="nav-more-item">
+				<div class="nav-name">
+					<a class="nav-link" href="/categories/前端入门/">
+						<span>前端入门</span>
+					</a>
+				</div>
+		</div>
+		
+	</div>
+	</div>
+</nav>
+
+	</div>
+
+  
+
+
+
+    
+
+    
+    
+    
+<script>
+    new Valine({
+        el: '#valine',
+        notify:false, 
+        verify:false,
+        appId: '0Nyr31J74bB24hrKnRrheEdf-gzGzoHsz',
+        appKey: 'RYPhOnr007gXeWPQr3V1VFHH',
+        placeholder: '说点什么吧...',
+        path:window.location.pathname, 
+        avatar:'monsterid',
+        lang: 'zh-cn',
+        visitor: true // 阅读量统计
+    });
+</script>
+
+
+
+
+
+
+
+
+
+    <script src="/js/lightgallery.min.js"></script>
+<script src="/js/lg-zoom.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+        $(".article-content img").each(function(){
+            console.log($(this).attr('src'))
+            $(this).attr('data-src', $(this).attr('src')).lightGallery({
+                selector: 'this'
+            })
+        });
+    });
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+  
+  // update cookie if this page is opened (directly)
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    
+    new Postv2('hashit_5951510281572662b0fb023b5b971e6310049a507c0019a57061f561ad0dca9f').update('hashit_5fb76d5c1f2590581fdf99202f9f1ab5efda15cbce241f5d299a4c989f0e5f43', function(){});
+  });
+  
+</script>
+
+
+    
+<script type="text/javascript">
+  
+  // update cookie if this page is opened (directly)
+  function getIP(json) {
+  loadjs(['/libs/jshashes/hashes.min.js', '/libs/js-cookie/src/js.cookie.js', '/js/leancloud.js'], 'post-visit-comment-count');
+  loadjs.ready('post-visit-comment-count', function(){
+    
+    
+    LeanCloud.init('', '');
+    var leanCloud = LeanCloud.getInstance();
+    leanCloud.fetchIsThumbUp('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', json.ip);
+    document.getElementById('thumb-up-button').addEventListener('click', function(e){
+      leanCloud.isThumbUp('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(isThumbUp){
+        console.log('is thumb up:' + isThumbUp);
+        if(isThumbUp){
+          leanCloud.removeThumbUpRecord('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', json.ip);
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          
+        }else{
+          leanCloud.addThumbUpRecord('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', json.ip);
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }
+        leanCloud.getThumbUpCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(count){
+            console.log('thumb up count: ' + count)
+            var el = document.getElementById('article-thumbup-count');
+            if(el) el.innerHTML = count;
+        });
+      });
+    });
+    leanCloud.addVisitRecord('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', json.ip);
+    leanCloud.fetchCommentCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/');
+    leanCloud.fetchVisitCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/');
+    leanCloud.fetchThumbUpCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/');
+    leanCloud.getCommentCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(count){
+        var el = document.querySelector('#article-comment-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getVisitCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(count){
+        var el = document.querySelector('#article-visit-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.getThumbUpCount('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(count){
+        var el = document.getElementById('article-thumbup-count');
+        if(el) el.innerHTML = count;
+    });
+    leanCloud.isThumbUp('/2019/08/31/webNotes/advanced/JavaScript/vue中使用G2问题汇总/', function(isThumbUp){
+        console.log('init thumb up:' + isThumbUp);
+        if(isThumbUp){
+          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+        }else{
+          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+        }
+    });
+  });
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+
+
+<!-- <script src="/js/post.js"></script> -->
+
+<script src="/js/headroom.min.js"></script>
+
+<script data-no-instant="" type="text/javascript">
+
+initHeadroom();
+
+changeLayoutOnTouchScreen();
+
+// 
+// var post = new Post('', '');
+// post.getCommentCount(window.location.pathname, function(count){
+//     $('#article-comment-count').text(count);
+// });
+// post.addVisitRecord(window.location.pathname, userip);
+// post.getVisitCount(window.location.pathname, function(count){
+//     $('#article-visit-count').text(count);
+// });
+
+// 
+</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
